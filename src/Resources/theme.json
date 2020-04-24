@@ -1,0 +1,85 @@
+{
+  "name": "SwagCleanAndLight",
+  "author": "Shopware AG",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SwagCleanAndLight"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/clean-and-light.js"
+  ],
+  "asset": [
+    "app/storefront/src/assets"
+  ],
+  "config": {
+    "blocks": {
+      "footer": {
+        "label": {
+          "en-GB": "Footer / Topbar",
+          "de-DE": "Footer / Topbar"
+        }
+      }
+    },
+    "fields": {
+      "sw-color-brand-primary": {
+        "value": "#231645"
+      },
+      "sw-color-brand-secondary": {
+        "value": "#161616"
+      },
+      "sw-border-color": {
+        "value": "#e7e7e7"
+      },
+      "sw-font-family-base": {
+        "value": "'Spartan', sans-serif"
+      },
+      "sw-text-color": {
+        "value": "#161616"
+      },
+      "sw-font-family-headline": {
+        "value": "'Spartan', sans-serif"
+      },
+      "sw-headline-color": {
+        "value": "#161616"
+      },
+      "sw-color-price": {
+        "value": "#161616"
+      },
+      "sw-color-buy-button": {
+        "value": "#231645"
+      },
+      "sw-color-buy-button-text": {
+        "value": "#fdfdfd"
+      },
+      "sw-footer-bg-color": {
+        "label": {
+          "en-GB": "Background colour footer",
+          "de-DE": "Hintergrundfarbe Footer"
+        },
+        "type": "color",
+        "value": "#161616",
+        "editable": true,
+        "block": "footer",
+        "order": 100
+      },
+      "sw-footer-text-color": {
+        "label": {
+          "en-GB": "Text colour footer",
+          "de-DE": "Textfarbe Footer"
+        },
+        "type": "color",
+        "value": "#fdfdfd",
+        "editable": true,
+        "block": "footer",
+        "order": 200
+      }
+    }
+  }
+}

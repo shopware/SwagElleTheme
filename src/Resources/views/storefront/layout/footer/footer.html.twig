@@ -1,0 +1,100 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_navigation %}
+    <div id="footerColumns"
+         class="row footer-columns"
+         data-collapse-footer="true">
+        {% block layout_footer_navigation_columns %}
+            {% for root in page.footer.navigation.tree %}
+                {% block layout_footer_navigation_column %}
+                    <div class="col-md-3 footer-column js-footer-column">
+                        {% block layout_footer_navigation_information_headline %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% block layout_footer_navigation_information_content %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            {% endfor %}
+        {% endblock %}
+
+        {% block layout_footer_navigation_newsletter %}
+            <div class="col-md-3 footer-column js-footer-column">
+                {% block layout_footer_navigation_newsletter_headline %}
+                    <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                         id="collapseFooterNewsletterTitle"
+                         data-target="#collapseFooterNewsletter"
+                         aria-expanded="true"
+                         aria-controls="collapseFooterNewsletter">
+                        {{ 'footer.newsletterHeadline'|trans|sw_sanitize }}
+                        {% block layout_footer_navigation_newsletter_icons %}
+                            <div class="footer-column-toggle">
+                                <span class="footer-plus-icon">
+                                    {% sw_icon 'plus' %}
+                                </span>
+                                <span class="footer-minus-icon">
+                                    {% sw_icon 'minus' %}
+                                </span>
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_navigation_newsletter_content %}
+                    <div id="collapseFooterNewsletter"
+                         class="footer-column-content collapse js-footer-column-content footer-newsletter"
+                         aria-labelledby="collapseFooterNewsletterTitle">
+                        <div class="footer-column-content-inner">
+                            <p class="footer-newsletter-info">
+                                {{ 'footer.newsletterInfo'|trans({
+                                    '%shopname%': shopware.config.core.basicInformation.shopName
+                                })|sw_sanitize }}
+                            </p>
+                        </div>
+                        <div class="footer-newsletter-form">
+                            {# TODO: add newsletter form #}
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block layout_footer_navigation_hotline %}
+            <div class="col-md-3 footer-column js-footer-column">
+                {% block layout_footer_navigation_hotline_headline %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block layout_footer_navigation_hotline_content %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_bottom %}
+    <div class="footer-bottom">
+        {% block layout_footer_service_menu %}
+            {{ parent() }}
+        {% endblock %}
+
+        <div class="row align-items-center">
+            {% block layout_footer_vat %}
+                <div class="col-12 col-md-6">
+                    {{ parent() }}
+                </div>
+            {% endblock %}
+
+            {% block layout_footer_copyright %}
+                <div class="col-12 col-md-6">
+                    <div class="footer-copyright">
+                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

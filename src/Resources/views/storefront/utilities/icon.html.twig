@@ -1,0 +1,12 @@
+{% sw_extends '@Storefront/storefront/utilities/icon.html.twig' %}
+
+{% block utilities_icon %}
+    {% set styles = [ size, color, rotation, flip, class ] %}
+    {% if pack == 'feather' %}
+        <span class="icon-feather icon-feather-{{ name }}{% for entry in styles %}{% if entry != "" %} icon-{{ entry }}{% endif %}{% endfor %}">
+            {{ source('@SwagCleanAndLight/../public/assets/icon/feather/'~ name ~'.svg', ignore_missing = true) }}
+        </span>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
