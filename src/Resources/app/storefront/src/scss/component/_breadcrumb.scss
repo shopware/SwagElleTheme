@@ -1,0 +1,5 @@
+.breadcrumb {
+  // remove spacing from container because it could be empty if no breadcrumb is available
+  margin-bottom: 0;
+  padding: 0;
+}

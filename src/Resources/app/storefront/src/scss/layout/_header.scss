@@ -1,0 +1,16 @@
+.header-logo-col {
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.header-logo-main {
+  text-align: left;
+}
+
+.header-navigation-col {
+  display: none;
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+  }
+}

@@ -1,0 +1,13 @@
+// use custom icon class instead of standard icon class
+// feather icons don't need "fill: currentColor"
+.icon-feather {
+  @include sw-icon-size($icon-base-size);
+  overflow: visible;
+  color: $icon-base-color;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}

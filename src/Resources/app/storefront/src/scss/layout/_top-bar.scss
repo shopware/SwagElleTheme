@@ -1,0 +1,18 @@
+.top-bar {
+  background-color: $footer-bg-color;
+  color: $footer-color;
+
+  .top-bar-nav-btn {
+    font-size: $font-size-sm;
+
+    &,
+    &:hover,
+    .icon {
+      color: $footer-color;
+    }
+  }
+}
+
+.top-bar-nav {
+  display: block;
+}

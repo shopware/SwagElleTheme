@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_header_inner %}
+    {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+{% endblock %}
+
+{% block base_navigation %}
+    {# move navigation to header and show search collapse instead #}
+    {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
+{% endblock %}
