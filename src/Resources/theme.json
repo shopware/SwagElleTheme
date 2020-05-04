@@ -1,10 +1,10 @@
 {
-  "name": "SwagCleanAndLight",
+  "name": "SwagElleTheme",
   "author": "Shopware AG",
   "views": [
      "@Storefront",
      "@Plugins",
-     "@SwagCleanAndLight"
+     "@SwagElleTheme"
   ],
   "style": [
     "app/storefront/src/scss/overrides.scss",
@@ -13,7 +13,7 @@
   ],
   "script": [
     "@Storefront",
-    "app/storefront/dist/storefront/js/clean-and-light.js"
+    "app/storefront/dist/storefront/js/swag-elle-theme.js"
   ],
   "asset": [
     "app/storefront/src/assets"

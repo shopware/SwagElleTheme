@@ -1,18 +1,18 @@
 {
-  "name": "swag/clean-and-light",
-  "description": "Clean & Light Theme",
+  "name": "swag/elle-theme",
+  "description": "Elle Theme",
   "type": "shopware-platform-plugin",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "SwagCleanAndLight\\": "src/"
+      "SwagElleTheme\\": "src/"
     }
   },
   "extra": {
-    "shopware-plugin-class": "SwagCleanAndLight\\SwagCleanAndLight",
+    "shopware-plugin-class": "SwagElleTheme\\SwagElleTheme",
     "label": {
-      "de-DE": "Clean & Light Theme",
-      "en-GB": "Clean & Light Theme"
+      "de-DE": "Elle Theme",
+      "en-GB": "Elle Theme"
     }
   }
 }

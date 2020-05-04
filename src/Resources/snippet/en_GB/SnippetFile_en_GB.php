@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace SwagCleanAndLight\Resources\snippet\en_GB;
+namespace SwagElleTheme\Resources\snippet\en_GB;
 
 use Shopware\Core\System\Snippet\Files\SnippetFileInterface;
 
@@ -8,12 +8,12 @@ class SnippetFile_en_GB implements SnippetFileInterface
 {
     public function getName(): string
     {
-        return 'cleanAndLight.en-GB';
+        return 'elleTheme.en-GB';
     }
 
     public function getPath(): string
     {
-        return __DIR__ . '/cleanAndLight.en-GB.json';
+        return __DIR__ . '/elleTheme.en-GB.json';
     }
 
     public function getIso(): string
