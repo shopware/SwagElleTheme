@@ -1,3 +1,6 @@
+// Options
+$enable-responsive-font-sizes: false;
+
 // Color system
 $gray-100: #FDFDFD !default;
 $gray-200: #EFEFEF !default;
@@ -8,6 +11,17 @@ $gray-600: #9F9F9F !default;
 $gray-700: #444444 !default;
 $gray-800: #161616 !default;
 $gray-900: #161616 !default;
+
+// Typography
+$h1-font-size: 36px;
+$h2-font-size: 28px;
+$h3-font-size: 24px;
+$h4-font-size: 20px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+
+// Buttons
+$btn-font-weight: 600;
 
 // Components
 $border-radius: 0 !default;
