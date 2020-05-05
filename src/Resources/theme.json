@@ -79,6 +79,17 @@
         "editable": true,
         "block": "footer",
         "order": 200
+      },
+      "sw-footer-logo": {
+        "label": {
+            "en-GB": "Footer logo",
+            "de-DE": ""
+        },
+        "type": "media",
+        "value": "public/assets/logo/elle-logo-white.svg",
+        "editable": true,
+        "block": "media",
+        "order": 300
       }
     }
   }
