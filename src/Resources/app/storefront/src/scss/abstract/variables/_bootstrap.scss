@@ -24,6 +24,11 @@ $h6-font-size: 14px;
 $btn-font-weight: 600;
 
 // Components
+$border-color: #ced4da !default;
+
 $border-radius: 0 !default;
 $border-radius-lg: 0 !default;
 $border-radius-sm: 0 !default;
+
+// Forms
+$input-placeholder-color: $gray-600 !default;

@@ -58,6 +58,18 @@
       "sw-color-buy-button-text": {
         "value": "#fdfdfd"
       },
+      "sw-logo-desktop": {
+        "type": "media",
+        "value": "public/assets/logo/elle-logo.svg"
+      },
+      "sw-logo-tablet": {
+        "type": "media",
+        "value": "public/assets/logo/elle-logo.svg"
+      },
+      "sw-logo-mobile": {
+        "type": "media",
+        "value": "public/assets/logo/elle-logo.svg"
+      },
       "sw-footer-bg-color": {
         "label": {
           "en-GB": "Background colour footer",
