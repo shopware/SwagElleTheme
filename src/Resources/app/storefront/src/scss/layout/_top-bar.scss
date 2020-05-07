@@ -3,16 +3,54 @@
   color: $footer-color;
 
   .top-bar-nav-btn {
-    font-size: $font-size-sm;
 
     &,
     &:hover,
+    .icon,
+    .icon-feather {
+      color: $footer-color;
+    }
+  }
+
+  .icon-feather {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .top-bar-nav-btn.btn:hover {
     .icon {
       color: $footer-color;
     }
+  }
+
+  .dropdown.show {
+    .top-bar-nav-btn,
+    .icon {
+      color: $footer-color;
+    }
+  }
+
+  .btn {
+    line-height: 26px;
   }
 }
 
 .top-bar-nav {
   display: block;
+
+  .col,
+  .col-auto {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.top-bar-language {
+  @include media-breakpoint-up(md) {
+    .top-bar-nav-text {
+      display: none;
+    }
+  }
 }
