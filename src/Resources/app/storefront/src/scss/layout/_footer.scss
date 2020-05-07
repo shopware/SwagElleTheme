@@ -20,7 +20,9 @@
 }
 
 .footer-column {
-  border-bottom: none;
+    @include media-breakpoint-down(sm) {
+      border-bottom: 1px solid $footer-border-color;
+    }
 }
 
 .footer-logo-row {
@@ -34,7 +36,7 @@
 }
 
 .footer-newsletter {
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-up(sm) {
     display: none;
   }
 }
@@ -58,6 +60,9 @@
 
 .footer-contact-form {
   text-decoration: underline;
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 26px;
+    }
 }
 
 .footer-column-headline {
