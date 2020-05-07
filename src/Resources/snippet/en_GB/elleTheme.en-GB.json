@@ -1,4 +1,8 @@
 {
+  "header": {
+    "searchPlaceholder": "What are you looking for?",
+    "supportInfo": "<strong>Questions regarding your order?</strong><br /><strong><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></strong> <small>Daily from 7:30 am to 10:00 pm</small>"
+  },
   "footer": {
     "newsletterHeadline": "Newsletter",
     "newsletterInfo": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of %shopname%.",
