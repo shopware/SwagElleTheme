@@ -6,32 +6,29 @@ Contains the imports to all theme styles.
 The file organization follows the 7-1 pattern architecture
 https://sass-guidelin.es/#the-7-1-pattern
 */
-
 /*
  * Variables, Mixins, Functions
  * ---------------------------- */
 @import 'abstract/variables/custom';
-
 /*
  * Vendors
  * ------- */
-
 /*
  * Base stuff
  * ---------- */
 @import 'base/font';
 @import 'base/typography';
-
 /*
  * Components
  * ---------- */
+@import 'component/button';
 @import 'component/breadcrumb';
 @import 'component/card';
 @import 'component/icon';
 @import 'component/button';
 @import 'component/forms';
 @import 'component/privacy-notice';
-
+@import 'component/input-group';
 /*
  * Layout-related sections
  * ----------------------- */
@@ -41,7 +38,6 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/footer';
 @import 'layout/main-navigation';
 @import 'layout/top-bar';
-
 /*
  * Page-specific styles
  * -------------------- */
