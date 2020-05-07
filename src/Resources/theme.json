@@ -95,7 +95,7 @@
       "sw-footer-logo": {
         "label": {
             "en-GB": "Footer logo",
-            "de-DE": ""
+            "de-DE": "Footer Logo"
         },
         "type": "media",
         "value": "public/assets/logo/elle-logo-white.svg",
