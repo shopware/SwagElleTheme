@@ -13,14 +13,64 @@
 
 .footer-columns {
   border-bottom: none;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 20px;
+  }
+}
+
+.footer-column {
+  border-bottom: none;
+}
+
+.footer-logo-row {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 22px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.footer-newsletter {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.footer-column-hotline {
+  text-align: right;
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
+}
+
+.footer-contact-hotline {
+  margin-bottom: 0;
+}
+
+.footer-contact-hotline a {
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  margin-top: 0;
+}
+
+.footer-contact-form {
+  text-decoration: underline;
 }
 
 .footer-column-headline {
   color: $footer-color;
+  font-weight: $font-weight-semibold;
 
   @include media-breakpoint-up(md) {
     display: none;
   }
+}
+
+.footer-column-headline .icon {
+    color: $footer-color;
 }
 
 .footer-bottom {
