@@ -1,5 +1,8 @@
+// contains new variables specific to the theme
+
+$disabled-btn-color: #adb5bd !default;
+
 $footer-bg-color: $sw-footer-bg-color !default;
 $footer-color: $sw-footer-text-color !default;
-// TODO: use admin variables
-$footer-border-color: #202020 !default;
+$footer-border-color: $gray-800 !default;
 $footer-bottom-color: $gray-700 !default;

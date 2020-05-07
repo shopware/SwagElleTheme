@@ -32,10 +32,22 @@
         "value": "#231645"
       },
       "sw-color-brand-secondary": {
-        "value": "#161616"
+        "value": "#242523"
       },
       "sw-border-color": {
-        "value": "#e7e7e7"
+        "value": "#ced4da"
+      },
+      "sw-color-success": {
+        "value": "#3cc261"
+      },
+      "sw-color-info": {
+        "value": "#26b6cf"
+      },
+      "sw-color-warning": {
+        "value": "#ffbd5d"
+      },
+      "sw-color-danger": {
+        "value": "#e52427"
       },
       "sw-font-family-base": {
         "value": "'Spartan', sans-serif"
@@ -53,10 +65,10 @@
         "value": "#161616"
       },
       "sw-color-buy-button": {
-        "value": "#231645"
+        "value": "#3cc261"
       },
       "sw-color-buy-button-text": {
-        "value": "#fdfdfd"
+        "value": "#ffffff"
       },
       "sw-logo-desktop": {
         "type": "media",

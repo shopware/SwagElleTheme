@@ -1,3 +1,7 @@
-.btn {
-  padding: 2px 10px;
+.btn,
+.btn-buy {
+  &.disabled,
+  &:disabled {
+    color: $disabled-btn-color;
+  }
 }

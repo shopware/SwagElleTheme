@@ -1,0 +1,10 @@
+// decrease button padding for lg and sm sized input-groups to fit icons inside the button
+.input-group-lg,
+.input-group-sm {
+  .input-group-append {
+    .btn {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+}
