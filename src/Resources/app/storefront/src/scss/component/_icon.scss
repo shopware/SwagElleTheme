@@ -4,6 +4,7 @@
   @include sw-icon-size($icon-base-size);
   overflow: visible;
   color: $icon-base-color;
+  display: flex;
 
   > svg {
     width: 100%;
