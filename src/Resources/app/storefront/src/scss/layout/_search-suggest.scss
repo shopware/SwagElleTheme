@@ -39,3 +39,16 @@
       width: 100%;
   }
 }
+
+.search-suggest-total {
+  padding-top: 24px;
+  padding-bottom: 14px;
+
+  .search-suggest-total-link {
+    display: flex;
+
+    .icon-feather {
+      margin-top: -2px;
+    }
+  }
+}

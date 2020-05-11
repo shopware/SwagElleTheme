@@ -4,6 +4,14 @@
 
 .header-row {
   padding: 14px 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: 10px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+  }
 }
 
 .header-menu-col {
@@ -35,6 +43,7 @@
 
 // Header search
 .header-search {
+  margin: 0;
   max-width: inherit;
 
   .header-search-rectangle {
