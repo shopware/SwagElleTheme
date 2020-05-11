@@ -25,6 +25,12 @@
     }
 }
 
+.footer-column-toggle {
+  .icon-feather {
+    color: $footer-color;
+  }
+}
+
 .footer-logo-row {
   @include media-breakpoint-up(md) {
     margin-bottom: 22px;
@@ -50,12 +56,12 @@
 
 .footer-contact-hotline {
   margin-bottom: 0;
-}
 
-.footer-contact-hotline a {
-  font-size: 20px;
-  font-weight: $font-weight-bold;
-  margin-top: 0;
+  a {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    margin-top: 0;
+  }
 }
 
 .footer-contact-form {
@@ -72,10 +78,6 @@
   @include media-breakpoint-up(md) {
     display: none;
   }
-}
-
-.footer-column-headline .icon {
-    color: $footer-color;
 }
 
 .footer-bottom {
