@@ -12,10 +12,12 @@
     }
   }
 
-  .icon-feather {
-    svg {
+  .top-bar-menu {
+    .icon-feather {
+      float: left;
       width: 18px;
       height: 18px;
+      margin: 3px 2px 0 0;
     }
   }
 
@@ -52,5 +54,11 @@
     .top-bar-nav-text {
       display: none;
     }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .top-bar-nav-text {
+    display: inline;
   }
 }
