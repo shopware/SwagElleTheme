@@ -2,4 +2,57 @@
   // remove spacing from container because it could be empty if no breadcrumb is available
   margin-bottom: 0;
   padding: 0;
+  white-space: nowrap;
+
+    .breadcrumb-container {
+        margin-top: 20px;
+    }
+
+    a {
+        font-size: $font-size-base;
+
+        &.is-active {
+            font-weight: $font-weight-semibold;
+        }
+    }
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: nowrap;
+
+    a {
+      font-size: $font-size-sm;
+    }
+
+    .breadcrumb-container:last-child {
+      margin: 20px 0 10px 0;
+      min-width: 0;
+
+      a {
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .breadcrumb-placeholder {
+    .icon-feather > svg {
+      height: 16px;
+      width: 16px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 4px;
+
+      .icon-feather {
+        width: 14px;
+        height: 14px;
+
+        svg {
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
+  }
 }

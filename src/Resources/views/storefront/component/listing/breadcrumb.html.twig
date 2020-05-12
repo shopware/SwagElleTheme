@@ -1,11 +1,11 @@
 {% sw_extends '@Storefront/storefront/component/listing/breadcrumb.html.twig' %}
 
+
 {% block component_listing_breadcrumb %}
     {% set breadcrumb = category.buildSeoBreadcrumb(context.salesChannel.navigationCategoryId) %}
-
     {% if breadcrumb %}
         {# prepend home as first breadcrumb #}
-        <div class="breadcrumb-container">
+        <div class="breadcrumb-container breadcrumb-listing-container">
             {% block component_listing_breadcrumb_home %}
                 <a class="{% if controllerAction is same as('home') %} is-active{% endif %}"
                    title="{{ 'general.homeLink'|trans|sw_sanitize }}"
@@ -15,15 +15,14 @@
                     {% endblock %}
                 </a>
             {% endblock %}
-            {% block component_listing_breadcrumb_home_placeholder %}
-                {% if breadcrumb %}
+            {% block component_listing_breadcrumb_placeholder %}
+                {% if item != breadcrumb|last %}
                     <div class="breadcrumb-placeholder">
-                        {% sw_icon 'arrow-medium-right' style { 'size': 'fluid', 'pack': 'solid'} %}
+                        {% sw_icon 'chevron-right' style { 'pack': 'feather'} %}
                     </div>
                 {% endif %}
             {% endblock %}
         </div>
-
         {{ parent() }}
     {% endif %}
 {% endblock %}
