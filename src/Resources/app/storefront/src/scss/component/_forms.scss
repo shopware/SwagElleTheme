@@ -3,3 +3,19 @@
     color: $gray-700;
   }
 }
+
+.form-label {
+  margin-bottom: 2px;
+}
+
+.form-control {
+  &:disabled,
+  &[readonly] {
+    border-color: $gray-200;
+    color: $gray-500;
+  }
+
+  &::placeholder {
+    color: $gray-500;
+  }
+}
