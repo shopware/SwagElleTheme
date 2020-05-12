@@ -41,16 +41,15 @@
   }
 }
 
-.footer-newsletter {
-  @include media-breakpoint-up(sm) {
-    display: none;
-  }
-}
-
 .footer-column-hotline {
   text-align: right;
+
   @include media-breakpoint-down(sm) {
     text-align: left;
+  }
+
+  @include media-breakpoint-only(md) {
+    padding-left: 0;
   }
 }
 
@@ -61,6 +60,10 @@
     font-size: 20px;
     font-weight: $font-weight-bold;
     margin-top: 0;
+
+    @include media-breakpoint-only(md) {
+      font-size: $font-size-base;
+    }
   }
 }
 
@@ -77,6 +80,49 @@
 
   @include media-breakpoint-up(md) {
     display: none;
+  }
+}
+
+.footer-column-newsletter {
+  @include media-breakpoint-only(md) {
+    padding-left: 0;
+  }
+}
+
+.footer-newsletter-form {
+  .input-group {
+    .form-control {
+      border-right: none;
+    }
+
+    .btn {
+      border-left: none;
+    }
+
+    .form-control,
+    .btn {
+      background: none;
+      border-color: $footer-color;
+
+      &, .icon-feather {
+        color: $footer-color;
+      }
+
+      @include hover-focus {
+        background: none;
+      }
+    }
+  }
+
+  .confirm-message {
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    text-align: left;
+  }
+
+  .confirm-message,
+  .confirm-alert {
+    padding: 0;
   }
 }
 

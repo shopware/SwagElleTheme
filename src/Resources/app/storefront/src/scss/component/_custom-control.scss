@@ -1,0 +1,25 @@
+// custom control styles for checkbox/radio
+.custom-checkbox,
+.custom-radio {
+  .custom-control-label {
+    &::before,
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+// custom control styles for switches
+.custom-switch {
+  .custom-control-label {
+    &::before {
+      background-color: $gray-400;
+    }
+
+    &::after {
+      background-color: $white;
+      top: 6px;
+      left: -29px;
+    }
+  }
+}
