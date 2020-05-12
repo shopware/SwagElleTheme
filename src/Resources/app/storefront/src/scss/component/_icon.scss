@@ -12,3 +12,23 @@
     position: relative;
   }
 }
+
+// Icon Sizes
+// -------------------------
+
+.icon-fluid {
+  @include sw-icon-size(100%);
+}
+
+.icon-lg {
+  @include sw-icon-size($icon-base-size / 3 * 4);
+}
+
+// 33% bigger icon
+.icon-sm {
+  @include sw-icon-size($icon-base-size * 0.875);
+}
+
+.icon-xs {
+  @include sw-icon-size($icon-base-size * 0.75);
+}

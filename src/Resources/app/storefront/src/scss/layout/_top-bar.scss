@@ -12,13 +12,6 @@
     }
   }
 
-  .icon-feather {
-    svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
   .top-bar-nav-btn.btn:hover {
     .icon {
       color: $footer-color;
@@ -32,8 +25,31 @@
     }
   }
 
-  .btn {
-    line-height: 26px;
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .top-bar-dropdown-icon {
+    display: inline-block;
+
+    .icon-feather {
+      padding-top: 6px;
+    }
+  }
+
+  .top-bar-nav-btn {
+    display: inherit;
+    line-height: 22px;
+  }
+
+  .top-bar-menu {
+    .icon-feather-help-circle {
+      margin: 2px;
+    }
+
+    .top-bar-nav-text {
+      line-height: 26px;
+    }
   }
 }
 
@@ -48,9 +64,7 @@
 }
 
 .top-bar-language {
-  @include media-breakpoint-up(md) {
-    .top-bar-nav-text {
-      display: none;
-    }
+  .top-bar-nav-text {
+    display: none;
   }
 }
