@@ -5,7 +5,14 @@
          id="searchCollapse">
         <div class="header-search">
             <div class="header-search-rectangle"></div>
-            <div class="header-search-close js-close-flyout-search">{% sw_icon 'x' %}</div>
+            <button class="btn header-search-close"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#searchCollapse"
+                    aria-expanded="true"
+                    aria-controls="searchCollapse">
+                {% sw_icon 'x' style { 'pack': 'feather' } %}
+            </button>
             <form action="{{ path('frontend.search.page') }}"
                   method="get"
                   data-search-form="true"
