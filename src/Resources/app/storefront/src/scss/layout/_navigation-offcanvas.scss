@@ -1,0 +1,54 @@
+.navigation-offcanvas {
+  .top-bar-nav-item {
+
+    &:first-child {
+      padding: 0 0 0 10px;
+      margin-right: 0;
+    }
+
+    .top-bar-dropdown-icon {
+      display: inline-block;
+
+      .icon-feather {
+        padding-top: 6px;
+      }
+    }
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .dropdown.show {
+      .top-bar-nav-btn {
+        color: $gray-900;
+      }
+    }
+  }
+
+  .top-bar-nav-text {
+    display: block;
+  }
+
+  .top-bar-nav-btn.btn {
+    display: initial;
+  }
+
+  .languages-menu {
+    .top-bar-list-icon {
+      display: inherit;
+      width: 20px;
+      height: 15px;
+      margin-right: 0;
+    }
+
+    .top-bar-nav-text {
+      display: none;
+    }
+  }
+
+  .currencies-menu {
+    .top-bar-nav-text {
+      display: inline;
+    }
+  }
+}
