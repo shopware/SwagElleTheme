@@ -30,6 +30,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/forms';
 @import 'component/privacy-notice';
 @import 'component/input-group';
+@import 'component/offcanvas';
+
 /*
  * Layout-related sections
  * ----------------------- */
@@ -39,6 +41,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/footer';
 @import 'layout/main-navigation';
 @import 'layout/top-bar';
+@import 'layout/navigation-offcanvas';
+
 /*
  * Page-specific styles
  * -------------------- */
