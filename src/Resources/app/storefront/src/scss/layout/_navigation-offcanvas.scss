@@ -51,4 +51,10 @@
       display: inline;
     }
   }
+
+  .navigation-offcanvas-link-icon {
+    .loader {
+      @include sw-icon-size($icon-base-size);
+    }
+  }
 }
