@@ -7,8 +7,9 @@
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
-        {% sw_icon 'help-circle' style { 'pack': 'feather' } %}
+        {% sw_icon 'help-circle' style { 'pack': 'feather', 'size': 'sm' } %}
         <span class="top-bar-nav-text">{{ "header.indexLinkService"|trans|sw_sanitize }}</span>
+        <div class="top-bar-dropdown-icon">{% sw_icon 'chevron-down' style { 'pack': 'feather', 'size': 'sm' } %}</div>
     </button>
     {% block layout_header_actions_service_menu_items %}
         {{ parent() }}
