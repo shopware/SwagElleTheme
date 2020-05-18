@@ -31,6 +31,9 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/privacy-notice';
 @import 'component/input-group';
 @import 'component/offcanvas';
+@import 'component/tab-menu';
+@import 'component/tables';
+@import 'component/product_box';
 
 /*
  * Layout-related sections
@@ -47,4 +50,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
-@import 'page/product-detail';
+@import 'page/product-detail/tabs';
+@import 'page/product-detail/review';
+@import 'page/product-detail/product-detail';
+

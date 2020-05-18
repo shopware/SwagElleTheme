@@ -1,0 +1,52 @@
+$box-standard-height-img: 200px;
+$box-image-height-img: 332px;
+
+.product-box {
+  border: none;
+}
+
+.product-box {
+  .card-body {
+    border: none;
+    padding: 0;
+  }
+}
+
+.product-image-wrapper {
+  height: $box-standard-height-img;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 180px;
+  margin-bottom: 15px;
+}
+
+.product-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: $box-standard-height-img;
+  object-fit: cover;
+  font-family: 'object-fit: cover;'; // IE polyfill
+  // 'max-height: 100%' not working in firefox
+
+
+  &.is-cover,
+  &.is-contain {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.is-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover;'; // IE polyfill
+  }
+
+  &.is-contain {
+    object-fit: contain;
+    font-family: 'object-fit: contain;'; // IE polyfill
+  }
+}
+
+.product-info {
+  padding: 30px;
+}

@@ -1,0 +1,25 @@
+.product-detail-name {
+  font-weight: $font-weight-base;
+  font-size: $product-detail-name;
+}
+
+.product-detail-price-container {
+  .product-detail-price {
+    font-size: $product-detail-price;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.product-detail-tax {
+  .product-detail-tax-link {
+    text-decoration: underline;
+  }
+}
+
+.product-detail-configurator-group-title {
+  text-transform: capitalize;
+}
+
+.product-detail-description-title {
+  font-width: $font-weight-semibold;
+}
