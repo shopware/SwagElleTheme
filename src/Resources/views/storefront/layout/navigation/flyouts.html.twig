@@ -14,6 +14,13 @@
                         {% block layout_main_navigation_menu_flyout %}
                             <div class="navigation-flyout"
                                  data-flyout-menu-id="{{ treeItem.category.id }}">
+                                <div class="navigation-flyout-close js-close-flyout-menu">
+                                    {% block layout_navigation_flyout_bar_close_content %}
+                                        {% block layout_utilities_offcanvas_close_icon %}
+                                            {% sw_icon 'x' style { 'pack': 'feather' } %}
+                                        {% endblock %}
+                                    {% endblock %}
+                                </div>
                                 <div class="container">
                                     {% block layout_main_navigation_menu_flyout_include %}
                                         {% sw_include '@Storefront/storefront/layout/navigation/flyout.html.twig' with {navigationTree: treeItem, level: level+1} only %}
