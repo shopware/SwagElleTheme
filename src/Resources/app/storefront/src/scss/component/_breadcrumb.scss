@@ -36,9 +36,10 @@
   }
 
   .breadcrumb-placeholder {
-    .icon-feather > svg {
-      height: 16px;
-      width: 16px;
+    .icon-feather {
+      & > svg {
+        top: 1px;
+      }
     }
 
     @include media-breakpoint-down(sm) {
@@ -47,11 +48,6 @@
       .icon-feather {
         width: 14px;
         height: 14px;
-
-        svg {
-          height: 12px;
-          width: 12px;
-        }
       }
     }
   }

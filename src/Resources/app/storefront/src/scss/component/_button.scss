@@ -5,3 +5,11 @@
     color: $disabled-btn-color;
   }
 }
+
+.btn {
+  .icon-feather {
+    > svg {
+      top: 6px;
+    }
+  }
+}

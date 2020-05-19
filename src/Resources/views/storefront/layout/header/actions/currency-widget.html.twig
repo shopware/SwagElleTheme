@@ -3,5 +3,5 @@
 {% block layout_header_actions_currency_widget_dropdown_toggle_name %}
     {{ page.header.activeCurrency.symbol }}
     <span class="top-bar-nav-text">{{ page.header.activeCurrency.translated.shortName }}</span>
-    <div class="top-bar-dropdown-icon">{% sw_icon 'chevron-down' style { 'pack': 'feather', 'size': 'sm' } %}</div>
+    {% sw_icon 'chevron-down' style { 'pack': 'feather', 'size': 'xs' } %}
 {% endblock %}

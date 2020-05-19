@@ -14,7 +14,7 @@
                 aria-expanded="false">
             <div class="top-bar-list-icon language-flag country-{{ country }} language-{{ language }}"></div>
             <span class="top-bar-nav-text">{{ page.header.activeLanguage.name }}</span>
-            <div class="top-bar-dropdown-icon">{% sw_icon 'chevron-down' style { 'pack': 'feather', 'size': 'sm' } %}</div>
+            {% sw_icon 'chevron-down' style { 'pack': 'feather', 'size': 'xs' } %}
         </button>
         {% block layout_header_actions_languages_widget_form_items %}
             {{ parent() }}

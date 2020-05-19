@@ -2,5 +2,11 @@
   .offcanvas-close {
     background: $gray-300;
     color: $gray-900;
+
+    .icon-feather {
+      & > svg {
+        top: 0;
+      }
+    }
   }
 }

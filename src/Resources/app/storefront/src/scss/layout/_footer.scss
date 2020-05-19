@@ -77,6 +77,7 @@
 .footer-column-headline {
   color: $footer-color;
   font-weight: $font-weight-semibold;
+  align-items: center;
 
   @include media-breakpoint-up(md) {
     display: none;

@@ -48,7 +48,9 @@
     display: flex;
 
     .icon-feather {
-      margin-top: -2px;
+      & > svg {
+        top: -3px;
+      }
     }
   }
 }
