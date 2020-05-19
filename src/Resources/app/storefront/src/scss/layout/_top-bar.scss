@@ -2,25 +2,8 @@
   background-color: $footer-bg-color;
   color: $footer-color;
 
-  .top-bar-nav-btn {
-
-    &,
-    &:hover,
-    .icon,
-    .icon-feather {
-      color: $footer-color;
-    }
-  }
-
-  .top-bar-nav-btn.btn:hover {
-    .icon {
-      color: $footer-color;
-    }
-  }
-
   .dropdown.show {
-    .top-bar-nav-btn,
-    .icon {
+    .top-bar-nav-btn {
       color: $footer-color;
     }
   }
@@ -29,26 +12,25 @@
     display: none;
   }
 
-  .top-bar-dropdown-icon {
-    display: inline-block;
+  .top-bar-nav-btn {
+    line-height: 26px;
+
+    &,
+    &:hover,
+    .icon-feather {
+      color: $footer-color;
+    }
 
     .icon-feather {
-      padding-top: 6px;
+      & > svg {
+        top: 3px;
+      }
     }
-  }
-
-  .top-bar-nav-btn {
-    display: inherit;
-    line-height: 22px;
   }
 
   .top-bar-menu {
     .icon-feather-help-circle {
-      margin: 2px;
-    }
-
-    .top-bar-nav-text {
-      line-height: 26px;
+      margin-right: 5px;
     }
   }
 }

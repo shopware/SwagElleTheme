@@ -14,7 +14,7 @@
                         {% endblock %}
                     </a>
                     <div class="breadcrumb-placeholder">
-                        {% sw_icon 'chevron-right' style { 'pack': 'feather' } %}
+                        {% sw_icon 'chevron-right' style { 'pack': 'feather', 'size': 'xs' } %}
                     </div>
                 {% endblock %}
 
@@ -30,7 +30,7 @@
                 {% block component_product_breadcrumb_placeholder %}
                     {% if item != breadcrumb|last %}
                         <div class="breadcrumb-placeholder">
-                            {% sw_icon 'chevron-right' style { 'pack': 'feather' } %}
+                            {% sw_icon 'chevron-right' style { 'pack': 'feather', 'size': 'xs' } %}
                         </div>
                     {% endif %}
                 {% endblock %}

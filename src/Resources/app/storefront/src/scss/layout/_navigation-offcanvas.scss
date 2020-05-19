@@ -1,36 +1,25 @@
 .navigation-offcanvas {
   .top-bar-nav-item {
-
     &:first-child {
       padding: 0 0 0 10px;
       margin-right: 0;
     }
 
-    .top-bar-dropdown-icon {
-      display: inline-block;
-
-      .icon-feather {
-        padding-top: 6px;
-      }
-    }
-
     .dropdown-toggle::after {
       display: none;
     }
+  }
 
-    .dropdown.show {
-      .top-bar-nav-btn {
-        color: $gray-900;
+  .top-bar-nav-btn {
+    .icon-feather {
+      & > svg {
+        top: 3px;
       }
     }
   }
 
   .top-bar-nav-text {
     display: block;
-  }
-
-  .top-bar-nav-btn.btn {
-    display: initial;
   }
 
   .languages-menu {
@@ -52,9 +41,24 @@
     }
   }
 
-  .navigation-offcanvas-link-icon {
+  .navigation-offcanvas-link {
     .loader {
-      @include sw-icon-size($icon-base-size);
+      @include sw-icon-size(16px);
+    }
+
+    .icon-feather {
+      & > svg {
+        top: 0;
+      }
+    }
+
+    &.is-back-link,
+    &.is-home-link {
+      .icon-feather {
+        & > svg {
+          top: -2px;
+        }
+      }
     }
   }
 }
