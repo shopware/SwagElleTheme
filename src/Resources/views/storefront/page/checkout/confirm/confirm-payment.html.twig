@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-payment.html.twig' %}
+
+{% block page_checkout_confirm_payment_modal %}
+    <div class="modal fade confirm-payment-modal"
+         id="confirmPaymentModal"
+         tabindex="-1"
+         role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title h4">
+                        {{ "checkout.confirmChangePayment"|trans|sw_sanitize }}
+                    </div>
+                    <button type="button"
+                            class="modal-close close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">
+                            {% sw_icon 'x' style { 'pack': 'feather', 'size': 'lg' } %}
+                        </span>
+                    </button>
+                </div>
+
+                {% block page_checkout_confirm_payment_modal_body %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
