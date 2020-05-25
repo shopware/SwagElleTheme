@@ -1,0 +1,10 @@
+.account-content {
+  .account-content-main {
+    @extend .col-xl-8;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
