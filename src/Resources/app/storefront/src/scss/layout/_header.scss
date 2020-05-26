@@ -65,14 +65,15 @@
 
   @include media-breakpoint-up(xl) {
     .header-search-form {
-      padding-top: 40px;
+      padding-top: 0;
       padding-bottom: 40px;
     }
 
     .header-search-close {
-      display: block !important;
-      padding: 10px;
-      float: right;
+      display: block;
+      padding: 0 10px;
+      margin-right: 0;
+      margin-left: auto;
     }
   }
 }
