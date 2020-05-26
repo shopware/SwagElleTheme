@@ -34,6 +34,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/modal';
 @import 'component/table';
 @import 'component/product-slider';
+@import 'component/tab-menu';
 
 /*
  * Layout-related sections
@@ -50,7 +51,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
-@import 'page/product-detail';
+@import 'page/product-detail/product-detail';
+@import 'page/product-detail/tabs';
 @import 'page/account/account';
 @import 'page/account/overview';
-
