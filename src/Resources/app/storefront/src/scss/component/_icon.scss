@@ -19,6 +19,10 @@
     @include sw-icon-size(100%);
   }
 
+  &.icon-xl {
+    @include sw-icon-size(30px);
+  }
+
   &.icon-lg {
     @include sw-icon-size(26px);
   }
