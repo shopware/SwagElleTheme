@@ -11,5 +11,8 @@
   },
   "account": {
     "orRegisterLink": "register"
+  },
+  "general": {
+    "requiredFields": "The fields marked with * are required"
   }
 }
