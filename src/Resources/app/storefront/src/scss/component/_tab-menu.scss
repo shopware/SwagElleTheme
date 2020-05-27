@@ -6,12 +6,15 @@
   }
 
   .card-header {
-    background: none;
     padding: 0;
   }
 
   .nav-item {
     margin-right: 0;
+
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      max-width: 44%;
+    }
   }
 
   .nav-link {
@@ -21,28 +24,20 @@
     padding: 20px 50px;
     font-size: $font-size-lg;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
       padding: 10px 0;
       font-size: $font-size-base;
-    }
-
-    &:hover {
-      border-color: $primary;
-      color: $primary;
-    }
-
-    &.active {
-      border-color: $primary;
-      color: $gray-800;
-      font-weight: $font-weight-bold;
     }
 
     &.active,
     &:hover {
       background-color: $white;
       background-image: none;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      border: none;
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(xs) {
         background: none;
       }
     }
