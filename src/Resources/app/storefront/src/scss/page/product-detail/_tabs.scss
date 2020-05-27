@@ -53,5 +53,13 @@
   .product-detail-tabs.product-detail-information {
     margin-bottom: 0;
   }
+
+  .product-detail-tabs {
+    padding-top: 10px;
+
+    .nav-item:last-child {
+      border-bottom: 1px solid $gray-400;
+    }
+  }
 }
 
