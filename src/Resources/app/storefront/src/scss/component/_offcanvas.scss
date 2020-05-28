@@ -9,4 +9,17 @@
       }
     }
   }
+
+  &.is-right {
+    .offcanvas-close {
+      display: flex;
+
+      .icon-feather {
+        & > svg {
+          top: -2px;
+        }
+      }
+    }
+  }
+
 }
