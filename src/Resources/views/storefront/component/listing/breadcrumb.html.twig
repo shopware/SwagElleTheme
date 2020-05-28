@@ -1,6 +1,5 @@
 {% sw_extends '@Storefront/storefront/component/listing/breadcrumb.html.twig' %}
 
-
 {% block component_listing_breadcrumb %}
     {% set breadcrumb = category.buildSeoBreadcrumb(context.salesChannel.navigationCategoryId) %}
     {% if breadcrumb %}
