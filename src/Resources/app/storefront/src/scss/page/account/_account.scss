@@ -10,6 +10,10 @@
 }
 
 .account-welcome {
+  h1 {
+    @extend .h2;
+  }
+
   @include media-breakpoint-down(md) {
     padding-top: 5px;
   }
