@@ -8,3 +8,9 @@
     }
   }
 }
+
+.account-welcome {
+  @include media-breakpoint-down(md) {
+    padding-top: 5px;
+  }
+}
