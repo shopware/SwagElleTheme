@@ -13,6 +13,7 @@
     "orRegisterLink": "register"
   },
   "general": {
+    "paginationNumber": "Site %current_page% of %total_page%",
     "requiredFields": "The fields marked with * are required"
   }
 }
