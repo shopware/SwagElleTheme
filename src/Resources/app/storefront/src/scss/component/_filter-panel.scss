@@ -1,0 +1,10 @@
+.is--sidebar {
+    .filter-panel-item-toggle {
+        &.btn {
+            .icon-feather > svg {
+                // overwrite from the _button.scss to make it in middle align
+                top: 0;
+            }
+        }
+    }
+}
