@@ -1,0 +1,45 @@
+.product-detail-review-widget {
+  hr {
+    display: none;
+  }
+}
+
+.review-filter-form {
+  padding-bottom: 20px;
+}
+
+.product-detail-review-list-content {
+  padding-top: 40px;
+}
+
+.product-detail-review-list {
+  hr {
+    display: none;
+  }
+}
+
+.product-detail-review-item {
+  border-bottom: 0;
+}
+
+.product-detail-review-rating {
+  .h6 {
+    font-weight: $font-weight-base;
+  }
+}
+
+.product-detail-review-item-date {
+  text-align: right;
+}
+
+.product-detail-review-sortby {
+  .custom-select {
+    font-size: $font-size-sm;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .product-detail-review-item-title {
+    padding-left: 20px;
+  }
+}
