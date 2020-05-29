@@ -1,0 +1,89 @@
+.product-detail-headline {
+  margin-bottom: 30px;
+}
+
+.product-detail-name {
+  font-weight: $font-weight-base;
+  font-size: $product-detail-name;
+}
+
+.product-detail-price-container {
+  .product-detail-price {
+    font-size: $product-detail-price;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.product-detail-tax {
+  .product-detail-tax-link {
+    text-decoration: underline;
+  }
+}
+
+.product-detail-description-title {
+  font-width: $font-weight-semibold;
+}
+
+.product-detail-manufacturer {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.product-detail-ordernumber-container {
+  margin-top: 28px;
+}
+
+.product-detail-delivery-information {
+  p {
+    font-size: $font-size-sm;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .product-detail-content {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .product-detail-main {
+    &.container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .product-detail-media,
+  .product-detail-buy {
+    padding: 0;
+  }
+}
+
+// Tablet stripped for gradduated price
+.product-block-prices-table {
+  .product-block-prices-head {
+    background: $gray-100;
+  }
+
+  thead th {
+    border-right: 1px solid $white;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  th {
+    font-weight: $font-weight-base;
+  }
+}
+
+.product-block-prices-table th,
+.product-block-prices-table td {
+  border-top: 0;
+  border-bottom: 0.0625rem solid $gray-400;
+  padding: 10px 20px;
+}
+
+.product-block-prices-body {
+  td {
+    font-weight: $font-weight-semibold;
+  }
+}

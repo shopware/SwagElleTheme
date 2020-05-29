@@ -22,11 +22,29 @@
                                             {% block page_product_detail_main %}
                                                 <div class="row product-detail-main container">
                                                     {% block page_product_detail_media %}
-                                                        {{ parent() }}
+                                                        <div class="col-lg-6 product-detail-media">
+                                                            {% if page.product.media %}
+                                                                {% sw_include '@Storefront/storefront/element/cms-element-image-gallery.html.twig' with {
+                                                                    'mediaItems': mediaItems,
+                                                                    'zoom': true,
+                                                                    'zoomModal': true,
+                                                                    'displayMode': 'contain',
+                                                                    'gutter': 5,
+                                                                    'minHeight': '430px',
+                                                                    'navigationArrows': 'inside',
+                                                                    'navigationDots': 'inside',
+                                                                    'galleryPosition': 'underneath',
+                                                                    'isProduct': true,
+                                                                    'fallbackImageTitle': page.product.translated.name,
+                                                                    'startIndexThumbnails': page.product.cover.position + 1,
+                                                                    'startIndexSlider': page.product.cover.position + 1
+                                                                } %}
+                                                            {% endif %}
+                                                        </div>
                                                     {% endblock %}
 
                                                     {% block page_product_detail_buy %}
-                                                        <div class="col-lg-5 product-detail-buy">
+                                                        <div class="col-lg-6 product-detail-buy">
                                                             {% block page_product_detail_headline %}
                                                                 <div class="align-items-center product-detail-headline">
                                                                     {% sw_include '@Storefront/storefront/page/product-detail/headline.html.twig' %}
