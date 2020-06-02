@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/storefront/page/checkout/checkout-item.html.twig' %}
+
+{% block page_checkout_item_info %}
+    <div class="col-12 col-md cart-item-info">
+        {% block page_checkout_item_info_inner %}
+            <div class="row cart-item-row">
+                {% block page_checkout_item_info_image %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_item_info_details %}
+                    <div class="col-12 col-md cart-item-details">
+                        {% block page_checkout_item_info_details_inner %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_item_remove %}
+    <div class="col-md-1 cart-item-remove">
+        {% block page_checkout_item_remove_form %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_item_remove_submit %}
+    <button type="submit"
+            title="{{ "checkout.removeLineItem"|trans|striptags }}"
+            data-product-id="{{ lineItem.id }}"
+            class="btn btn-light btn-sm btn-square cart-item-remove-button">
+        {% sw_icon 'x' style { 'pack': 'feather' } %}
+    </button>
+{% endblock %}
+
