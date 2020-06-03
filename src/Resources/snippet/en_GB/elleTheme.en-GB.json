@@ -1,7 +1,7 @@
 {
   "header": {
     "searchPlaceholder": "What are you looking for?",
-    "supportInfo": "<strong>Questions regarding your order?</strong><br /><strong><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></strong> <small>Daily from 7:30 am to 10:00 pm</small>"
+    "supportInfo": "<b>Questions regarding your order?<br /><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></b> <small>Daily from 7:30 am to 10:00 pm</small>"
   },
   "footer": {
     "newsletterHeadline": "Newsletter",
@@ -15,5 +15,8 @@
   "general": {
     "paginationNumber": "Site %current_page% of %total_page%",
     "requiredFields": "The fields marked with * are required"
+  },
+  "checkout": {
+    "finishButtonBackToShop": "Back to shop"
   }
 }
