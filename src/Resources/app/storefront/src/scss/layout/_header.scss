@@ -9,17 +9,20 @@
 .header-row {
   padding: 14px 0;
 
-  @include media-breakpoint-down(lg) {
-    padding: 10px 0;
+  .header-actions-col {
+    .btn {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
   }
 
-  @include media-breakpoint-down(sm) {
-    padding: 0;
+  @include media-breakpoint-down(lg) {
+    padding: 10px 0;
   }
 }
 
 .header-menu-col {
-  padding: 10px;
+  padding: 0 0 0 10px;
 }
 
 // Header logo
