@@ -17,6 +17,7 @@
     "requiredFields": "The fields marked with * are required"
   },
   "checkout": {
-    "finishButtonBackToShop": "Back to shop"
+    "finishButtonBackToShop": "Back to shop",
+    "addPromotionPlaceholder": "Gift card or discount number..."
   }
 }
