@@ -18,6 +18,7 @@
   },
   "checkout": {
     "finishButtonBackToShop": "Back to shop",
-    "addPromotionPlaceholder": "Gift card or discount number..."
+    "addPromotionPlaceholder": "Gift card or discount number...",
+    "shippingCosts": "Configure Shipping costs"
   }
 }
