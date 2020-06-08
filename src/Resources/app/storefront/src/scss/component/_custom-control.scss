@@ -1,6 +1,6 @@
 // custom control styles for checkbox/radio
-.custom-checkbox,
-.custom-radio {
+.custom-control.custom-checkbox,
+.custom-control.custom-radio {
   .custom-control-label {
     &::before,
     &::after {
