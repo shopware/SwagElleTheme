@@ -3,3 +3,11 @@
 {% block utilities_offcanvas_close_icon %}
     {% sw_icon 'chevron-left' style { 'pack': 'feather' } %}
 {% endblock %}
+
+{% block component_offcanvas_cart_actions_cart %}
+    <a href="{{ path('frontend.checkout.cart.page') }}"
+       class="btn btn-block btn-outline-secondary"
+       title="{{ "checkout.proceedToCart"|trans|striptags }}">
+        {{ "checkout.proceedToCart"|trans|sw_sanitize }}
+    </a>
+{% endblock %}
