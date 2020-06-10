@@ -13,9 +13,6 @@
   &.is-right {
     .offcanvas-close {
       display: flex;
-      align-items: center;
-      flex-direction: row-reverse;
-      justify-content: space-between;
 
       .icon-feather {
         & > svg {
