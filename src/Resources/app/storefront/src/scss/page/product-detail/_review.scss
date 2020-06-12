@@ -38,6 +38,14 @@
   }
 }
 
+// change font-size in the small tag
+// of the review filter language to 100%
+label[for="showForeignReviews"] {
+  small {
+    font-size: 100%;
+  }
+}
+
 @include media-breakpoint-up(md) {
   .product-detail-review-item-title {
     padding-left: 20px;

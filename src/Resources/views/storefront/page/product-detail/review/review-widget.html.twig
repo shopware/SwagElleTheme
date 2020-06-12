@@ -4,7 +4,20 @@
 	<div class="row product-detail-review-filter">
 
 		{% block page_product_detail_review_filter_checkbox %}
-			{{ parent() }}
+			<div class="col-md-8 col-lg-5 product-detail-review-checkbox mb-3">
+				<div class="custom-control custom-checkbox">
+					{% block page_product_detail_review_filter_checkbox_input %}
+						{{ parent() }}
+					{% endblock %}
+
+					{% block page_product_detail_review_filter_checkbox_label %}
+						<label class="custom-control-label text-nowrap"
+							   for="reviewRating{{ matrix.points }}">
+							{{ "detail.review#{matrix.points}PointRatingText"|trans|sw_sanitize }} ({{ matrix.count }})
+						</label>
+					{% endblock %}
+				</div>
+			</div>
 		{% endblock %}
 
 		{% block page_product_detail_review_filter_progressbar %}{% endblock %}
