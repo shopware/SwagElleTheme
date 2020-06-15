@@ -22,8 +22,12 @@
 .cart-table-header {
   padding-bottom: 5px;
   margin-bottom: 0;
-  font-weight: $font-weight-semibold;
   border-bottom: 1px solid $border-color;
+}
+
+.cart-table-header,
+.cart-item-total-price {
+  font-weight: $font-weight-semibold;
 }
 
 .cart-add-product {
