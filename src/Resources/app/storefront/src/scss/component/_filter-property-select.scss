@@ -1,31 +1,11 @@
-.filter-property-select-preview {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
 .filter-property-select-preview-checkmark {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    position: absolute;
-    border: 1px solid $white;
-    border-radius: 50%;
-
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: all 0.15s ease-in-out;
-    opacity: 0;
-    transform: translateY(-3px);
+    background-color: $gray-400;
 
     .icon-feather {
-        color: $white;
+        width: 14px;
+        height: 14px;
 
-        svg {
+        & > svg {
             top: 0;
         }
     }
