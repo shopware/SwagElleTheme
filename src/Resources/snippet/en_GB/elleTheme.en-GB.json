@@ -19,6 +19,7 @@
   "checkout": {
     "finishButtonBackToShop": "Back to shop",
     "addPromotionPlaceholder": "Gift card or discount number...",
-    "shippingCosts": "Configure Shipping costs"
+    "shippingCosts": "Configure Shipping costs",
+    "finishHeader": "Thanks for your order at %shop%!"
   }
 }
