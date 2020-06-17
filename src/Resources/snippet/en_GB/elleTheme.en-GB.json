@@ -20,6 +20,8 @@
     "finishButtonBackToShop": "Back to shop",
     "addPromotionPlaceholder": "Gift card or discount number...",
     "shippingCosts": "Configure Shipping costs",
-    "finishHeader": "Thanks for your order at %shop%!"
+    "finishHeader": "Thanks for your order at %shop%!",
+    "addressAlreadyHaveAccount": "You already have an account?",
+    "addressLoginToggle": "Click here to login."
   }
 }
