@@ -46,14 +46,11 @@
   }
 
   .product-detail-main {
-    &.container {
       max-width: 100%;
       margin: 0 auto;
-    }
   }
 
-  .product-detail-media,
-  .product-detail-buy {
+  .product-detail-media {
     padding: 0;
   }
 }
