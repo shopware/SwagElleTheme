@@ -33,6 +33,12 @@
     }
   }
 
+  .register-login-collapse-toogle,
+  .login-card {
+    margin-bottom: 0;
+    padding-bottom: $spacer;
+  }
+
   .register-card {
     margin-top: 40px;
 
@@ -69,5 +75,9 @@
       text-align: right;
       font-weight: $font-weight-semibold;
     }
+  }
+
+  .privacy-notice {
+    margin-bottom: 0;
   }
 }
