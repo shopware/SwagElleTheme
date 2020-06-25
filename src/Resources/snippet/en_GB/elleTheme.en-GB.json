@@ -10,7 +10,8 @@
     "serviceContactLink": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Or via our contact form</a>."
   },
   "account": {
-    "orRegisterLink": "register"
+    "orRegisterLink": "register",
+    "colonCharacter": ":"
   },
   "general": {
     "paginationNumber": "Site %current_page% of %total_page%",
