@@ -11,11 +11,22 @@
   },
   "account": {
     "orRegisterLink": "register",
-    "colonCharacter": ":"
+    "colonCharacter": ":",
+    "loginHeader": "Login",
+    "loginMailLabel": "Email address",
+    "loginPasswordLabel": "Password",
+    "loginPasswordRecover": "Forget your password?",
+    "personalMailLabel": "Email address",
+    "personalPasswordDescription": "Your password must contain at least %minLength%  characters."
+  },
+  "address": {
+    "streetLabel": "Street and number",
+    "zipcodeLabel": "Zip code"
   },
   "general": {
     "paginationNumber": "Site %current_page% of %total_page%",
-    "requiredFields": "The fields marked with * are required"
+    "requiredFields": "The fields marked with * are required",
+    "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information</a>."
   },
   "checkout": {
     "finishButtonBackToShop": "Back to shop",
