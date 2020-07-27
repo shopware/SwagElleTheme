@@ -15,3 +15,22 @@
         {% endblock %}
     </div>
 {% endblock %}
+
+{% set hasRequiredField = false %}
+{% block swag_customized_products_option_type_template %}
+    {{ parent() }}
+
+    {% if option.required == true %}
+        {% set hasRequiredField = true %}
+    {% endif %}
+
+    {% set lastOption = customizedProductsTemplate.options|last %}
+
+    {% if lastOption.id == option.id and hasRequiredField == true %}
+        <div class="form-row swag-customized-products-option swag-customized-products__item">
+            <span class="swag-customized-products-option__required-field-label">
+                {{ "customizedProducts.requiredField"|trans|sw_sanitize }}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
