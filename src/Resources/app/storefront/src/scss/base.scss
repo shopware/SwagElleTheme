@@ -43,6 +43,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/filter-property-select';
 @import 'component/gallery-slider';
 @import 'component/product-box';
+@import 'component/customized-product/option-type/select';
+@import 'component/customized-product/option-type/upload';
 
 /*
  * Layout-related sections
@@ -52,6 +54,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/header-minimal';
 @import 'layout/search-suggest';
 @import 'layout/footer';
+@import 'layout/footer-minimal';
 @import 'layout/main-navigation';
 @import 'layout/top-bar';
 @import 'layout/navigation-offcanvas';
@@ -66,6 +69,9 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/product-detail/tabs';
 @import 'page/product-detail/review';
 @import 'page/product-detail/configurator';
+@import 'page/product-detail/customized-product';
+@import 'page/product-detail/customized-product-step-by-step';
+@import 'page/product-detail/price-display';
 @import 'page/account/account';
 @import 'page/account/overview';
 @import 'page/account/aside';
@@ -79,5 +85,6 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/checkout/confirm';
 @import 'page/checkout/finish';
 @import 'page/checkout/register';
+@import 'page/checkout/customized-product-cart';
 @import 'page/error/404';
 @import 'page/error/maintenance';

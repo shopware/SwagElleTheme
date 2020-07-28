@@ -34,6 +34,15 @@
     }
 }
 
+.btn.filter-panel-wrapper-toggle {
+    @extend .btn-light;
+    border: none;
+
+    &:hover {
+        @extend .btn-light:hover;
+    }
+}
+
 
 
 
