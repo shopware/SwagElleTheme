@@ -8,6 +8,10 @@
 
   &.product-detail-cross-selling {
     padding-bottom: 100px;
+
+    .product-box {
+      margin-top: 0;
+    }
   }
 }
 
@@ -20,7 +24,11 @@
 }
 
 .product-detail-cross-selling .card-tabs .product-detail-tabs-content.card-body {
-  padding: 40px 30px;
+  padding: 5px;
+
+  @include media-breakpoint-up(sm) {
+    padding: 40px 30px;
+  }
 }
 
 @include media-breakpoint-down(sm) {

@@ -1,0 +1,36 @@
+$custom-box-standard-height-img: 390px;
+$custom-box-image-height-img: 425px;
+
+.product-image-wrapper {
+  height: $custom-box-standard-height-img;
+}
+
+.product-image {
+  max-height: $custom-box-image-height-img;
+}
+
+.product-box {
+  border: none;
+
+  .card-body {
+    padding: 0;
+  }
+
+  .product-info {
+    padding: 17px;
+  }
+
+  &.box-image {
+    .product-image-wrapper {
+      height: $custom-box-image-height-img;
+    }
+
+    .product-image {
+      max-height: $custom-box-image-height-img;
+    }
+
+    .product-info {
+      padding: 0 30px 30px 30px;
+    }
+  }
+}
