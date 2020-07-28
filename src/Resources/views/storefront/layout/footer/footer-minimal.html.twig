@@ -8,24 +8,22 @@
                     {{ parent() }}
                 {% endblock %}
 
-                <div class="row align-items-center">
+                <div class="align-items-center">
                     {% block layout_footer_vat %}
-                        <div class="col-12">
-                            <div class="footer-vat">
-                                {% if context.taxState == "gross" %}
-                                    <p>
-                                        {{ "footer.includeVat"|trans({
-                                            '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
-                                        })|raw }}
-                                    </p>
-                                {% else %}
-                                    <p>
-                                        {{ "footer.excludeVat"|trans({
-                                            '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
-                                        })|raw }}
-                                    </p>
-                                {% endif %}
-                            </div>
+                        <div class="footer-vat">
+                            {% if context.taxState == "gross" %}
+                                <p>
+                                    {{ "footer.includeVat"|trans({
+                                        '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                    })|raw }}
+                                </p>
+                            {% else %}
+                                <p>
+                                    {{ "footer.excludeVat"|trans({
+                                        '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                    })|raw }}
+                                </p>
+                            {% endif %}
                         </div>
                     {% endblock %}
 
