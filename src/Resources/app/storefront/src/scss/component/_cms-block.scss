@@ -1,0 +1,10 @@
+@include media-breakpoint-down(md) {
+    .cms-block-container {
+        .cms-block-container-row.has--sidebar {
+            .cms-element-category-navigation {
+                display: none;
+            }
+        }
+    }
+}
+

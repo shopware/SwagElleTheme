@@ -1,4 +1,6 @@
 .navigation-flyout {
+  overflow-x: hidden;
+
   &.is-open {
     border-top: 1px solid $border-color;
   }
