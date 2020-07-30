@@ -1,15 +1,6 @@
-// Product box custom height for images
-$custom-box-standard-height-img: 390px;
-$custom-box-image-height-img: 425px;
-
 .product-image-wrapper {
-  height: $custom-box-standard-height-img;
   margin-bottom: 0;
   overflow: hidden;
-}
-
-.product-image {
-  max-height: $custom-box-image-height-img;
 }
 
 .product-box {
@@ -24,14 +15,6 @@ $custom-box-image-height-img: 425px;
   }
 
   &.box-image {
-    .product-image-wrapper {
-      height: $custom-box-image-height-img;
-    }
-
-    .product-image {
-      max-height: $custom-box-image-height-img;
-    }
-
     .product-info {
       padding: 0 30px 30px 30px;
     }
