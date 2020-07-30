@@ -1,4 +1,5 @@
 .product-detail-headline {
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 
@@ -26,7 +27,7 @@
 
 .product-detail-manufacturer {
   text-align: right;
-  margin-bottom: 30px;
+  margin-top: -60px;
 }
 
 .product-detail-ordernumber-container {
@@ -39,6 +40,16 @@
   }
 }
 
+@include media-breakpoint-down(md) {
+  .product-detail-headline {
+    margin-top: 0;
+  }
+
+  .product-detail-manufacturer {
+    margin-top: 10px;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   .product-detail-content {
     padding: 0;
@@ -46,16 +57,25 @@
   }
 
   .product-detail-main {
-      max-width: 100%;
-      margin: 0 auto;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .product-detail-media {
     padding: 0;
   }
+
+  .product-detail-name {
+    margin-bottom: 0;
+  }
+
+  .product-detail-manufacturer {
+    text-align: left;
+    margin: 0;
+  }
 }
 
-// Tablet stripped for gradduated price
+// Tablet stripped for graduated price
 .product-block-prices-table {
   .product-block-prices-head {
     background: $gray-100;
