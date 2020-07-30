@@ -51,3 +51,9 @@ label[for="showForeignReviews"] {
     padding-left: 20px;
   }
 }
+
+@include media-breakpoint-down(sm) {
+  .product-detail-review-main {
+    padding-right: 40px;
+  }
+}
