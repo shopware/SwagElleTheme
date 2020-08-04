@@ -1,22 +1,13 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/headline.html.twig' %}
 
 {% block page_product_detail_headline_inner %}
-    {% block page_product_detail_manufacturer %}
-        {% if page.product.manufacturer %}
-            <div class="product-detail-manufacturer">
-                {% block page_product_detail_manufacturer_inner %}
-                    {{ parent() }}
-                {% endblock %}
-            </div>
-        {% endif %}
-    {% endblock %}
+    <div class="row">
+        {% block page_product_detail_name_container %}
+            {{ parent() }}
+        {% endblock %}
 
-    {% block page_product_detail_name_container %}
-        <div class="product-detail-name-container">
-            {% block page_product_detail_name %}
-                {{ parent() }}
-            {% endblock %}
-        </div>
-    {% endblock %}
-
+        {% block page_product_detail_manufacturer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
 {% endblock %}

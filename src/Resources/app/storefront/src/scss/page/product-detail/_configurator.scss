@@ -21,8 +21,9 @@
         }
 
         &.is-display-text {
-           padding: 8px 10px;
-           border: 1px solid $gray-400;
+            padding: 8px 10px;
+            min-width: 40px;
+            border: 1px solid $gray-400;
         }
 
     }
