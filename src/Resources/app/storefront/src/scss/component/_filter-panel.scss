@@ -41,6 +41,10 @@
     &:hover {
         @extend .btn-light:hover;
     }
+
+    .icon-feather.icon-xs > svg {
+        top: 3px;
+    }
 }
 
 
