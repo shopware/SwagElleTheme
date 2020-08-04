@@ -68,10 +68,13 @@
 }
 
 .footer-contact-form {
-  text-decoration: underline;
-    @include media-breakpoint-down(sm) {
-        padding-bottom: 26px;
-    }
+  a {
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 26px;
+  }
 }
 
 .footer-column-headline {
