@@ -23,3 +23,13 @@
     }
   }
 }
+
+@include media-breakpoint-up(lg) {
+  .custom-switch {
+    .custom-control-label {
+      &::after {
+        top: 5px;
+      }
+    }
+  }
+}
