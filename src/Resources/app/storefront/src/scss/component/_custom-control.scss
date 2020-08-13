@@ -24,6 +24,10 @@
   }
 }
 
+.custom-select {
+  padding: 11px 32px 9px 16px;
+}
+
 @include media-breakpoint-up(lg) {
   .custom-switch {
     .custom-control-label {
