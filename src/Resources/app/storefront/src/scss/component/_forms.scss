@@ -19,3 +19,9 @@
     color: $gray-500;
   }
 }
+
+input[type="text"].form-control,
+input[type="password"].form-control,
+input[type="email"].form-control{
+  padding: 12px 16px 9px;
+}
