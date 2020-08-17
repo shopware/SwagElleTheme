@@ -84,8 +84,8 @@
       },
       "sw-footer-bg-color": {
         "label": {
-          "en-GB": "Background colour footer",
-          "de-DE": "Hintergrundfarbe Footer"
+          "en-GB": "Background colour",
+          "de-DE": "Hintergrundfarbe"
         },
         "type": "color",
         "value": "#161616",
@@ -95,8 +95,8 @@
       },
       "sw-footer-text-color": {
         "label": {
-          "en-GB": "Text colour footer",
-          "de-DE": "Textfarbe Footer"
+          "en-GB": "Text colour",
+          "de-DE": "Textfarbe"
         },
         "type": "color",
         "value": "#fdfdfd",
