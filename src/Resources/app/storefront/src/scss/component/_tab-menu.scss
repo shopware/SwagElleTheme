@@ -22,6 +22,7 @@
     border-radius: 0;
     color: $body-color;
     padding: 20px 50px;
+    margin: 0 1.5px;
     font-size: $font-size-lg;
 
     @include media-breakpoint-down(xs) {
@@ -36,6 +37,7 @@
       font-weight: $font-weight-bold;
       color: $gray-900;
       border: none;
+      margin: 0;
 
       @include media-breakpoint-down(xs) {
         background: none;
