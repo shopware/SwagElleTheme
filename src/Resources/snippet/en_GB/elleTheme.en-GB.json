@@ -1,7 +1,7 @@
 {
   "header": {
     "searchPlaceholder": "What are you looking for?",
-    "supportInfo": "<b>Questions regarding your order?<br /><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></b> <small>Daily from 7:30 am to 10:00 pm</small>"
+    "supportInfo": "<b>Questions regarding your order?<br /><a href=\"tel:+49123456798\">+49 1234-56798</a></b> <small>Daily from 7:30 am to 10:00 pm</small>"
   },
   "footer": {
     "newsletterHeadline": "Newsletter",
@@ -15,25 +15,25 @@
     "loginHeader": "Login",
     "loginMailLabel": "Email address",
     "loginPasswordLabel": "Password",
-    "loginPasswordRecover": "Forget your password?",
+    "loginPasswordRecover": "Did you forget your password?",
     "personalMailLabel": "Email address",
     "personalPasswordDescription": "Your password must contain at least %minLength%  characters."
   },
   "address": {
     "streetLabel": "Street and number",
-    "zipcodeLabel": "Zip code"
+    "zipcodeLabel": "Postal code"
   },
   "general": {
-    "paginationNumber": "Site %current_page% of %total_page%",
-    "requiredFields": "The fields marked with * are required",
+    "paginationNumber": "Page %current_page% of %total_page%",
+    "requiredFields": "Fields marked with an * are required",
     "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information</a>."
   },
   "checkout": {
     "finishButtonBackToShop": "Back to shop",
     "addPromotionPlaceholder": "Gift card or discount number...",
-    "shippingCosts": "Configure Shipping costs",
-    "finishHeader": "Thanks for your order at %shop%!",
-    "addressAlreadyHaveAccount": "You already have an account?",
+    "shippingCosts": "Configure shipping costs",
+    "finishHeader": "Thank you for your order at %shop%!",
+    "addressAlreadyHaveAccount": "Do you already have an account?",
     "addressLoginToggle": "Click here to login."
   }
 }
