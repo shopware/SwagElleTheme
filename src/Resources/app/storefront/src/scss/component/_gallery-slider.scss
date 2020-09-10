@@ -21,6 +21,12 @@
     }
 }
 
+.gallery-slider-thumbnails-container {
+    &.hide-thumbs {
+        display: none;
+    }
+}
+
 @include media-breakpoint-up(md){
     .gallery-slider {
         .tns-nav,
