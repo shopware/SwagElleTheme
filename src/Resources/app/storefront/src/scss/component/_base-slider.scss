@@ -1,0 +1,9 @@
+.base-slider {
+  .base-slider-dots {
+    width: 55%;
+
+    &.hide-dots {
+      display: none;
+    }
+  }
+}
