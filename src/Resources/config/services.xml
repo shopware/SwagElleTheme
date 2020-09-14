@@ -8,5 +8,8 @@
         <service id="SwagElleTheme\Resources\snippet\en_GB\SnippetFile_en_GB">
             <tag name="shopware.snippet.file"/>
         </service>
+        <service id="SwagElleTheme\Resources\snippet\de_DE\SnippetFile_de_DE">
+            <tag name="shopware.snippet.file"/>
+        </service>
     </services>
 </container>
