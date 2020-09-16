@@ -35,7 +35,6 @@
     {% endif %}
 {% endblock %}
 
-
 {% block page_product_detail_buy_container_paypal %}
     {% set buyable = product.available and product.childCount <= 0 and product.calculatedMaxPurchase > 0 %}
 
@@ -45,7 +44,7 @@
 
         {% if expressSettings.productDetailEnabled %}
             <div class="form-row mt-3 justify-content-start">
-                {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' with {button_class: 'col-12 col-sm-12 col-md-4 col-lg-6 offset-md-3'} %}
+                {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-12 col-sm-12 col-md-4 col-lg-6 offset-md-3'} %}
             </div>
         {% endif %}
     {% endif %}
