@@ -35,6 +35,10 @@
     font-weight: $font-weight-semibold;
   }
 
+  .search-suggest-product-price {
+    text-align: right;
+  }
+
   @include media-breakpoint-up(md) {
       width: 100%;
   }
