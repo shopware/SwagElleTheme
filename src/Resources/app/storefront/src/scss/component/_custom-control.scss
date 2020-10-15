@@ -25,11 +25,7 @@
 }
 
 .custom-select {
-  &.product-detail-quantity-select,
-  &.js-offcanvas-cart-change-quantity,
-  &.quantity-select {
-    padding: 11px 32px 9px 16px;
-  }
+  line-height: 1.7;
 }
 
 @include media-breakpoint-up(lg) {
