@@ -2,9 +2,9 @@
   "name": "SwagElleTheme",
   "author": "Shopware AG",
   "views": [
-     "@Storefront",
-     "@Plugins",
-     "@SwagElleTheme"
+    "@Storefront",
+    "@Plugins",
+    "@SwagElleTheme"
   ],
   "style": [
     "app/storefront/src/scss/overrides.scss",
@@ -106,8 +106,8 @@
       },
       "sw-footer-logo": {
         "label": {
-            "en-GB": "Footer logo",
-            "de-DE": "Footer Logo"
+          "en-GB": "Footer logo",
+          "de-DE": "Footer Logo"
         },
         "type": "media",
         "value": "public/assets/logo/elle-logo-white.svg",
