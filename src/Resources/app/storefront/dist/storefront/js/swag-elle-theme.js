@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["swag-elle-theme"],{"D4/M":function(e,n){}},[["D4/M","runtime"]]]);
