@@ -6,6 +6,7 @@
     "@Plugins",
     "@SwagElleTheme"
   ],
+  "previewMedia": "public/assets/images/ellePreview.png",
   "style": [
     "app/storefront/src/scss/overrides.scss",
     "@Storefront",
