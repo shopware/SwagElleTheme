@@ -1,9 +1,34 @@
+$paypal-padding-sm: 9px;
+
 .footer-main {
   border-top: none;
   background-color: $footer-bg-color;
 
   &, a, a:hover {
     color: $footer-color;
+  }
+
+  div[data-swag-paypal-installment-banner="true"] {
+    @extend .col-12;
+
+    background-color: $white;
+    padding-top: 5px;
+    border-radius: 3px;
+    margin-top: 0 !important;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col(4);
+    }
+  }
+
+  .paypal-mark {
+    padding-top: $paypal-padding-sm;
+    padding-bottom: $paypal-padding-sm;
+    border: none;
   }
 
   @include media-breakpoint-up(md) {
