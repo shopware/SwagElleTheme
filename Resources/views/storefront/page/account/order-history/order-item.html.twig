@@ -10,8 +10,7 @@
 {% block page_account_order_item_status_col %}
     <div class="col-12 col-sm">
      {% block page_account_order_item_status %}
-         <span class="order-table-header-order-status">
-             {{ "account.orderStatus"|trans|sw_sanitize }}
+         <span class="order-table-header-order-status badge">
              {% if order.transactions.last.stateMachineState.technicalName == 'failed' or order.transactions.last.stateMachineState.technicalName == 'reminded' %}
                  {{ "account.orderStatusActionRequired"|trans|sw_sanitize }}
              {% else %}
