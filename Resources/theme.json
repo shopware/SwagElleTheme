@@ -3,8 +3,11 @@
   "author": "Shopware AG",
   "views": [
     "@Storefront",
-    "@Plugins",
-    "@SwagElleTheme"
+    "@SwagCustomizedProducts",
+    "@SwagPayPal",
+    "@SwagCmsExtensions",
+    "@SwagElleTheme",
+    "@Plugins"
   ],
   "previewMedia": "public/assets/images/ellePreview.png",
   "style": [
