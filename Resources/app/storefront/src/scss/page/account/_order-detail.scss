@@ -1,4 +1,10 @@
+$order-status-bg: #d1f4dd;
+
 .order-item-header {
+  > .row.flex-wrap {
+    align-items: center;
+  }
+
   .order-table-header-heading {
     @extend .h3;
   }
@@ -29,6 +35,13 @@
     }
   }
 
+  .order-table-header-order-status {
+    background-color: $order-status-bg;
+    color: $sw-color-success;
+    font-size: 14px;
+    padding: 7px 16px;
+  }
+
   @include media-breakpoint-down(xs) {
     padding-left: 10px;
     padding-right: 10px;
@@ -39,8 +52,9 @@
     }
 
     .order-table-header-order-status {
-      font-size: $h5-font-size;
       margin-top: 0;
+      background-color: $order-status-bg;
+      font-weight: $font-weight-semibold;
     }
 
     .order-table-header-order-table-header {
@@ -120,6 +134,14 @@
   }
 
   .order-detail-content-row {
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 2rem;
+    }
+
     .order-item:last-of-type {
       padding-right: 0;
     }
@@ -127,6 +149,18 @@
     .order-item:first-of-type {
       padding-left: 0;
       padding-right: 20px;
+    }
+
+    .document-item-date {
+      color: $gray-600;
+      font-size: 14px;
+      padding-left: 24px;
+    }
+
+    @include media-breakpoint-up(md) {
+      .document-item-date {
+        padding-left: 0.5rem;
+      }
     }
   }
 
@@ -154,8 +188,20 @@
 
   @include media-breakpoint-down(sm) {
     .order-detail-content-row {
-      margin-left: 10px;
+      align-items: start;
       margin-right: 10px;
     }
   }
 }
+
+.document-item-file-name {
+  > a {
+    display: flex;
+    align-items: flex-start;
+
+    > span {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
