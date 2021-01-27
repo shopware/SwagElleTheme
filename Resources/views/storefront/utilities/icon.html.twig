@@ -4,7 +4,7 @@
     {% set styles = [ size, color, rotation, flip, class ] %}
     {% if pack == 'feather' %}
         <span class="icon-feather icon-feather-{{ name }}{% for entry in styles %}{% if entry != "" %} icon-{{ entry }}{% endif %}{% endfor %}">
-            {{ source('@SwagElleTheme/../public/assets/icon/feather/'~ name ~'.svg', ignore_missing = true) }}
+            {{ source('@SwagElleTheme/../app/storefront/src/assets/icon/feather/'~ name ~'.svg', ignore_missing = true) }}
         </span>
     {% else %}
         {{ parent() }}
