@@ -35,5 +35,8 @@
     "finishHeader": "Danke für Ihre Bestellung bei %shop%!",
     "addressAlreadyHaveAccount": "Haben Sie schon einen Account?",
     "addressLoginToggle": "Klicken Sie hier, um sich anzumelden."
+  },
+  "wishlist": {
+    "headline": "Ihr Merkzettel"
   }
 }

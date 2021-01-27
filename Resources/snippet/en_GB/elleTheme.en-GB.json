@@ -35,5 +35,8 @@
     "finishHeader": "Thank you for your order at %shop%!",
     "addressAlreadyHaveAccount": "Do you already have an account?",
     "addressLoginToggle": "Click here to login."
+  },
+  "wishlist": {
+    "headline": "Your wish list"
   }
 }

@@ -42,5 +42,9 @@
                 </div>
             {% endif %}
         </a>
+
+        {% block component_product_box_wishlist_action %}
+            {{ parent() }}
+        {% endblock %}
     </div>
 {% endblock %}
