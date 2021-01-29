@@ -9,7 +9,7 @@
     "@SwagElleTheme",
     "@Plugins"
   ],
-  "previewMedia": "public/assets/images/ellePreview.png",
+  "previewMedia": "app/storefront/src/assets/images/ellePreview.png",
   "style": [
     "app/storefront/src/scss/overrides.scss",
     "@Storefront",
@@ -76,15 +76,15 @@
       },
       "sw-logo-desktop": {
         "type": "media",
-        "value": "public/assets/logo/elle-logo.svg"
+        "value": "app/storefront/src/assets/logo/elle-logo.svg"
       },
       "sw-logo-tablet": {
         "type": "media",
-        "value": "public/assets/logo/elle-logo.svg"
+        "value": "app/storefront/src/assets/logo/elle-logo.svg"
       },
       "sw-logo-mobile": {
         "type": "media",
-        "value": "public/assets/logo/elle-logo-mobile.svg"
+        "value": "app/storefront/src/assets/elle-logo-mobile.svg"
       },
       "sw-footer-bg-color": {
         "label": {
@@ -114,7 +114,7 @@
           "de-DE": "Footer Logo"
         },
         "type": "media",
-        "value": "public/assets/logo/elle-logo-white.svg",
+        "value": "app/storefront/src/assets/logo/elle-logo-white.svg",
         "editable": true,
         "block": "media",
         "order": 300
