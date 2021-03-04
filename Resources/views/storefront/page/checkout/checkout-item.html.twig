@@ -48,6 +48,10 @@
                                 {% block page_checkout_item_delivery_date %}
                                     {{ parent() }}
                                 {% endblock %}
+
+                                {% if shopware.config.core.cart.wishlistEnabled and lineItem.type == 'product' %}
+                                    {{ block('page_checkout_item_wishlist') }}
+                                {% endif %}
                             </div>
                         {% endblock %}
                     </div>
