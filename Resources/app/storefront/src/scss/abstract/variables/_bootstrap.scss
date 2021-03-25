@@ -3,7 +3,6 @@
 
 // Options
 $enable-responsive-font-sizes: false !default;
-$asset-path: '#{$sw-asset-theme-url}/bundles/swagelletheme/assets' !default;
 
 // Color system
 $gray-100: #f8f9fa !default;
@@ -49,7 +48,8 @@ $input-font-size-sm: 14px !default;
 $custom-control-indicator-border-color: $gray-400 !default;
 $custom-checkbox-indicator-border-radius: 4px !default;
 
-$custom-select-indicator: url('#{$asset-path}/icon/feather/chevron-down.svg') !default;
+$custom-select-indicator: url('#{$sw-asset-theme-url}/bundles/swagelletheme/assets/icon/feather/chevron-down.svg') !default;
+
 $custom-select-bg-size: 16px !default;
 
 $custom-switch-width: 1.5rem !default;
