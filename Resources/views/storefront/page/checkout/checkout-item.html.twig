@@ -49,7 +49,7 @@
                                     {{ parent() }}
                                 {% endblock %}
 
-                                {% if shopware.config.core.cart.wishlistEnabled and lineItem.type == 'product' %}
+                                {% if config('core.cart.wishlistEnabled') and lineItem.type == 'product' %}
                                     {{ block('page_checkout_item_wishlist') }}
                                 {% endif %}
                             </div>

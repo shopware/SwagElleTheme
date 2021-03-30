@@ -3,7 +3,7 @@
 {% block layout_footer_inner_container %}
     <footer class="footer-minimal">
         {% block layout_footer_bottom %}
-            <div class="footer-bottom"> 
+            <div class="footer-bottom">
                 {% block layout_footer_service_menu %}
                     {{ parent() }}
                 {% endblock %}
@@ -14,13 +14,13 @@
                             {% if context.taxState == "gross" %}
                                 <p>
                                     {{ "footer.includeVat"|trans({
-                                        '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                        '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                                     })|raw }}
                                 </p>
                             {% else %}
                                 <p>
                                     {{ "footer.excludeVat"|trans({
-                                        '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                        '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                                     })|raw }}
                                 </p>
                             {% endif %}
