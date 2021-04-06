@@ -5,16 +5,16 @@
          class="row footer-columns footer-logo-row">
         {% block layout_footer_logo %}
             <div class="col-md-12 footer-column`">
-               <a class="footer-logo-main-link"
-                    href="{{ path('frontend.home.page') }}"
-                    title="{{ "header.logoLink"|trans|striptags }}">
+                <a class="footer-logo-main-link"
+                   href="{{ path('frontend.home.page') }}"
+                   title="{{ "header.logoLink"|trans|striptags }}">
                     {% block layout_header_footer_image %}
                         <picture>
                             {% block layout_header_footer_image_default %}
                                 {% if shopware.theme['sw-footer-logo'] %}
                                     <img src="{{ shopware.theme['sw-footer-logo'] |sw_encode_url }}"
-                                        alt="{{ "header.logoLink"|trans|striptags }}"
-                                        class="img-fluid header-logo-main-img"/>
+                                         alt="{{ "header.logoLink"|trans|striptags }}"
+                                         class="img-fluid header-logo-main-img"/>
                                 {% endif %}
                             {% endblock %}
                         </picture>
@@ -51,7 +51,7 @@
                             </div>
                         {% endblock %}
 
-                      {% block layout_footer_navigation_information_content %}
+                        {% block layout_footer_navigation_information_content %}
                             {{ parent() }}
                         {% endblock %}
                     </div>
@@ -137,7 +137,7 @@
                                                                    value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}"
                                                                    name="option">
                                                             {{ sw_csrf('frontend.form.newsletter.register.handle') }}
-                                                            <input type="submit" class="submit--hidden d-none" />
+                                                            <input type="submit" class="submit--hidden d-none"/>
                                                         </div>
                                                     {% endblock %}
                                                 </form>
@@ -188,20 +188,22 @@
             {{ parent() }}
         {% endblock %}
 
-        <div class="row align-items-center">
-            {% block layout_footer_vat %}
-                <div class="col-12 col-md-6">
-                    {{ parent() }}
-                </div>
-            {% endblock %}
-
-            {% block layout_footer_copyright %}
-                <div class="col-12 col-md-6">
-                    <div class="footer-copyright">
-                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+        <div class="container">
+            <div class="row align-items-center">
+                {% block layout_footer_vat %}
+                    <div class="col-12 col-md-6">
+                        {{ parent() }}
                     </div>
-                </div>
-            {% endblock %}
+                {% endblock %}
+
+                {% block layout_footer_copyright %}
+                    <div class="col-12 col-md-6">
+                        <div class="footer-copyright">
+                            {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -5,9 +5,7 @@
         <nav class="top-bar-nav container">
             <div class="row">
                 {% block layout_header_top_bar_service %}
-                    <div class="col">
-                        {% sw_include '@Storefront/storefront/layout/header/actions/service-menu-widget.html.twig' %}
-                    </div>
+                    {{ parent() }}
                 {% endblock %}
 
                 {% block layout_header_top_bar_currency %}
