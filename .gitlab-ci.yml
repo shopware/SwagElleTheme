@@ -1,0 +1,49 @@
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: 'tcp://docker:2375'
+  MYSQL_ROOT_PASSWORD: app
+  WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
+  DEVELOPMENT_BRANCH: "master"
+  PLATFORM_BRANCH: "master"
+  THEME_NAME: "SwagElleTheme"
+
+stages:
+  - Static analyze
+
+default:
+  image: shopware/development:latest
+  services:
+    - name: mariadb:10.3
+      alias: mysql
+  before_script:
+    - zip -rq custom-theme.zip .
+    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/development.git --branch $DEVELOPMENT_BRANCH
+    - rm -rf development/platform
+    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git development/platform --branch $PLATFORM_BRANCH
+    - unzip -q custom-theme.zip -d development/custom/apps/$THEME_NAME
+    - cd development
+    - cp -v dev-ops/gitlab/.psh.yaml.override .
+    - ./psh.phar init
+    - php bin/console app:install --activate $THEME_NAME
+
+Check built JS files:
+  stage: Static analyze
+  allow_failure: true
+  script:
+    - ./psh.phar storefront:install-dependencies
+    - ./psh.phar storefront:build
+    - cd $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME
+    - >
+      if ! git diff --quiet --ignore-submodules HEAD --; then
+          echo "Built Javascript files differ. Update the dependencies and execute 'administration:build' and 'storefront:build' again";
+          git status;
+          exit 1;
+      else
+          echo "Everything ok"
+          exit 0;
+      fi
+
+Validate snippets:
+  stage: Static analyze
+  script:
+    - php bin/console snippets:validate
