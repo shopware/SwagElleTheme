@@ -11,10 +11,10 @@
                     {% block layout_header_footer_image %}
                         <picture>
                             {% block layout_header_footer_image_default %}
-                                {% if shopware.theme['sw-footer-logo'] %}
-                                    <img src="{{ shopware.theme['sw-footer-logo'] |sw_encode_url }}"
-                                         alt="{{ "header.logoLink"|trans|striptags }}"
-                                         class="img-fluid header-logo-main-img"/>
+                                {% if theme_config('sw-footer-logo') %}
+                                    <img src="{{ theme_config('sw-footer-logo')  |sw_encode_url }}"
+                                        alt="{{ "header.logoLink"|trans|striptags }}"
+                                        class="img-fluid header-logo-main-img"/>
                                 {% endif %}
                             {% endblock %}
                         </picture>
@@ -91,7 +91,7 @@
                                     {% block layout_footer_navigation_newsletter_header %}
                                         <p class="footer-newsletter-info">
                                             {{ 'footer.newsletterInfo'|trans({
-                                                '%shopname%': shopware.config.core.basicInformation.shopName
+                                                '%shopname%': config('core.basicInformation.shopName')
                                             })|sw_sanitize }}
                                         </p>
                                     {% endblock %}

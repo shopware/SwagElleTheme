@@ -43,7 +43,7 @@
             {% endif %}
         </a>
 
-        {% if shopware.config.core.cart.wishlistEnabled %}
+        {% if config('core.cart.wishlistEnabled') %}
             {% block component_product_box_wishlist_action %}
                 {{ parent() }}
             {% endblock %}
