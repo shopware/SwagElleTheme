@@ -84,7 +84,7 @@
       },
       "sw-logo-mobile": {
         "type": "media",
-        "value": "app/storefront/src/assets/elle-logo-mobile.svg"
+        "value": "app/storefront/src/assets/logo/elle-logo-mobile.svg"
       },
       "sw-footer-bg-color": {
         "label": {
