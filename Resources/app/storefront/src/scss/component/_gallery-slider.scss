@@ -27,6 +27,11 @@
     }
 }
 
+
+.gallery-slider-row {
+    margin: 0 0 16px;
+}
+
 @include media-breakpoint-up(md){
     .gallery-slider {
         .tns-nav,
