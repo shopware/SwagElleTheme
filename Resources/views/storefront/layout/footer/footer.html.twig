@@ -37,7 +37,15 @@
                                  aria-expanded="true"
                                  aria-controls="collapseFooter{{ loop.index }}">
 
-                                {{ root.category.translated.name }}
+                                {% if root.category.type == 'folder' %}
+                                    {{ root.category.translated.name }}
+                                {% else %}
+                                    <a href="{{ category_url(root.category) }}"
+                                       {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+                                       title="{{ root.category.translated.name }}">
+                                        {{ root.category.translated.name }}
+                                    </a>
+                                {% endif %}
                                 {% block layout_footer_navigation_information_icons %}
                                     <div class="footer-column-toggle">
                                         <span class="footer-plus-icon">
