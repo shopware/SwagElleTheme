@@ -108,3 +108,32 @@
     font-weight: $font-weight-semibold;
   }
 }
+
+.product-detail-form-container {
+    div[data-amazon-pay-button-product-detail="true"] .col-8,
+    div[data-swag-paypal-installment-banner="true"] {
+        @include make-col(12);
+
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+            @include make-col-offset(3);
+
+            margin-right: auto;
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(6);
+        }
+    }
+}
+
+
+.swag-cms-extensions-quickview-product-buy-form {
+    div[data-swag-paypal-express-button="true"],
+    div[data-swag-paypal-installment-banner="true"] {
+        @include media-breakpoint-up(md) {
+            @include make-col(8);
+            @include make-col-offset(4);
+        }
+    }
+}
