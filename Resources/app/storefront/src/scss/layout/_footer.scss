@@ -220,11 +220,14 @@ $paypal-padding-sm: 9px;
         background-color: white;
         border-radius: 3px;
     }
+
+    &-image {
+        max-width: 100%;
+    }
 }
 
 .footer-main div[data-swag-paypal-installment-banner=true] {
     @extend .p-2;
 
     padding: 8px;
-    line-height: 1;
 }
