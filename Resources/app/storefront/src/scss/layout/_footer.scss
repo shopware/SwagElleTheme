@@ -213,3 +213,18 @@ $paypal-padding-sm: 9px;
   font-size: $font-size-sm;
   color: $footer-bottom-color;
 }
+
+.footer-logo {
+    &.is-payment {
+        padding: 8px;
+        background-color: white;
+        border-radius: 3px;
+    }
+}
+
+.footer-main div[data-swag-paypal-installment-banner=true] {
+    @extend .p-2;
+
+    padding: 8px;
+    line-height: 1;
+}
