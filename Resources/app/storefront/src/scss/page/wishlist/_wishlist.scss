@@ -18,6 +18,10 @@ $wishlist-icon-notadded-color: #758ca3;
     .cms-element-product-listing-actions {
         margin-bottom: 0.5rem;
     }
+
+    > .row.mh-100 {
+        flex-direction: column;
+    }
 }
 
 .wishlist-listing-col {
