@@ -13,7 +13,7 @@ stages:
 default:
   image: shopware/development:latest
   services:
-    - name: mariadb:10.3
+    - name: mariadb:10.3.28
       alias: mysql
   before_script:
     - zip -rq custom-theme.zip .
