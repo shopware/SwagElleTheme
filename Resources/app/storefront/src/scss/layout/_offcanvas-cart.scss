@@ -61,4 +61,12 @@
       @extend .btn-outline-secondary;
     }
   }
+
+    .cart-item-children {
+        padding-right: 8px;
+
+        .cart-item-headline {
+            padding-top: 4px;
+        }
+    }
 }
