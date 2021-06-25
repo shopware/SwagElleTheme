@@ -55,4 +55,10 @@
   .shipping-value {
     text-align: right;
   }
+
+  &-actions {
+    .btn-link {
+      @extend .btn-outline-secondary;
+    }
+  }
 }

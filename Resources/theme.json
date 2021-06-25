@@ -6,8 +6,8 @@
     "@SwagCustomizedProducts",
     "@SwagPayPal",
     "@SwagCmsExtensions",
-    "@SwagElleTheme",
-    "@Plugins"
+    "@Plugins",
+    "@SwagElleTheme"
   ],
   "previewMedia": "app/storefront/src/assets/images/ellePreview.png",
   "style": [
