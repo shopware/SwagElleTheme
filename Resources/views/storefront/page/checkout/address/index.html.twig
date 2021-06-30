@@ -58,7 +58,7 @@
                 <div class="row mb-2">
                     {% if expressEnabled %}
                         {% block page_checkout_address_login_swag_paypal_button %}
-                            {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' with {button_class: 'col-6'} %}
+                            {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-6'} %}
                         {% endblock %}
                     {% endif %}
 
