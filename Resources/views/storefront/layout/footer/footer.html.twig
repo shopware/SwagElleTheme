@@ -133,6 +133,16 @@
                                                                 </div>
                                                             {% endblock %}
 
+                                                            <div class="footer-newsletter-captcha-wrapper">
+                                                                {% sw_include '@Storefront/storefront/component/captcha/base.html.twig'
+                                                                    with {
+                                                                        'captchas': config('core.basicInformation.activeCaptchasV2'),
+                                                                        'additionalClass' : 'col-md-4',
+                                                                        'formId': 'newsletter-form'
+                                                                    }
+                                                                %}
+                                                            </div>
+
                                                             {% block layout_footer_navigation_newsletter_form_privacy %}
                                                                 {% sw_include '@Storefront/storefront/component/privacy-notice.html.twig' %}
                                                             {% endblock %}

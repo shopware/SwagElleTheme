@@ -43,3 +43,19 @@ $captcha-image-height: 46px;
 .captcha-google-re-captcha-v3 {
     padding-top: 20px;
 }
+
+.footer-newsletter-captcha-wrapper {
+    .icon-arrow-switch {
+        height: 18px;
+        width: 18px;
+    }
+    // Refresh icon hover state
+    .basic-captcha-content-refresh-icon:hover .icon-arrow-switch > svg {
+        color: #000;
+    }
+    .icon-arrow-switch > svg {
+        color: #fff;
+        height: 18px;
+        width: 18px;
+    }
+}
