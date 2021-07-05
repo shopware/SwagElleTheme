@@ -231,3 +231,11 @@ $paypal-padding-sm: 9px;
 
     padding: 8px;
 }
+
+.footer-newsletter-captcha-wrapper {
+    .form-control {
+        background-color: transparent;
+        border-color: $footer-color;
+        color: $footer-color;
+    }
+}

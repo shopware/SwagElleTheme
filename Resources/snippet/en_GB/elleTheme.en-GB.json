@@ -38,5 +38,8 @@
   },
   "wishlist": {
     "headline": "Your wish list"
+  },
+  "captcha": {
+    "basicCaptchaInputPlaceholder": "Enter characters..."
   }
 }
