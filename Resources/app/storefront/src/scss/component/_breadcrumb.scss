@@ -17,7 +17,8 @@
     }
 
   @include media-breakpoint-down(sm) {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    padding: 0 20px;
 
     a {
       font-size: $font-size-sm;
