@@ -60,10 +60,6 @@ $paypal-padding-sm: 9px;
   @include media-breakpoint-up(md) {
     margin-bottom: 22px;
   }
-
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
 }
 
 .footer-column-hotline {
@@ -107,10 +103,16 @@ $paypal-padding-sm: 9px;
   font-weight: $font-weight-semibold;
   align-items: center;
 
-    .footer-newsletter &,
-    .footer-column-hotline & {
+  .footer-newsletter &,
+  .footer-column-hotline & {
     display: none;
+  }
+
+  .footer-newsletter & {
+    @include media-breakpoint-down(sm) {
+      display: flex;
     }
+  }
 }
 
 .footer-column-newsletter {
