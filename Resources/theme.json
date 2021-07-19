@@ -19,6 +19,9 @@
     "@Storefront",
     "app/storefront/dist/storefront/js/swag-elle-theme.js"
   ],
+  "iconSets": {
+    "elle": "app/storefront/src/assets/icon-pack/elle"
+  },
   "asset": [
     "app/storefront/src/assets"
   ],
