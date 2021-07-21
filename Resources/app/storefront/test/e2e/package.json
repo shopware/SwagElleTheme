@@ -1,0 +1,35 @@
+{
+  "name": "e2e-swag-elle-theme",
+  "private": true,
+  "version": "1.0.0",
+  "description": "E2E testsuite for the SwagElleTheme",
+  "main": "index.js",
+  "scripts": {
+    "open": "node_modules/.bin/cypress open",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox"
+  },
+  "keywords": [
+    "e2e",
+    "visual",
+    "testing"
+  ],
+  "author": "klarstil",
+  "license": "MIT",
+  "dependencies": {
+    "@percy/cli": "^1.0.0-beta.58",
+    "@percy/cypress": "^3.1.0",
+    "@shopware-ag/e2e-testsuite-platform": "^3.0.0-alpha.4",
+    "cypress": "^7.6.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mocha": "^9.0.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=12.14.1",
+    "npm": ">=7.18.1"
+  }
+}
