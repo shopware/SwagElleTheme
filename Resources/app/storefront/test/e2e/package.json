@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "open": "node_modules/.bin/cypress open",
+    "open:cli": "./node_modules/.bin/cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox"
   },

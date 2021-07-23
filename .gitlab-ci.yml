@@ -1,10 +1,11 @@
 variables:
   DOCKER_DRIVER: overlay2
   DOCKER_HOST: "tcp://docker:2375"
+  DEV_IMAGE: shopware/development:8.0-composer-2
   MYSQL_ROOT_PASSWORD: app
   WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
-  DEVELOPMENT_BRANCH: "master"
-  PLATFORM_BRANCH: "master"
+  DEVELOPMENT_BRANCH: "trunk"
+  PLATFORM_BRANCH: "trunk"
   THEME_NAME: "SwagElleTheme"
 
 stages:
@@ -13,13 +14,12 @@ stages:
   - Visual Testing
 
 default:
-  image: shopware/development:latest
+  image: $DEV_IMAGE
   services:
     - name: mariadb:10.3.28
       alias: mysql
   before_script:
     - zip -rq custom-theme.zip .
-    - rm -rf development
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/development.git --branch $DEVELOPMENT_BRANCH
     - rm -rf development/platform
     - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git development/platform --branch $PLATFORM_BRANCH
@@ -95,8 +95,8 @@ Storefront Percy.io:
     - ./psh.phar storefront:init --APP_ENV="prod"
     - ./psh.phar administration:init --APP_ENV="prod"
     - ./psh.phar init-test-databases --APP_ENV="prod"
-    - bin/console theme:change $THEME_NAME --all
     - ./psh.phar e2e:dump-db --DB_NAME="shopware" --APP_ENV="prod"
+    - bin/console theme:change $THEME_NAME --all
     - chown -R 1000:1000 .
     - cd custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
     - npm clean-install
