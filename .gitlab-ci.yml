@@ -4,8 +4,8 @@ variables:
   DEV_IMAGE: shopware/development:8.0-composer-2
   MYSQL_ROOT_PASSWORD: app
   WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
-  DEVELOPMENT_BRANCH: "trunk"
-  PLATFORM_BRANCH: "trunk"
+  DEVELOPMENT_BRANCH: "6.4.1.2"
+  PLATFORM_BRANCH: "6.4.2.1"
   THEME_NAME: "SwagElleTheme"
 
 stages:
@@ -56,13 +56,13 @@ default:
     - php bin/console app:install --activate $THEME_NAME
     - ./psh.phar storefront:init --APP_ENV="prod"
     - ./psh.phar administration:init --APP_ENV="prod"
-    - ./psh.phar init-test-databases --APP_ENV="prod"
-    - bin/console theme:change SwagElleTheme --all
-    - ./psh.phar e2e:dump-db --DB_NAME="shopware" --APP_ENV="prod"
+    - php bin/console theme:change SwagElleTheme --all
+    - ./psh.phar cache --APP_ENV="prod"
+    - echo "SET unique_checks=0;SET foreign_key_checks=0;" | mysqldump -u 'root' -p'app' -h 'mysql' --port='3306' -q --opt 'shopware' --no-autocommit --ignore-table 'shopware.enqueue' --ignore-table 'shopware.message_queue_stats' | gzip -9 > /tmp/shopware_e2e_dump.sql.gz
     - chown -R 1000:1000 .
     - E2E_BASE_PATH=custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
     - PROJECT_ROOT=$CI_PROJECT_DIR/development node $E2E_BASE_PATH/routes/cypress.js 2>&1 &
-    - docker run --name cypress --add-host="docker.vm:$(hostname -I)" -e CYPRESS_baseUrl=http://docker.vm:8000 -v $(pwd)/${E2E_BASE_PATH}:/e2e -v $(pwd):/app -w /e2e --entrypoint "sh" cypress/included:${CYPRESS_VERSION} -c "npm i -ci --production --prefix /e2e && cypress run --project /e2e --browser $BROWSER --headless --config baseUrl=http://docker.vm:8000 --env grepTags=@workflow"
+    - docker run --name cypress --add-host="docker.vm:$(hostname -I)" -e CYPRESS_baseUrl=http://docker.vm:8000 -e CYPRESS_projectRoot=$CI_PROJECT_DIR/development -v $(pwd)/${E2E_BASE_PATH}:/e2e -v $(pwd):/app -w /e2e --entrypoint "sh" cypress/included:${CYPRESS_VERSION} -c "npm i -ci --production --prefix /e2e && cypress run --project /e2e --browser $BROWSER --headless --config baseUrl=http://docker.vm:8000 --env grepTags=@workflow"
 
 Storefront Cypress E2E:
   extends: .E2E
@@ -87,6 +87,8 @@ Storefront Percy.io:
     PERCY_TOKEN: $PERCY_TOKEN
     CYPRESS_localUsage: 'true'
     CYPRESS_usePercy: 'true'
+    CYPRESS_projectPath: $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
+    CYPRESS_projectRoot: $CI_PROJECT_DIR/development
     CYPRESS_baseUrl: 'http://docker.vm:8000'
     CYPRESS_numTestsKeptInMemory: 0
   script:
