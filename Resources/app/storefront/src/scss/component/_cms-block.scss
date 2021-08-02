@@ -8,3 +8,12 @@
     }
 }
 
+.cms-element-image-gallery {
+    .gallery-slider-single-image {
+        @extend .text-center;
+
+        @include media-breakpoint-down(sm) {
+            min-height: 225px!important;
+        }
+    }
+}
