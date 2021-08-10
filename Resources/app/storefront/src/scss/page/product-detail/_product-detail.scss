@@ -137,3 +137,32 @@
         }
     }
 }
+
+.product-detail-content {
+  .breadcrumb {
+    @extend .mb-3;
+  }
+}
+
+.cms-section-default .boxed {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cms-block-container {
+  @extend .container, .px-0;
+  
+  .cms-block-container-row {
+    @extend .container, .px-0;
+  }
+}
+
+.cms-block-cross-selling,
+.cms-block-product-description-reviews {
+  background: $gray-100;
+}
+
+.cms-block-cross-selling {
+  padding-bottom: 80px;
+}
