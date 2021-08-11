@@ -1,4 +1,4 @@
-const waitingTimeForCapture = 1000;
+const waitingTimeForCapture = 1500;
 const waitingTimeForNextButton = 400;
 const waitingTimeForFlatpickr = 300;
 
