@@ -12,6 +12,7 @@
   .product-detail-price {
     font-size: $product-detail-price;
     font-weight: $font-weight-semibold;
+    line-height: 1;
   }
 }
 
@@ -101,6 +102,7 @@
   border-top: 0;
   border-bottom: 0.0625rem solid $gray-400;
   padding: 10px 20px;
+  vertical-align: middle;
 }
 
 .product-block-prices-body {
