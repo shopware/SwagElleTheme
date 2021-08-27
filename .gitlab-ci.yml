@@ -7,6 +7,8 @@ variables:
     LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
     PLATFORM_BRANCH: "6.4.3.0"
     THEME_NAME: "SwagElleTheme"
+    CUSTOM_PRODUCT_EXTENSIONS_BRANCH: "master"
+    CUSTOM_PRODUCT_EXTENSIONS_NAME: "SwagCustomizedProducts"
     APP_ENV: e2e
     CYPRESS_baseUrl: 'http://localhost:8000'
     CYPRESS_localUsage: 1
@@ -30,9 +32,13 @@ default:
         - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git platform --branch $PLATFORM_BRANCH
         - mkdir -p platform/custom/apps || true
         - unzip -q custom-theme.zip -d platform/custom/apps/$THEME_NAME
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/services/customized-product.git platform/custom/plugins/SwagCustomizedProducts --branch $CUSTOM_PRODUCT_EXTENSIONS_BRANCH
         - cd platform
         - composer run setup
         - chown -R application:application .
+        - bin/console plugin:refresh
+        - bin/console plugin:install --activate $CUSTOM_PRODUCT_EXTENSIONS_NAME
+        - bin/console cache:clear
         - bin/console app:install --activate $THEME_NAME
         - bin/console theme:change $THEME_NAME --all
         - composer run build:js
