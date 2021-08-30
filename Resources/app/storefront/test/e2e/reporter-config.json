@@ -1,12 +1,13 @@
 {
-    "reporterEnabled": "mocha-junit-reporter, mochawesome",
-    "mochaJunitReporterReporterOptions": {
-        "mochaFile": "./../app/build/artifacts/e2e/my-test-output-[hash].xml"
-    },
+    "reporterEnabled": "mochawesome, mocha-junit-reporter",
     "mochawesomeReporterOptions": {
-        "reportDir": "./../app/build/artifacts/e2e/mochawesome/single-reports",
+        "reportDir": "cypress/results/mocha",
+        "quite": true,
         "overwrite": false,
         "html": false,
         "json": true
+    },
+    "mochaJunitReporterReporterOptions": {
+        "mochaFile": "cypress/results/single-reports/results-[hash].xml"
     }
 }

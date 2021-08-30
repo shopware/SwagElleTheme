@@ -1,133 +1,118 @@
 variables:
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: "tcp://docker:2375"
-  DEV_IMAGE: shopware/development:8.0-composer-2
-  MYSQL_ROOT_PASSWORD: app
-  WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
-  DEVELOPMENT_BRANCH: "6.4.1.2"
-  PLATFORM_BRANCH: "6.4.2.1"
-  THEME_NAME: "SwagElleTheme"
+    DEV_IMAGE: shopware/development:7.4-composer-2
+    COMPOSER_PROCESS_TIMEOUT: 7200 # 60s * 60 * 2 = 2 hours
+    MYSQL_ROOT_PASSWORD: app
+    WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/platform/public
+    PROJECT_ROOT: $CI_PROJECT_DIR/platform
+    LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
+    PLATFORM_BRANCH: "6.4.3.0"
+    THEME_NAME: "SwagElleTheme"
+    APP_ENV: e2e
+    CYPRESS_baseUrl: 'http://localhost:8000'
+    CYPRESS_localUsage: 1
+    CYPRESS_shopwareRoot: $CI_PROJECT_DIR/platform
+    SHOPWARE_HTTP_CACHE_ENABLED: 0
+    E2E_PROJECT_PATH: $CI_PROJECT_DIR/platform/custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e/
+    CYPRESS_screenshotsFolder: $CI_PROJECT_DIR/platform/var/log/screenshots
 
 stages:
-  - Static analyze
-  - E2E
-  - Visual Testing
+    - Static analyze
+    - E2E
+    - Visual Testing
 
 default:
-  image: $DEV_IMAGE
-  services:
-    - name: mariadb:10.3.28
-      alias: mysql
-  before_script:
-    - zip -rq custom-theme.zip .
-    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/development.git --branch $DEVELOPMENT_BRANCH
-    - rm -rf development/platform
-    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git development/platform --branch $PLATFORM_BRANCH
-    - unzip -q custom-theme.zip -d development/custom/apps/$THEME_NAME
-    - cd development
-    - cp -v dev-ops/gitlab/.psh.yaml.override .
-    - /entrypoint supervisord > /dev/null 2>&1 &
-
-.generate_mochawesome_reports:
-  after_script: &mochawesome_report_definition
-    - npx mochawesome-merge development/build/artifacts/e2e/mochawesome/single-reports/mochawesome*.json > development/build/artifacts/e2e/mochawesome/report-final.json
-    - npx mochawesome-report-generator development/build/artifacts/e2e/mochawesome/report-final.json --cdn true --reportDir development/build/artifacts/e2e/mochawesome
-    - docker rm -f cypress
-
-.E2E:
-  stage: E2E
-  timeout: 2h 00m
-  services:
-    - name: docker:18.09.7-dind
-      alias: docker
-    - name: mariadb:10.3
-      alias: mysql
-  artifacts:
-    when: always
-    paths:
-      - development/build/artifacts/e2e/
-      - development/var/log/*
-      - $CI_PROJECT_DIR/stdout.log
-    reports:
-      junit: development/build/artifacts/e2e/*.xml
-  after_script: *mochawesome_report_definition
-  script:
-    - ./psh.phar init
-    - php bin/console app:install --activate $THEME_NAME
-    - ./psh.phar storefront:init --APP_ENV="prod"
-    - ./psh.phar administration:init --APP_ENV="prod"
-    - php bin/console theme:change SwagElleTheme --all
-    - ./psh.phar cache --APP_ENV="prod"
-    - echo "SET unique_checks=0;SET foreign_key_checks=0;" | mysqldump -u 'root' -p'app' -h 'mysql' --port='3306' -q --opt 'shopware' --no-autocommit --ignore-table 'shopware.enqueue' --ignore-table 'shopware.message_queue_stats' | gzip -9 > /tmp/shopware_e2e_dump.sql.gz
-    - chown -R 1000:1000 .
-    - E2E_BASE_PATH=custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
-    - PROJECT_ROOT=$CI_PROJECT_DIR/development node $E2E_BASE_PATH/routes/cypress.js 2>&1 &
-    - docker run --name cypress --add-host="docker.vm:$(hostname -I)" -e CYPRESS_baseUrl=http://docker.vm:8000 -e CYPRESS_projectRoot=$CI_PROJECT_DIR/development -v $(pwd)/${E2E_BASE_PATH}:/e2e -v $(pwd):/app -w /e2e --entrypoint "sh" cypress/included:${CYPRESS_VERSION} -c "npm i -ci --production --prefix /e2e && cypress run --project /e2e --browser $BROWSER --headless --config baseUrl=http://docker.vm:8000 --env grepTags=@workflow"
-
-Storefront Cypress E2E:
-  extends: .E2E
-  dependencies: []
-  variables:
-    BROWSER: 'chrome'
-    CYPRESS_VERSION: '7.6.0'
-
-Storefront Percy.io:
-  stage: Visual Testing
-  dependencies: []
-  services:
-    - name: docker:18.09.7-dind
-      alias: docker
-    - name: mariadb:10.3
-      alias: mysql
-  variables:
-    PERCY_TARGET_BRANCH: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
-    PERCY_TARGET_COMMIT: $CI_MERGE_REQUEST_DIFF_BASE_SHA
-    PERCY_BRANCH: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
-    PERCY_COMMIT: $CI_COMMIT_SHA
-    PERCY_TOKEN: $PERCY_TOKEN
-    CYPRESS_localUsage: 'true'
-    CYPRESS_usePercy: 'true'
-    CYPRESS_projectPath: $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
-    CYPRESS_projectRoot: $CI_PROJECT_DIR/development
-    CYPRESS_baseUrl: 'http://docker.vm:8000'
-    CYPRESS_numTestsKeptInMemory: 0
-  script:
-    - ./psh.phar init
-    - php bin/console app:install --activate $THEME_NAME
-    - ./psh.phar storefront:init --APP_ENV="prod"
-    - ./psh.phar administration:init --APP_ENV="prod"
-    - ./psh.phar init-test-databases --APP_ENV="prod"
-    - ./psh.phar e2e:dump-db --DB_NAME="shopware" --APP_ENV="prod"
-    - bin/console theme:change $THEME_NAME --all
-    - chown -R 1000:1000 .
-    - cd custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
-    - npm clean-install
-    - npx percy exec -- cypress run
-        --browser chrome --headless
-        --spec "cypress/**/*.visual.spec.js"
+    image: $DEV_IMAGE
+    services:
+        -   name: mariadb:10.4
+            alias: database
+    before_script:
+        - zip -rq custom-theme.zip .
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git platform --branch $PLATFORM_BRANCH
+        - mkdir -p platform/custom/apps || true
+        - unzip -q custom-theme.zip -d platform/custom/apps/$THEME_NAME
+        - cd platform
+        - composer run setup
+        - chown -R application:application .
+        - bin/console app:install --activate $THEME_NAME
+        - bin/console theme:change $THEME_NAME --all
+        - composer run build:js
+        - /entrypoint supervisord > /dev/null 2>&1 &
 
 Check built JS files:
-  stage: Static analyze
-  allow_failure: true
-  script:
-    - ./psh.phar init
-    - php bin/console app:install --activate $THEME_NAME
-    - ./psh.phar storefront:install-dependencies
-    - ./psh.phar storefront:build
-    - cd $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME
-    - >
-      if ! git diff --quiet --ignore-submodules HEAD --; then
-          echo "Built Javascript files differ. Update the dependencies and execute 'administration:build' and 'storefront:build' again";
-          git status;
-          exit 1;
-      else
-          echo "Everything ok"
-          exit 0;
-      fi
+    stage: Static analyze
+    allow_failure: true
+    script:
+        - cd $CI_PROJECT_DIR/platform/custom/apps/$THEME_NAME
+        - >
+            if ! git diff --quiet --ignore-submodules HEAD --; then
+                echo "Built Javascript files differ. Update the dependencies and execute 'administration:build' and 'storefront:build' again";
+                git status;
+                exit 1;
+            else
+                echo "Everything ok"
+                exit 0;
+            fi
+
 
 Validate snippets:
-  stage: Static analyze
-  script:
-    - ./psh.phar init
-    - php bin/console app:install --activate $THEME_NAME
-    - php bin/console snippets:validate
+    stage: Static analyze
+    script:
+        - php bin/console snippets:validate
+
+.generate_mochawesome_reports:
+    after_script: &mochawesome_report_definition
+        - mkdir $CI_PROJECT_DIR/platform/var/log/e2e
+        - cd $E2E_PROJECT_PATH
+        - npx mochawesome-merge cypress/results/mocha/*.json > cypress/mochareports/report.json
+        - npx marge cypress/mochareports/*.json -f report -o mochareports"
+        - mv cypress/results/single-reports/*.xml $CI_PROJECT_DIR/platform/var/log/e2e/ || true
+        - mv mochareports/ $CI_PROJECT_DIR/platform/var/log/e2e/ || true
+
+.E2E:
+    stage: E2E
+    timeout: 2h 00m
+    script:
+        - composer run e2e:prepare
+        - cd custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e/
+        - npm clean-install
+        - ./node_modules/.bin/cypress run
+            --browser $BROWSER
+            --headless
+            --env grepTags=@workflow
+    after_script: *mochawesome_report_definition
+    artifacts:
+        when: always
+        paths:
+            - platform/build/artifacts/e2e/
+            - platform/var/log/*
+            - $CI_PROJECT_DIR/stdout.log
+        reports:
+            junit: platform/build/artifacts/e2e/*.xml
+
+Storefront Cypress E2E:
+    extends: .E2E
+    dependencies: []
+    variables:
+        CYPRESS_VERSION: '7.6.0'
+        BROWSER: 'chrome'
+
+Storefront Percy.io:
+    extends: .E2E
+    stage: Visual Testing
+    dependencies: []
+    variables:
+        PERCY_TARGET_BRANCH: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+        PERCY_TARGET_COMMIT: $CI_MERGE_REQUEST_DIFF_BASE_SHA
+        PERCY_BRANCH: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+        PERCY_COMMIT: $CI_COMMIT_SHA
+        PERCY_TOKEN: $PERCY_TOKEN
+        CYPRESS_usePercy: 'true'
+        CYPRESS_numTestsKeptInMemory: 0
+    script:
+        - composer run e2e:prepare
+        - cd custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e/
+        - npm clean-install
+        - ./node_modules/.bin/percy exec -- ./node_modules/.bin/cypress run
+            --browser chrome
+            --spec "cypress/**/*.visual.spec.js"
+            --headless
