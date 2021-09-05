@@ -21,3 +21,8 @@
 .cms-breadcrumb {
     @extend .mb-3;
 }
+
+.full-width .cms-block-container,
+.full-width .cms-block-container .cms-block-container-row {
+    max-width: 100%;
+}
