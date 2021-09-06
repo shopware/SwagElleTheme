@@ -12,6 +12,8 @@ variables:
     CUSTOM_PRODUCT_EXTENSIONS_NAME: "SwagCustomizedProducts"
     AMAZON_PAY_BRANCH: "master"
     AMAZON_PAY_NAME: "SwagAmazonPay"
+    CMS_EXTENSIONS_BRANCH: "master"
+    CMS_EXTENSIONS_NAME: "SwagCmsExtensions"
     APP_ENV: e2e
     CYPRESS_baseUrl: 'http://localhost:8000'
     CYPRESS_localUsage: 1
@@ -38,6 +40,7 @@ default:
         - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/services/customized-product.git platform/custom/plugins/SwagCustomizedProducts --branch $CUSTOM_PRODUCT_EXTENSIONS_BRANCH
         - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/services/paypal.git platform/custom/plugins/SwagPayPal --branch $PAYPAL_PLUGIN_BRANCH
         - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/services/swagamazonpay.git platform/custom/plugins/SwagAmazonPay --branch $AMAZON_PAY_BRANCH
+        - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/services/cms-extensions.git platform/custom/plugins/SwagCmsExtensions --branch $CMS_EXTENSIONS_BRANCH
         - cd platform
         - composer run setup
         - composer require theiconic/name-parser
@@ -48,6 +51,7 @@ default:
         - bin/console plugin:install --activate $CUSTOM_PRODUCT_EXTENSIONS_NAME
         - bin/console plugin:install --activate SwagPayPal
         - bin/console plugin:install --activate $AMAZON_PAY_NAME
+        - bin/console plugin:install --activate $CMS_EXTENSIONS_NAME
         - bin/console app:install --activate $THEME_NAME
         - bin/console cache:clear
         - bin/console theme:change $THEME_NAME --all
