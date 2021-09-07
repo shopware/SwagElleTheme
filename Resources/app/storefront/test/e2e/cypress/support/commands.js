@@ -84,3 +84,21 @@ Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtu
         return fixture.setProductFixture(data, categoryName);
     });
 });
+
+/**
+ * Initial paypal plugin config from fixture file to administration
+ * @memberOf Cypress.Chainable#
+ * @name initializePluginConfig
+ * @function
+ */
+Cypress.Commands.add('initializePluginConfig', (config = 'paypal-config.json') => {
+    return cy.fixture(config).then((data) => {
+        return cy.requestAdminApi(
+            'POST',
+            `/api/_action/system-config/batch`,
+            {
+                data
+            }
+        )
+    });
+});
