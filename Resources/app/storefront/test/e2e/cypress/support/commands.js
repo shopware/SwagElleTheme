@@ -1,4 +1,4 @@
-
+const ProductFixture = global.ProductFixtureService;
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -47,4 +47,40 @@ Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
     }
 
     return orig();
+});
+
+/**
+ * Patch to update via admin api
+ * @memberOf Cypress.Chainable#
+ * @name patchViaAdminApi
+ * @param {String} [endpoint = null] - Endpoint to patch
+ * @param {Object} [data = null] - Data send to API
+ * @function
+ */
+Cypress.Commands.add('patchViaAdminApi', (endpoint, data) => {
+    return cy.requestAdminApi(
+        'PATCH',
+        `/api/${endpoint}?response=true`,
+        data
+    ).then((responseData) => {
+        return responseData;
+    });
+});
+
+/**
+ * Create custom product fixture using Shopware API at the given endpoint
+ * @memberOf Cypress.Chainable#
+ * @name createCustomProductFixture
+ * @function
+ * @param {Object} [userData={}] - Options concerning creation
+ * @param [String] [templateFixtureName = 'product'] - Specifies the base fixture name
+ */
+Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtureName = 'product', categoryName = 'Confirm input catalogue') => {
+    const fixture = ProductFixture;
+
+    return cy.fixture(templateFixtureName).then((result) => {
+        return Cypress._.merge(result, userData);
+    }).then((data) => {
+        return fixture.setProductFixture(data, categoryName);
+    });
 });
