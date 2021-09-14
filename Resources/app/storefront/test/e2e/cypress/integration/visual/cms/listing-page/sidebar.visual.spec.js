@@ -148,13 +148,13 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.main-navigation-link[title="Sidebar Listing Categorian"]').should('be.visible').click();
         cy.get('.cms-section-sidebar-sidebar-content').should('be.visible');
         cy.get('.cms-section-sidebar-main-content').should('be.visible');
-        cy.takeSnapshot('[CMS] Listing Page with Sidebar on the Desktop view', '.content-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[CMS] Listing Page with Sidebar on the Desktop view', '.content-main');
 
         cy.visit('/');
         cy.viewport(768, 1024);
         cy.get('.nav-main-toggle-btn').should('be.visible');
         cy.get('.nav-main-toggle-btn').click();
-        cy.get('.navigation-offcanvas').should('be.visible');
+        cy.get('.navigation-offcanvas').should('be.visible', { timeout: 20000 });
         cy.takeSnapshot('[Home] Navigation Offcanvas', '.navigation-offcanvas', {widths: [375, 768]});
 
         cy.get('.nav-main-toggle-btn').click();
