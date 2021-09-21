@@ -30,7 +30,7 @@
         {% block layout_footer_navigation_columns %}
             {% for root in page.footer.navigation.tree %}
                 {% block layout_footer_navigation_column %}
-                    <div class="col-md-3 footer-column js-footer-column">
+                    <div class="col-md-4 col-lg-3 footer-column js-footer-column">
                         {% block layout_footer_navigation_information_headline %}
                             <div class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
                                  data-target="#collapseFooterTitle{{ loop.index }}"
@@ -68,7 +68,7 @@
         {% endblock %}
 
         {% block layout_footer_navigation_newsletter %}
-            <div class="col-md-3 footer-column js-footer-column footer-newsletter">
+            <div class="col-md-3 d-md-none d-lg-block footer-column js-footer-column footer-newsletter">
                 {% block layout_footer_navigation_newsletter_headline %}
                     <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
                          id="collapseFooterNewsletterTitle"
@@ -142,10 +142,6 @@
                                                                     }
                                                                 %}
                                                             </div>
-
-                                                            {% block layout_footer_navigation_newsletter_form_privacy %}
-                                                                {% sw_include '@Storefront/storefront/component/privacy-notice.html.twig' %}
-                                                            {% endblock %}
                                                         </div>
                                                     {% endblock %}
 
@@ -171,7 +167,7 @@
         {% endblock %}
 
         {% block layout_footer_navigation_hotline %}
-            <div class="col-md-3 footer-column footer-column-hotline js-footer-column">
+            <div class="col-md-4 col-lg-3 footer-column footer-column-hotline js-footer-column">
                 {% block layout_footer_navigation_hotline_headline %}
                     <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
                          id="collapseFooterHotlineTitle"

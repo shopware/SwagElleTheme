@@ -102,10 +102,11 @@ $paypal-padding-sm: 9px;
   color: $footer-color;
   font-weight: $font-weight-semibold;
   align-items: center;
+  @extend .pt-md-0;
 
   .footer-newsletter &,
   .footer-column-hotline & {
-    display: none;
+    @extend .d-md-none;
   }
 
   .footer-newsletter & {
