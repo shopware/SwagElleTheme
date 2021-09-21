@@ -108,3 +108,55 @@ Cypress.Commands.add('updatePluginConfig', (data, salesChannelId) => {
         }
     );
 });
+
+/**
+ * Sets the specific shipping method as default in sales channel
+ * @memberOf Cypress.Chainable#
+ * @name setShippingMethodInSalesChannel
+ * @param {String} name - Name of the shipping method
+ * @param {String} [salesChannel = Storefront]  - Name of the sales channel
+ * @function
+ */
+Cypress.Commands.add('setShippingMethodInSalesChannel', (name, salesChannel = 'Storefront') => {
+    let salesChannelId;
+
+    // We need to assume that we're already logged in, so make sure to use loginViaApi command first
+    return cy.searchViaAdminApi({
+        endpoint: 'sales-channel',
+        data: {
+            field: 'name',
+            value: salesChannel,
+        },
+    }).then((data) => {
+        salesChannelId = data.id;
+
+        return cy.searchViaAdminApi({
+            endpoint: 'shipping-method',
+            data: {
+                field: 'name',
+                value: name,
+            },
+        });
+    }).then((data) => {
+        return cy.updateViaAdminApi('sales-channel', salesChannelId, {
+            data: {
+                shippingMethodId: data.id,
+            },
+        });
+    });
+});
+
+/**
+ * Updates an existing entity using Shopware API at the given endpoint
+ * @memberOf Cypress.Chainable#
+ * @name changeElementStyling
+ * @function
+ * @param {String} selector - API endpoint for the request
+ * @param {String} imageStyle - API endpoint for the request
+ */
+
+Cypress.Commands.add('changeElementStyling', (selector, elementStyle) => {
+    cy.get(selector)
+        .invoke('attr', 'style', elementStyle)
+        .should('have.attr', 'style', elementStyle);
+});

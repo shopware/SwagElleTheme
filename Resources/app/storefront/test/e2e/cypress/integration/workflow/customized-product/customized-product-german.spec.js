@@ -100,7 +100,7 @@ describe('Customize Product: Visual test customize product in German', () => {
             });
     });
 
-    it('@visual, @customized: Customize product in german', () => {
+    it('@workflow, @customized: Customize product in german', () => {
         // Verify we are on the correct product detail page, by checking the product name
         cy.get('.product-detail-name')
             .should('be.visible')
@@ -121,14 +121,5 @@ describe('Customize Product: Visual test customize product in German', () => {
 
         // Check the total price label
         cy.contains('.price-display__total-price > .price-display__label', 'Gesamtpreis');
-
-        // Expand all configuration
-        cy.get('.swag-customized-products-option .toggle-icon-plus').each(($el) => {
-          if (Cypress.dom.isVisible($el)) {
-            cy.wrap($el).click();
-          }
-        });
-        cy.wait(1000);
-        cy.takeSnapshot('[Customized Product] Layout in German language', '.product-detail-information', {widths: [375, 768, 1920]});
     });
 });

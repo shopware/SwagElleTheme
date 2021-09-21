@@ -41,8 +41,8 @@ describe('Wishlist: Disable wishlist', () => {
         cy.visit('/');
 
         cy.window().then((win) => {
-            cy.expect(win.customerLoggedInState).to.equal(undefined);
-            cy.expect(win.wishlistEnabled).to.equal(undefined);
+            expect(win.customerLoggedInState).to.equal(undefined);
+            expect(win.wishlistEnabled).to.equal(undefined);
             cy.get('.header-actions-btn .header-wishlist-icon .icon-heart svg').should('not.exist');
         })
     });

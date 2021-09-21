@@ -151,11 +151,11 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
 
         cy.visit('/');
         cy.viewport(768, 1024);
+        cy.wait(1000);
         cy.get('.nav-main-toggle-btn').should('be.visible');
         cy.get('.nav-main-toggle-btn').click();
         cy.get('.navigation-offcanvas').should('be.visible');
 
-        cy.get('.nav-main-toggle-btn').click();
         cy.get('.navigation-offcanvas').find('.navigation-offcanvas-link').click();
         cy.get('.breadcrumb-title').contains('Sidebar Listing Categorian');
         cy.get('.nav-main-toggle-btn').click();

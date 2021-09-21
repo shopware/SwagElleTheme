@@ -97,6 +97,7 @@ Validate snippets:
         - npm clean-install
         - ./node_modules/.bin/cypress run
             --browser $BROWSER
+            --spec "cypress/**/workflow/**/*.spec.js"
             --headless
             --env grepTags=@workflow
     after_script: *mochawesome_report_definition
