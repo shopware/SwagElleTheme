@@ -48,6 +48,8 @@ Check built JS files:
     stage: Static analyze
     allow_failure: true
     script:
+        - composer run setup
+        - composer run build:js
         - cd $CI_PROJECT_DIR/platform/custom/apps/$THEME_NAME
         - >
             if ! git diff --quiet --ignore-submodules HEAD --; then
