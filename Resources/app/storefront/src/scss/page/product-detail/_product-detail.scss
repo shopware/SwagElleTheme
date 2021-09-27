@@ -70,6 +70,13 @@
     padding: 0;
   }
 
+  @include media-breakpoint-up(lg) {
+    .product-detail-media,
+    .product-detail-buy {
+      @include make-col(6);
+    }
+  }
+
   .product-detail-name {
     margin-bottom: 0;
   }
@@ -112,32 +119,31 @@
 }
 
 .product-detail-form-container {
-    div[data-amazon-pay-button-product-detail="true"] .col-8,
-    div[data-swag-paypal-installment-banner="true"] {
-        @include make-col(12);
+  div[data-amazon-pay-button-product-detail="true"] .col-8,
+  div[data-swag-paypal-installment-banner="true"] {
+    @include make-col(12);
 
-        @include media-breakpoint-up(md) {
-            @include make-col(4);
-            @include make-col-offset(3);
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+      @include make-col-offset(3);
 
-            margin-right: auto;
-        }
-
-        @include media-breakpoint-up(lg) {
-            @include make-col(6);
-        }
+      margin-right: auto;
     }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(6);
+    }
+  }
 }
 
-
 .swag-cms-extensions-quickview-product-buy-form {
-    div[data-swag-paypal-express-button="true"],
-    div[data-swag-paypal-installment-banner="true"] {
-        @include media-breakpoint-up(md) {
-            @include make-col(8);
-            @include make-col-offset(4);
-        }
+  div[data-swag-paypal-express-button="true"],
+  div[data-swag-paypal-installment-banner="true"] {
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+      @include make-col-offset(4);
     }
+  }
 }
 
 .product-detail-content {
@@ -154,7 +160,7 @@
 
 .cms-block-container {
   @extend .container, .px-0;
-  
+
   .cms-block-container-row {
     @extend .container, .px-0;
   }

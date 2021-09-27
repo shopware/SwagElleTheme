@@ -13,3 +13,8 @@
     @extend .h6;
   }
 }
+
+#loginMail,
+#loginPassword {
+    @extend .col-sm-6, .col-lg-12;
+}
