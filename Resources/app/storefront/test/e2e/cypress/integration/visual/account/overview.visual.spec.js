@@ -15,20 +15,18 @@ describe('Account: Overview page', () => {
     });
 
     it('@visual: Overview page', () => {
-        const page = new AccountPageObject();
+        const accountPage = new AccountPageObject();
 
         cy.visit('/account/login');
-        cy.get(page.elements.loginCard).should('be.visible');
+        cy.get(accountPage.elements.loginCard).should('be.visible');
 
-        cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
-        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-        cy.get(`${page.elements.loginSubmit} [type="submit"]`).click();
+        accountPage.login();
 
         cy.get('.account-welcome h1').should((element) => {
             expect(element).to.contain('Overview');
         });
 
-        cy.takeSnapshot('[Account] Overview page', '.account', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Overview page', '.account');
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
@@ -40,42 +38,42 @@ describe('Account: Overview page', () => {
             expect(element).to.contain('You have subscribed to the newsletter');
         });
 
-        cy.takeSnapshot('[Overview] Newsletter subscription', '.account-overview', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Newsletter subscription', '.account-overview');
 
         cy.get('.overview-billing-address [data-address-editor="true"]').click();
         cy.get('.address-editor-modal').should('be.visible');
 
-        cy.takeSnapshot('[Overview] Billing Address Editor Modal', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Billing Address Editor Modal', '.address-editor-modal');
 
         cy.get('.address-editor-edit').click();
         cy.get('#address-create-edit').should('have.class', 'show');
         cy.get('#address-create-new').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Change billing address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Change billing address form', '.address-editor-modal');
 
         cy.get('.address-editor-create').click();
         cy.get('#address-create-new').should('have.class', 'show');
         cy.get('#address-create-edit').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Create a new billing address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Create a new billing address form', '.address-editor-modal');
 
         cy.get('.address-editor-modal').find('.modal-close').click();
 
         cy.get('.overview-shipping-address [data-address-editor="true"]').click();
         cy.get('.address-editor-modal').should('be.visible');
 
-        cy.takeSnapshot('[Overview] Shipping Address Editor Modal', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Shipping Address Editor Modal', '.address-editor-modal');
 
         cy.get('.address-editor-edit').click();
         cy.get('#address-create-edit').should('have.class', 'show');
         cy.get('#address-create-new').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Change shipping address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Change shipping address form', '.address-editor-modal');
 
         cy.get('.address-editor-create').click();
         cy.get('#address-create-new').should('have.class', 'show');
         cy.get('#address-create-edit').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Create a new shipping address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Create a new shipping address form', '.address-editor-modal');
     });
 });

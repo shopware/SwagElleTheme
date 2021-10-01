@@ -13,10 +13,10 @@ function nextButton() {
 
 describe('Customize Product: Visual tests product with full customize option', () => {
     beforeEach(() => {
-        return cy.setToInitialState().then(() => {
-            return cy.createDefaultFixture('category').then(() => {
-                return cy.fixture('customize-product');
-            }).then((fixtureProduct) => {
+        return cy.setToInitialState()
+            .then(() => cy.createDefaultFixture('category'))
+            .then(() => cy.fixture('customize-product'))
+            .then((fixtureProduct) => {
                 product = fixtureProduct;
                 // fetch the tax based on name
                 return cy.searchViaAdminApi({
@@ -39,35 +39,21 @@ describe('Customize Product: Visual tests product with full customize option', (
                     });
                     return value;
                 });
-            }).then(() => {
-                return cy.createProductFixture(product);
-            }).then(() => {
-                return cy.createCustomerFixtureStorefront();
-            }).then(() => {
+            })
+            .then(() => cy.setShippingMethodInSalesChannel('Standard'))
+            .then(() => cy.createProductFixture(product))
+            .then(() => cy.createCustomerFixtureStorefront())
+            .then(() => {
                 cy.visit('/');
                 cy.get('.cookie-permission-container .btn-primary').contains('Configure').click();
                 cy.get('.offcanvas .btn-primary').contains('Save').click();
             });
-        })
-    });
-
-    it('@visual, @customized: Customize product with required options ', () => {
-        cy.visit('/Product-name/RS-333')
-        // Expand all configuration
-        cy.get('.swag-customized-products-option .toggle-icon-plus').each(($el) => {
-            if (Cypress.dom.isVisible($el)) {
-                cy.wrap($el).click();
-            }
-        });
-        cy.takeSnapshot('[Customized Product] Test with some required label', '.product-detail-information', {widths: [375, 768, 1920]});
     });
 
     it('@visual, @customized: Customize product with all options', () => {
         cy.visit('/Product-name/RS-333');
 
         // Check for the price box
-        cy.get('.swag-customized-product__price-display').should('not.exist');
-        cy.get('.swag-customized-product__price-display').should('be.exist');
 
         // Check for the product price
         cy.contains('.price-display__product-price > .price-display__label', 'Product price');
@@ -167,7 +153,9 @@ describe('Customize Product: Visual tests product with full customize option', (
             .should('be.visible')
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
-        cy.get('.flatpickr-day.today').click();
+        cy.get('.numInputWrapper .cur-year').type('2021');
+        cy.get('.flatpickr-monthDropdown-months').select('September');
+        cy.get('.flatpickr-day').contains('27').first().click();
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
@@ -225,7 +213,7 @@ describe('Customize Product: Visual tests product with full customize option', (
                 cy.wrap($el).click();
             }
         })
-        cy.takeSnapshot('[Customized Product] Expand all validate option', '.product-detail-information', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Expand all validate option', '.product-detail-information');
 
         // Add to cart
         cy.get('.product-detail-buy .btn-buy').click();
@@ -233,13 +221,13 @@ describe('Customize Product: Visual tests product with full customize option', (
         // Off canvas cart
         cy.get('.offcanvas.is-open').should('be.visible');
         cy.get('.cart-item-label').contains(product.name);
-        cy.takeSnapshot('[Customized Product] Add to cart', '.cart-offcanvas', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Add to cart', '.cart-offcanvas');
 
         // Check the configuration
         cy.get('.cart-item-collapse-button').click();
         cy.contains('.cart-item-child-label-bullet', 'Example #2');
 
-        cy.takeSnapshot('[Customized Product] Off-canvas nested line items', '.cart-offcanvas', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Off-canvas nested line items', '.cart-offcanvas');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -256,10 +244,10 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
-        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-main');
 
         cy.get('.cart-item-collapse-button').first().click()
-        cy.takeSnapshot('[Customized Product] Checkout confirm nested line items', '.checkout-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Checkout confirm nested line items', '.checkout-main');
 
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
@@ -269,7 +257,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
         cy.get('.cart-item-collapse-button').first().click()
-        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-main');
     });
 
     it('@visual, @customized: Customize product step by step mode', () => {
@@ -280,48 +268,51 @@ describe('Customize Product: Visual tests product with full customize option', (
 
             // Start wizard
             cy.get('.swag-customized-products-start-wizard.btn-primary').should('be.visible');
-            cy.takeSnapshot('[Customized Product step by step] Start wizard customized product step by step', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Start wizard customized product step by step', '.swag-customized-products');
             cy.contains('.swag-customized-products-start-wizard.btn-primary', 'Configure product').click();
 
             // Select field
             cy.contains('.swag-customized-products-option__title', 'Example select').scrollIntoView();
             cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #2').click();
-            cy.takeSnapshot('[Customized Product step by step] Select field', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Select field', '.swag-customized-products');
             nextButton();
 
             // Checkbox
             cy.contains('.swag-customized-products-option__title', 'Example checkbox').scrollIntoView();
             cy.contains('.custom-control-label', 'Example checkbox').click();
-            cy.takeSnapshot('[Customized Product step by step] Checkbox', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Checkbox', '.swag-customized-products');
             nextButton();
 
             // Textfield
             cy.contains('.swag-customized-products-option__title', 'Example textfield').scrollIntoView();
             cy.get('.swag-customized-products__type-textfield input').type('Hello Customized Products Textfield StepByStep');
             cy.wait(waitingTimeForCapture);
-            cy.takeSnapshot('[Customized Product step by step] Textfield', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Textfield', '.swag-customized-products');
             nextButton();
 
             // Textarea
             cy.contains('.swag-customized-products-option__title', 'Example textarea').scrollIntoView();
             cy.get('.swag-customized-products__type-textarea textarea').type('Hello Customized Products Textarea StepByStep');
             cy.wait(waitingTimeForCapture);
-            cy.takeSnapshot('[Customized Product step by step] Textarea', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Textarea', '.swag-customized-products');
             nextButton();
 
             // Numberfield
             cy.contains('.swag-customized-products-option__title', 'Example numberfield').scrollIntoView();
             cy.get('.swag-customized-products__type-numberfield input').type('42');
             cy.wait(waitingTimeForCapture);
-            cy.takeSnapshot('[Customized Product step by step] Numberfield', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Numberfield', '.swag-customized-products');
             nextButton();
 
             // Datefield
             cy.contains('.swag-customized-products-option__title', 'Example datefield').scrollIntoView();
             cy.get('.swag-customized-products__type-datetime > .input-group > input[type="text"].swag-customized-products-options-datetime').click();
             cy.get('.flatpickr-calendar').should('be.visible');
-            cy.get('.flatpickr-day.today').click();
-            cy.takeSnapshot('[Customized Product step by step] Datefield', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.get('.numInputWrapper .cur-year').type('2021');
+            cy.get('.flatpickr-monthDropdown-months').select('September');
+            cy.get('.flatpickr-day').contains('27').first().click();
+            cy.wait(3000);
+            cy.takeSnapshot('[Customized Product step by step] Datefield', '.swag-customized-products');
 
             // We have to wait here to update the pager, the flatpickr is kinda weird in this regard
             cy.wait(waitingTimeForFlatpickr);
@@ -332,7 +323,7 @@ describe('Customize Product: Visual tests product with full customize option', (
             cy.get('.swag-customized-products__type-timestamp > .input-group > input[type="text"].swag-customized-products-options-datetime').click();
             cy.get('.flatpickr-calendar').should('be.visible');
             cy.get('.numInputWrapper .flatpickr-hour').type('3{enter}');
-            cy.takeSnapshot('[Customized Product step by step] Timefield', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Timefield', '.swag-customized-products');
             // We have to wait here to update the pager, the flatpickr is kinda weird in this regard
             cy.wait(waitingTimeForFlatpickr);
             nextButton();
@@ -340,28 +331,28 @@ describe('Customize Product: Visual tests product with full customize option', (
             // Color select
             cy.contains('.swag-customized-products-option__title', 'Example color select').scrollIntoView();
             cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue').click();
-            cy.takeSnapshot('[Customized Product step by step] Color select', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.wait(waitingTimeForCapture);
+            cy.takeSnapshot('[Customized Product step by step] Color select', '.swag-customized-products');
             nextButton();
 
             // File upload
             cy.contains('.swag-customized-products-option__title', 'Example file upload').scrollIntoView();
-            cy.takeSnapshot('[Customized Product step by step] File upload', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] File upload', '.swag-customized-products');
             nextButton();
 
             // Image upload
             cy.contains('.swag-customized-products-option__title', 'Example image upload').scrollIntoView();
-            cy.takeSnapshot('[Customized Product step by step] File upload', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Image upload', '.swag-customized-products');
             nextButton();
 
             // HTML Input
             cy.contains('.swag-customized-products-option__title', 'Example html').scrollIntoView();
-            // cy.get('.swag-custommized-product-html-editor__editor').should('be.visible').focus().type('Hello Customized Products HTML')
-            cy.takeSnapshot('[Customized Product step by step] HTML', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] HTML', '.swag-customized-products');
             nextButton();
 
             // Check if the configuration was done
             cy.contains('.swag-customized-products-start-wizard', 'Change configuration').should('be.visible');
-            cy.takeSnapshot('[Customized Product step by step] Finish', '.swag-customized-products', {widths: [375, 768, 1920]});
+            cy.takeSnapshot('[Customized Product step by step] Finish', '.swag-customized-products');
 
             // Add to cart
             cy.get('.product-detail-buy .btn-buy').click();

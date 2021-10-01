@@ -68,7 +68,7 @@ describe('Wishlist: Merge wishlist', () => {
         heartIcon.click();
 
         cy.window().then((win) => {
-            cy.expect(win.wishlistEnabled).to.equal(1);
+            expect(win.wishlistEnabled).to.equal(1);
         });
 
         cy.visit('/account/login');

@@ -15,7 +15,7 @@ describe('Account: Edit profile', () => {
     });
 
     it('@visual: update profile', () => {
-        const page = new AccountPageObject();
+        const accountPage = new AccountPageObject();
 
         cy.authenticate().then((result) => {
             const requestConfig = {
@@ -34,21 +34,19 @@ describe('Account: Edit profile', () => {
         });
 
         cy.visit('/account/login');
-        cy.get(page.elements.loginCard).should('be.visible');
+        cy.get(accountPage.elements.loginCard).should('be.visible');
 
-        cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
-        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-        cy.get(`${page.elements.loginSubmit} [type="submit"]`).click();
+        accountPage.login();
 
         cy.get('.account-welcome h1').should((element) => {
             expect(element).to.contain('Overview');
         });
 
-        cy.takeSnapshot('[Account] Login Success', '.account', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Login Success', '.account');
 
         cy.get('.card-actions [href="/account/profile"]').click();
 
-        cy.takeSnapshot('[Account] Profile page', '.account-profile', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile page', '.account-profile');
 
         const accountTypeSelector = 'select[name="accountType"]';
         const companySelector = 'input[name="company"]';
@@ -62,12 +60,12 @@ describe('Account: Edit profile', () => {
         cy.get(companySelector).should('be.visible');
         cy.get(companySelector).type('Company Testing');
 
-        cy.takeSnapshot('[Account] Edit profile form', '.account-profile', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Edit profile form', '.account-profile');
 
         cy.get('#profilePersonalForm button[type="submit"]').click();
         cy.get('.alert-success .alert-content').contains('Profile has been updated.');
 
-        cy.takeSnapshot('[Account] Profile updated', '.account-profile', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile updated', '.account-profile');
 
         cy.get('.account-profile-change[href="#profile-email-form"]').click();
         cy.get('#profile-email-form').should('have.class', 'show');
@@ -76,11 +74,11 @@ describe('Account: Edit profile', () => {
         cy.get('#personalMail').type('test@example.com');
         cy.get('#personalMailConfirmation').type('test@example.com');
         cy.get('#personalMailPasswordCurrent').type('shopware');
-        cy.takeSnapshot('[Account] Profile - Fill change Email form', '.account-profile',  {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile - Fill change Email form', '.account-profile');
 
         cy.get('#profileMailForm').find('.profile-form-submit').click();
         cy.get('.alert-success .alert-content').contains('Your email address has been updated.');
-        cy.takeSnapshot('[Account] Profile - Change Email form success', '.account-profile',  {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile - Change Email form success', '.account-profile');
 
         cy.get('.account-profile-change[href="#profile-password-form"]').click();
         cy.get('#profile-password-form').should('have.class', 'show');
@@ -88,10 +86,10 @@ describe('Account: Edit profile', () => {
         cy.get('#newPassword').type('shopware1');
         cy.get('#passwordConfirmation').type('shopware1');
         cy.get('#password').type('shopware');
-        cy.takeSnapshot('[Account] Profile - Fill change password form', '.account-profile',  {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile - Fill change password form', '.account-profile');
 
         cy.get('#profilePasswordForm').find('.profile-form-submit').click();
         cy.get('.alert-success .alert-content').contains('Your password has been updated.');
-        cy.takeSnapshot('[Account] Profile - Change password form', '.account-profile',  {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Profile - Change password form', '.account-profile');
     });
 });

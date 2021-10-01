@@ -5,7 +5,27 @@ let product = {};
 
 describe('Checkout: as a guest', () => {
     beforeEach(() => {
-        return cy.createProductFixture()
+        return cy.setToInitialState()
+            .then(() => {
+                cy.authenticate().then((result) => {
+                    const requestConfig = {
+                        headers: {
+                            Authorization: `Bearer ${result.access}`
+                        },
+                        method: 'post',
+                        url: `api/_action/system-config/batch`,
+                        body: {
+                            null: {
+                                'core.loginRegistration.showPhoneNumberField': true,
+                            }
+                        }
+                    };
+
+                    return cy.request(requestConfig);
+                })
+            })
+            .then(() => cy.setShippingMethodInSalesChannel('Standard'))
+            .then(() => cy.createProductFixture())
             .then((result) => {
                 product = result;
                 cy.visit('/');
@@ -20,7 +40,8 @@ describe('Checkout: as a guest', () => {
 
         // Shopping cart
         cy.get('.header-cart-btn').should('be.visible').click();
-        cy.takeSnapshot('[Checkout] Empty cart', '.offcanvas',{widths: [375, 768, 1920]});
+        cy.wait(1000);
+        cy.takeSnapshot('[Checkout] Empty cart', '.offcanvas');
         cy.get('.offcanvas .offcanvas-close').should('be.visible').click();
 
         // Product detail
@@ -28,13 +49,13 @@ describe('Checkout: as a guest', () => {
         cy.get('.header-search-input').should('be.visible');
         cy.get('.header-search-input').type('dummy test');
         cy.get('.header-search-btn').should('be.visible').click();
-        cy.takeSnapshot('[Checkout] No products found', '.container-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] No products found', '.container-main');
 
         cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
         cy.get('.search-suggest-product-price').contains(product.price[0].gross);
-        cy.takeSnapshot('[Checkout] Search product result', '.header-search', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Search product result', '.header-search');
 
         cy.get('.search-suggest-product-name').first().click();
 
@@ -43,7 +64,7 @@ describe('Checkout: as a guest', () => {
         // Offcanvas
         cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
-        cy.takeSnapshot('[Checkout] Offcanvas', '.offcanvas', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Offcanvas', '.offcanvas');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .begin-checkout-btn').click();
@@ -51,7 +72,7 @@ describe('Checkout: as a guest', () => {
         cy.get(accountPage.elements.registerCard).should('be.visible');
 
         cy.get('.login-collapse-toggle').should('be.visible').click();
-        cy.takeSnapshot('[Checkout] Login/Register form', '.page-checkout-address-login', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Login/Register form', '.page-checkout-address-login');
 
         cy.get('select[name="salutationId"]').select('Mr.');
         cy.get('input[name="firstName"]').type('John');
@@ -69,7 +90,7 @@ describe('Checkout: as a guest', () => {
         cy.get('select[name="billingAddress[countryStateId]"]').should('be.visible');
         cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
 
-        cy.takeSnapshot('[Checkout] Shipping information', '.checkout-container', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Shipping information', '.checkout-container');
 
         cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
@@ -80,7 +101,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
-        cy.takeSnapshot('[Checkout] Complete order', '.checkout-container', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Complete order', '.checkout-container');
 
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
@@ -88,7 +109,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.finish-header').contains('Thank you for your order at Demostore!');
         cy.get('.checkout-aside-summary-total').contains(product.price[0].gross);
         cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
-        cy.takeSnapshot('[Checkout] Finish checkout', '.checkout-container', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Finish checkout', '.checkout-container');
     });
 
     it('@checkout: Run checkout with the different shipping address', () => {
@@ -147,7 +168,7 @@ describe('Checkout: as a guest', () => {
         cy.get(`.register-shipping ${billingAddressCitySelector}`).type('Anytown');
         cy.get(`.register-shipping ${billingAddressCountryIdSelector}`).select('Germany');
         cy.get(`.register-shipping ${billingAddressCountryStateIdSelector}`).select('Berlin');
-        cy.takeSnapshot('[Checkout] Shipping information with the alternative address', '.checkout-container', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Shipping information with the alternative address', '.checkout-container');
 
         cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 

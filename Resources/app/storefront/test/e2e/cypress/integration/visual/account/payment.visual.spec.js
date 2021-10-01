@@ -15,14 +15,12 @@ describe('Account: Payment page', () => {
     });
 
     it('@visual: change payment visual test', () => {
-        const page = new AccountPageObject();
+        const accountPage = new AccountPageObject();
 
         cy.visit('/account/login');
-        cy.get(page.elements.loginCard).should('be.visible');
+        cy.get(accountPage.elements.loginCard).should('be.visible');
 
-        cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
-        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-        cy.get(`${page.elements.loginSubmit} [type="submit"]`).click();
+        accountPage.login();
 
         cy.get('.account-content .account-aside-item[title="Payment methods"]')
             .should('be.visible')
@@ -32,7 +30,7 @@ describe('Account: Payment page', () => {
             expect(element).to.contain('Payment methods');
         });
 
-        cy.takeSnapshot('[Payment] Payment methods page', '.account', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Payment] Payment methods page', '.account');
 
         cy.get('.payment-method:nth-child(2) input[name="paymentMethodId"]').should('not.be.visible')
             .check({ force: true })
@@ -40,6 +38,6 @@ describe('Account: Payment page', () => {
         cy.get('.account-payment-card [type="submit"]').click();
         cy.get('.alert-success .alert-content').contains('Payment method has been changed.');
 
-        cy.takeSnapshot('[Payment] Change default payment method', '.account-payment', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Payment] Change default payment method', '.account-payment');
     });
 });

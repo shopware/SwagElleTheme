@@ -1,32 +1,42 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
+const accountPage = new AccountPageObject();
+
 describe('Account: Register via account menu', () => {
+    beforeEach(() => {
+        return cy.setToInitialState()
+            .then(() => {
+                cy.visit('/');
+            }).then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
+    });
+
     it('@visual: Trigger validation error', () => {
-        const page = new AccountPageObject();
-        cy.visit('/');
         cy.get('.account-menu [type="button"]').click();
         cy.get('.account-menu-dropdown').should('be.visible');
 
         cy.get('.account-menu-register').children('a').click();
-        cy.get(page.elements.registerCard).should('be.visible');
+        cy.get(accountPage.elements.registerCard).should('be.visible');
 
         cy.get('[name="email"]:invalid').should('be.visible');
-        cy.get(`${page.elements.registerSubmit} [type="submit"]`).click();
+        cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
-        cy.takeSnapshot('[Account] Register trigger validation error', page.elements.registerCard, {widths: [375, 768, 1920]});
+        cy.wait(1000);
+        cy.takeSnapshot('[Account] Register trigger validation error', accountPage.elements.registerCard);
     });
 
     it('@visual: Fill registration form and submit', () => {
-        const page = new AccountPageObject();
         cy.visit('/account/login');
-        cy.get(page.elements.registerCard).should('be.visible');
+        cy.get(accountPage.elements.registerCard).should('be.visible');
 
         cy.get('select[name="salutationId"]').select('Mr.');
         cy.get('input[name="firstName"]').type('John');
         cy.get('input[name="lastName"]').type('Doe');
 
-        cy.get(`${page.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get(`${page.elements.registerForm} input[name="password"]`).type('1234567890');
+        cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('1234567890');
 
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -37,7 +47,7 @@ describe('Account: Register via account menu', () => {
 
         cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
 
-        cy.get(`${page.elements.registerSubmit} [type="submit"]`).click();
+        cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
         cy.url().should('not.include', '/register');
         cy.url().should('include', '/account');
@@ -46,7 +56,7 @@ describe('Account: Register via account menu', () => {
             expect(element).to.contain('Overview');
         });
 
-        cy.takeSnapshot('[Account] Fill registration form and submit', '.account', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Fill registration form and submit', '.account');
     });
 
     it('@visual: Fill registration form and submit with full config enable', () => {
@@ -80,16 +90,15 @@ describe('Account: Register via account menu', () => {
             return cy.request(requestConfig);
         });
 
-        const page = new AccountPageObject();
         cy.visit('/account/login');
-        cy.get(page.elements.registerCard).should('be.visible');
+        cy.get(accountPage.elements.registerCard).should('be.visible');
 
         const accountTypeSelector = 'select[name="accountType"]';
         const accountTypeSelectorForDifferentAddress = 'select[name="shippingAddress[accountType]"]';
 
         cy.get(accountTypeSelector).should('be.visible');
 
-        cy.takeSnapshot('[Account] registration form with full config enable', page.elements.registerCard, {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] registration form with full config enable', accountPage.elements.registerCard);
 
         cy.get(accountTypeSelector).select('Commercial');
         cy.get('select[name="salutationId"]').select('Mr.');
@@ -122,7 +131,7 @@ describe('Account: Register via account menu', () => {
 
         cy.get(accountTypeSelectorForDifferentAddress).should('be.visible');
 
-        cy.takeSnapshot('[Account] registration form with full config enable and different shipping address', page.elements.registerCard, {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] registration form with full config enable and different shipping address', accountPage.elements.registerCard);
 
         cy.get(accountTypeSelectorForDifferentAddress).select('Commercial');
         cy.get('#shippingAddresspersonalSalutation').select('Mr.');
@@ -143,13 +152,13 @@ describe('Account: Register via account menu', () => {
             .check({ force: true })
             .should('be.checked');
 
-        cy.takeSnapshot('[Account] fill registration form with full config enabled', page.elements.registerCard, {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] fill registration form with full config enabled', accountPage.elements.registerCard);
 
-        cy.get(`${page.elements.registerSubmit} [type="submit"]`).click();
+        cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
         cy.get('.alert').should('have.class', 'alert-success');
 
-        cy.takeSnapshot('[Account] Register a new customer successful and show alert success', page.elements.registerCard, {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Account] Register a new customer successful and show alert success', accountPage.elements.registerCard);
 
         cy.authenticate().then((result) => {
             const requestConfig = {
