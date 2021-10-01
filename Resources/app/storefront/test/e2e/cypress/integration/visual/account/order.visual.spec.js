@@ -40,7 +40,7 @@ describe('Account: Order page', () => {
         cy.visit('/account/order');
         accountPage.login();
 
-        cy.changeElementStyling('.order-table-header-heading', 'visibility: hidden');
+        cy.changeElementStyling('.order-table-header-heading', 'display: none');
 
         // Order detail is expandable
         cy.get('.order-table').should('be.visible');
@@ -99,9 +99,9 @@ describe('Account: Order page', () => {
         cy.get('.order-history-cancel-modal .btn-primary').click();
         cy.get('.order-table-header-order-status.badge').contains('Cancelled');
 
-        cy.changeElementStyling('.order-table-header-heading', 'visibility: hidden');
+        cy.changeElementStyling('.order-table-header-heading', 'display: none');
         cy.get('.order-table-header-heading')
-            .should('have.css', 'visibility', 'hidden');
+            .should('have.css', 'display', 'none');
 
         cy.takeSnapshot('[Order] Order Cancelled', '.order-table');
     });
