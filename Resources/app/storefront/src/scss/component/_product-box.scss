@@ -1,3 +1,9 @@
+.cms-block-product-three-column {
+    .card-col .card-body {
+        display: block;
+    }
+}
+
 .product-image-wrapper {
   height: $custom-box-standard-height-img;
   margin-bottom: 0;
