@@ -111,3 +111,12 @@
     object-fit: cover;
     font-family: 'object-fit: cover;'; // IE polyfill
 }
+
+.product-detail-configurator-option-input {
+    + .product-detail-configurator-option-label {
+        &.is-display-dropdown {
+            height: 40px;
+            min-width: 40px;
+        }
+    }
+}

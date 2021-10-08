@@ -1,0 +1,49 @@
+{
+    "name": "Listing product",
+    "productNumber": "TEST",
+    "price": [
+        {
+            "gross": 110,
+            "net": 110,
+            "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+            "linked": false,
+            "listPrice": {
+                "gross": 120,
+                "net": 120,
+                "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                "linked": false
+            }
+        }
+    ],
+    "prices": [
+        {
+            "quantityStart": 1,
+            "quantityEnd": 10,
+            "ruleId": "43be477b241448ecacd7ea2a266f8ec7",
+            "price": [
+                {
+                    "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                    "gross": 20,
+                    "net": 16.81,
+                    "linked": true
+                }
+            ]
+
+        },
+        {
+            "id": "db6f3ed762d14b0395a3fd2dc460db42",
+            "quantityStart": 11,
+            "quantityEnd": null,
+            "ruleId": "43be477b241448ecacd7ea2a266f8ec7",
+            "price": [
+                {
+                    "currencyId": "b7d2554b0ce847cd82f3ac9bd1c0dfca",
+                    "gross": 19,
+                    "net": 15.97,
+                    "linked": true
+                }
+            ]
+        }
+    ],
+    "stock": 1234
+}

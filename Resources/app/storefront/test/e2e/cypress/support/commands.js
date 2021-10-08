@@ -160,3 +160,119 @@ Cypress.Commands.add('changeElementStyling', (selector, elementStyle) => {
         .invoke('attr', 'style', elementStyle)
         .should('have.attr', 'style', elementStyle);
 });
+
+/**
+ * Logs in silently using Shopware API
+ * @memberOf Cypress.Chainable#
+ * @name createReviewFixture
+ * @function
+ */
+ Cypress.Commands.add('createReviewFixture', () => {
+    // TODO move into e2e-testsuite-platform and use own service completely
+
+    let reviewJson = null;
+    let productId = '';
+    let customerId = '';
+    let salesChannelId = '';
+
+    return cy.fixture('product-review').then((data) => {
+        reviewJson = data;
+
+        return cy.getCookie('bearerAuth');
+    }).then((result) => {
+        const headers = {
+            Accept: 'application/vnd.api+json',
+            Authorization: `Bearer ${JSON.parse(result.value).access}`,
+            'Content-Type': 'application/json'
+        };
+
+        cy.createProductFixture().then(() => {
+            return cy.createCustomerFixture();
+        }).then((data) => {
+            customerId = data.id;
+
+            return cy.searchViaAdminApi({
+                endpoint: 'product',
+                data: {
+                    field: 'name',
+                    value: 'Product name'
+                }
+            });
+        }).then((data) => {
+            productId = data.id;
+
+            return cy.searchViaAdminApi({
+                endpoint: 'sales-channel',
+                data: {
+                    field: 'name',
+                    value: 'Storefront'
+                }
+            });
+        }).then((data) => {
+            salesChannelId = data.id;
+
+            return cy.searchViaAdminApi({
+                endpoint: 'language',
+                data: {
+                    field: 'name',
+                    value: 'English'
+                }
+            });
+        }).then((data) => {
+            cy.request({
+                url: '/api/product-review',
+                method: 'POST',
+                headers: headers,
+                body: Cypress._.merge(reviewJson, {
+                    customerId: customerId,
+                    languageId: data.id,
+                    productId: productId,
+                    salesChannelId: salesChannelId
+                })
+            });
+        });
+    });
+});
+
+/**
+ * Creates a variant product based on given fixtures "product-variants.json", 'tax,json" and "property.json"
+ * with minor customisation
+ * @memberOf Cypress.Chainable#
+ * @name createProductVariantFixture
+ * @function
+ */
+Cypress.Commands.add('createProductVariantFixture', () => {
+    return cy.createDefaultFixture('tax', {
+        id: '91b5324352dc4ee58ec320df5dcf2bf4',
+    }).then(() => {
+        return cy.createPropertyFixture({
+            options: [{
+                id: '15532b3fd3ea4c1dbef6e9e9816e0715',
+                name: 'Red',
+            }, {
+                id: '98432def39fc4624b33213a56b8c944d',
+                name: 'Green',
+            }],
+        });
+    }).then(() => {
+        return cy.createPropertyFixture({
+            name: 'Size',
+            options: [{ name: 'S' }, { name: 'M' }, { name: 'L' }],
+        });
+    }).then(() => {
+        return cy.searchViaAdminApi({
+            data: {
+                field: 'name',
+                value: 'Storefront',
+            },
+            endpoint: 'sales-channel',
+        });
+    }).then((saleschannel) => {
+        cy.createDefaultFixture('product', {
+            visibilities: [{
+                visibility: 30,
+                salesChannelId: saleschannel.id,
+            }],
+        }, 'product-variants.json');
+    });
+});
