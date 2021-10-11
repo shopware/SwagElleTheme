@@ -20,3 +20,13 @@
     color: $gray-100;
   }
 }
+
+.checkout-aside-item {
+    .checkout-aside-item-image {
+        @extend .col-2;
+    }
+
+    .checkout-aside-item-data {
+        @extend .col-10;
+    }
+}

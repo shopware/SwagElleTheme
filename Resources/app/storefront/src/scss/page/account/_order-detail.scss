@@ -205,3 +205,8 @@ $order-status-bg: #d1f4dd;
   }
 }
 
+@include media-breakpoint-up(md) {
+  .order-header-name {
+    @include make-col(5);
+  }
+}

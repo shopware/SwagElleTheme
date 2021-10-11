@@ -52,3 +52,14 @@
 
   margin-bottom: 20px;
 }
+
+.checkout-main {
+    .cart-shipping-costs-container {
+        @extend .col-md-6;
+    }
+
+    .cart-item-info,
+    .cart-item-details {
+        @extend .col-12, .col-md;
+    }
+}

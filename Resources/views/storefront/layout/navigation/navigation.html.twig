@@ -1,15 +1,10 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
 
-{% block layout_main_navigation %}
-    <div class="main-navigation"
-         id="mainNavigation">
-        {% block layout_main_navigation_navbar %}
-            {# remove container #}
-            {% block layout_main_navigation_menu %}
-                {{ parent() }}
-            {% endblock %}
-        {% endblock %}
-    </div>
+{% block layout_main_navigation_navbar %}
+    {# remove container #}
+    {% block layout_main_navigation_menu %}
+        {{ parent() }}
+    {% endblock %}
 {% endblock %}
 
 {% block layout_main_navigation_menu_flyout_wrapper %}

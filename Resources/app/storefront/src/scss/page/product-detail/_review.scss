@@ -38,6 +38,14 @@
   }
 }
 
+.product-detail-review-checkbox {
+    @extend .mb-3;
+}
+
+.product-detail-review-share {
+    @extend .d-none;
+}
+
 // change font-size in the small tag
 // of the review filter language to 100%
 label[for="showForeignReviews"] {

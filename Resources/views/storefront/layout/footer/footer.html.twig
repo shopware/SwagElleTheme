@@ -32,31 +32,7 @@
                 {% block layout_footer_navigation_column %}
                     <div class="col-md-4 col-lg-3 footer-column js-footer-column">
                         {% block layout_footer_navigation_information_headline %}
-                            <div class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
-                                 data-target="#collapseFooterTitle{{ loop.index }}"
-                                 aria-expanded="true"
-                                 aria-controls="collapseFooter{{ loop.index }}">
-
-                                {% if root.category.type == 'folder' %}
-                                    {{ root.category.translated.name }}
-                                {% else %}
-                                    <a href="{{ category_url(root.category) }}"
-                                       {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
-                                       title="{{ root.category.translated.name }}">
-                                        {{ root.category.translated.name }}
-                                    </a>
-                                {% endif %}
-                                {% block layout_footer_navigation_information_icons %}
-                                    <div class="footer-column-toggle">
-                                        <span class="footer-plus-icon">
-                                            {% sw_icon 'plus' style { 'pack': 'feather' } %}
-                                        </span>
-                                        <span class="footer-minus-icon">
-                                            {% sw_icon 'minus' style { 'pack': 'feather' } %}
-                                        </span>
-                                    </div>
-                                {% endblock %}
-                            </div>
+                            {{ parent() }}
                         {% endblock %}
 
                         {% block layout_footer_navigation_information_content %}
@@ -169,23 +145,7 @@
         {% block layout_footer_navigation_hotline %}
             <div class="col-md-4 col-lg-3 footer-column footer-column-hotline js-footer-column">
                 {% block layout_footer_navigation_hotline_headline %}
-                    <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
-                         id="collapseFooterHotlineTitle"
-                         data-target="#collapseFooterHotline"
-                         aria-expanded="true"
-                         aria-controls="collapseFooterHotline">
-                        {{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
-                        {% block layout_footer_navigation_hotline_icons %}
-                            <div class="footer-column-toggle">
-                                    <span class="footer-plus-icon">
-                                        {% sw_icon 'plus' style { 'pack': 'feather' } %}
-                                    </span>
-                                <span class="footer-minus-icon">
-                                        {% sw_icon 'minus' style { 'pack': 'feather' } %}
-                                    </span>
-                            </div>
-                        {% endblock %}
-                    </div>
+                    {{ parent() }}
                 {% endblock %}
 
                 {% block layout_footer_navigation_hotline_content %}
@@ -193,6 +153,28 @@
                 {% endblock %}
             </div>
         {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_navigation_information_icons %}
+    <div class="footer-column-toggle">
+        <span class="footer-plus-icon">
+            {% sw_icon 'plus' style { 'pack': 'feather' } %}
+        </span>
+        <span class="footer-minus-icon">
+            {% sw_icon 'minus' style { 'pack': 'feather' } %}
+        </span>
+    </div>
+{% endblock %}
+
+{% block layout_footer_navigation_hotline_icons %}
+    <div class="footer-column-toggle">
+        <span class="footer-plus-icon">
+            {% sw_icon 'plus' style { 'pack': 'feather' } %}
+        </span>
+        <span class="footer-minus-icon">
+            {% sw_icon 'minus' style { 'pack': 'feather' } %}
+        </span>
     </div>
 {% endblock %}
 
