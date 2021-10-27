@@ -171,6 +171,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.filter-multi-select-manufacturer button').click();
         cy.get('.filter-multi-select-manufacturer .filter-multi-select-dropdown').should('be.visible').click();
         cy.get('.offcanvas-filter ').click();
+        cy.wait(1000);
         cy.takeSnapshot('[Listing] Filter Offcanvas', '.offcanvas-filter', {widths: [375, 768]});
     });
 });
