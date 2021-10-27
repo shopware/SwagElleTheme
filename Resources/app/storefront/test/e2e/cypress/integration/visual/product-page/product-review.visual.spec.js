@@ -88,8 +88,8 @@ describe('Product Detail: Visual tests review area', () => {
         cy.get('.product-detail-review-language-form input').should('be.checked')
         cy.get('.product-detail-review-rating').should('be.visible');
         cy.get('.product-detail-review-item').should('be.visible');
-        cy.changeElementStyling('.product-detail-review-item-date', 'visibility:hidden');
         cy.wait(1000);
+        cy.changeElementStyling('.product-detail-review-item-date', 'visibility:hidden');
         cy.takeSnapshot('[Product Detail] Product review', '.product-detail-information');
     });
 });
