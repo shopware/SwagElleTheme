@@ -13,16 +13,15 @@
     width: 75px;
   }
 
+  &-details {
+    padding-top: 0;
+  }
+
   &-quantity-label,
   &-unit-price-label,
   &-total-price-label,
   &-tax-price-label {
     color: $gray-900;
-  }
-
-  &-info-img, &-details {
-    margin-bottom: $spacer-sm;
-    margin-right: $spacer-sm;
   }
 
   &-ordernumber,
