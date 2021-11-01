@@ -21,13 +21,6 @@
     }
 }
 
-.gallery-slider-thumbnails-container {
-    &.hide-thumbs {
-        display: none;
-    }
-}
-
-
 .gallery-slider-row {
     margin: 0 0 16px;
 }
@@ -42,9 +35,4 @@
             }
         }
     }
-}
-
-.gallery-slider-thumbnails-container {
-    display: flex;
-    flex-direction: column-reverse;
 }
