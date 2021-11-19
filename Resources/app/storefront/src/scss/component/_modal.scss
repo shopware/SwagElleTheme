@@ -33,4 +33,10 @@ $modal-max-width: 800px;
             max-width: $modal-max-width;
         }
     }
+
+    &.swag-cms-extensions-quickview-modal {
+        .modal-dialog {
+            max-width: $modal-xl;
+        }
+    }
 }

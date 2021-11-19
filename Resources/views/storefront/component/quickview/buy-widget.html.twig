@@ -9,22 +9,6 @@
         {{ parent() }}
     {% endblock %}
 
-    {% if page.product.manufacturer %}
-        <div class="product-detail-manufacturer">
-            <a href="{{ page.product.manufacturer.link }}"
-               class="product-detail-manufacturer-link"
-               title="{{ page.product.manufacturer.translated.name }}">
-                {% if page.product.manufacturer.media %}
-                    <img src="{{ page.product.manufacturer.media|sw_encode_media_url }}"
-                         class="product-detail-manufacturer-logo"
-                         alt="{{ page.product.manufacturer.translated.name }}"/>
-                {% else %}
-                    {{ page.product.manufacturer.translated.name }}
-                {% endif %}
-            </a>
-        </div>
-    {% endif %}
-
     {# Put the position of reviews on here #}
     {% block page_product_detail_reviews %}
         {{ parent() }}
