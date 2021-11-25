@@ -9,6 +9,10 @@ export default class AccountPageObject {
             loginCard: '.login-card',
             loginForm: '.login-form',
             loginSubmit: '.login-submit',
+            editModal: '#billing-address-create-edit',
+            createModal: '#billing-address-create-new',
+            shippingEditModal: '#shipping-address-create-edit',
+            shippingCreateModal: '#shipping-address-create-new'
         };
     }
 

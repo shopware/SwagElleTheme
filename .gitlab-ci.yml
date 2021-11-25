@@ -5,7 +5,7 @@ variables:
     WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/platform/public
     PROJECT_ROOT: $CI_PROJECT_DIR/platform
     LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
-    PLATFORM_BRANCH: "6.4.6.0"
+    PLATFORM_BRANCH: "6.4.7.0"
     PAYPAL_PLUGIN_BRANCH: "master"
     THEME_NAME: "SwagElleTheme"
     CUSTOM_PRODUCT_EXTENSIONS_BRANCH: "master"

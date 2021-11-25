@@ -67,6 +67,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.sw-cms-stage-section-selection__default')
             .contains('Full width')
             .find('.sw-cms-stage-section-selection__default-preview').click();
+        cy.wait(1000);
         cy.get('.sw-cms-section').last()
             .find('.sw-cms-section__action').first().click();
         cy.get('input[name="sw-field--swagCmsExtensionsScrollNavigation-active"]').check();

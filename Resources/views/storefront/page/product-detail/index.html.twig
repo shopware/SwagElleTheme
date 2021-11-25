@@ -37,7 +37,8 @@
                                                                     'isProduct': true,
                                                                     'fallbackImageTitle': page.product.translated.name,
                                                                     'startIndexThumbnails': page.product.cover.position + 1,
-                                                                    'startIndexSlider': page.product.cover.position + 1
+                                                                    'startIndexSlider': page.product.cover.position + 1,
+                                                                    'keepAspectRatioOnZoom': false
                                                                 } %}
                                                             {% endif %}
                                                         </div>
@@ -67,7 +68,7 @@
                                     {% endblock %}
 
                                     {% block page_product_detail_cross_selling %}
-                                        {% if page.crossSellings.elements %}
+                                        {% if page.crossSellings.elements is defined and page.crossSellings.elements|filter(item => item.total > 0)|length > 0 %}
                                             <div class="product-detail-tabs product-detail-cross-selling">
                                                 <div class="container">
                                                     {% sw_include '@Storefront/storefront/page/product-detail/cross-selling/tabs.html.twig' with {
