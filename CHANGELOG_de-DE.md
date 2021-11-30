@@ -1,3 +1,8 @@
+# 1.3.0
+- Kompatibilität des Themas mit Shopware 6.4.7.0 prüfen
+- Reihenfolge der Plugin-Installation ändern
+- In scss geladene Assets werden nicht in die Cloud geladen
+
 # 1.2.0
 - Bilder des Produktes können bei großer Ansicht gewechselt werden. | Bilder des Produktes können bei großer Ansicht gewechselt werden.
 - Volle Breite für Bilder nicht möglich

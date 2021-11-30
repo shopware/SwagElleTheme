@@ -1,3 +1,8 @@
+# 1.3.0
+- Check theme compatibility with Shopware 6.4.7.0
+- Change plugin installing order
+- Assets loaded in scss don't load on cloud
+
 # 1.2.0
 - Images of the product can be changed in large view. | Bilder des Produktes können bei großer ansicht gewechselt
   werden.
