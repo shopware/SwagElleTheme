@@ -1,17 +1,17 @@
 .account-register {
-  .login-card {
-    .card-title {
-      font-size: $h4-font-size;
+    .login-card {
+        .card-title {
+            font-size: $h4-font-size;
+        }
     }
-  }
 
-  .login-submit {
-    padding: $spacer 0;
-  }
+    .login-submit {
+        padding: $spacer 0;
+    }
 
-  .login-advantages-header {
-    @extend .h6;
-  }
+    .login-advantages-header {
+        @extend .h6;
+    }
 }
 
 #loginMail,

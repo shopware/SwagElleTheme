@@ -1,8 +1,16 @@
 .breadcrumb {
-  // remove spacing from container because it could be empty if no breadcrumb is available
-  margin-bottom: 0;
-  padding: 0;
-  white-space: nowrap;
+    // remove spacing from container because it could be empty if no breadcrumb is available
+    margin-bottom: 0;
+    padding: 0;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+
+        a {
+            font-size: $font-size-sm;
+        }
+    }
 
     .breadcrumb-container {
         margin-top: 20px;
@@ -16,40 +24,27 @@
         }
     }
 
-  @include media-breakpoint-down(sm) {
-    flex-wrap: wrap;
-    padding: 0 20px;
+    .breadcrumb-placeholder {
 
-    a {
-      font-size: $font-size-sm;
+        @include media-breakpoint-down(sm) {
+            margin: 0 4px;
+
+            .icon-feather {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .icon-feather > svg {
+            top: 1px;
+        }
     }
+}
 
-    .breadcrumb-container:last-child {
-      margin: 20px 0 10px 0;
-      min-width: 0;
-
-      a {
-          flex: 1;
-          overflow: hidden;
-          text-overflow: ellipsis;
-      }
+.is-ctl-product {
+    nav {
+        .breadcrumb {
+            padding: 0 $grid-gutter-width / 2;
+        }
     }
-  }
-
-  .breadcrumb-placeholder {
-    .icon-feather {
-      & > svg {
-        top: 1px;
-      }
-    }
-
-    @include media-breakpoint-down(sm) {
-      margin: 0 4px;
-
-      .icon-feather {
-        width: 14px;
-        height: 14px;
-      }
-    }
-  }
 }

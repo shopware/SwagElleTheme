@@ -1,6 +1,13 @@
 $modal-max-width: 800px;
 
 .modal {
+
+    @include media-breakpoint-up(sm) {
+        .modal-dialog {
+            max-width: $modal-max-width;
+        }
+    }
+
     &-content {
         border: 1px solid $border-color;
         border-radius: 3px;
@@ -13,7 +20,7 @@ $modal-max-width: 800px;
         .close {
             position: absolute;
             right: 16px;
-            margin: -10px 0 0 0;
+            margin: -10px 0 0;
             padding: 0;
             color: $body-color;
             opacity: unset;
@@ -26,12 +33,6 @@ $modal-max-width: 800px;
 
     &-body {
         padding: 20px;
-    }
-
-    @include media-breakpoint-up(sm) {
-        .modal-dialog {
-            max-width: $modal-max-width;
-        }
     }
 
     &.swag-cms-extensions-quickview-modal {

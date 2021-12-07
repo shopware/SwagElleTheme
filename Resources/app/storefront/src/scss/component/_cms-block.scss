@@ -13,7 +13,7 @@
         @extend .text-center;
 
         @include media-breakpoint-down(sm) {
-            min-height: 225px!important;
+            min-height: 225px !important;
         }
     }
 }

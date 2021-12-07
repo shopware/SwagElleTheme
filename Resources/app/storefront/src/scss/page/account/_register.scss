@@ -1,15 +1,15 @@
 .account-register {
-  .privacy-notice {
-    margin-bottom: 0;
-  }
-
-  .register-card {
-    .card-title {
-      font-size: $h4-font-size;
+    .privacy-notice {
+        margin-bottom: 0;
     }
-  }
 
-  .register-submit {
-    text-align: right;
-  }
+    .register-card {
+        .card-title {
+            font-size: $h4-font-size;
+        }
+    }
+
+    .register-submit {
+        text-align: right;
+    }
 }
