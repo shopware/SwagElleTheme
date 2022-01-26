@@ -3,96 +3,96 @@
  * ---------- */
 
 .header-main {
-  position: relative;
+    position: relative;
 }
 
 .header-row {
-  padding: 14px 0;
+    padding: 14px 0;
 
-  .header-actions-col {
-    .btn {
-      padding-left: 6px;
-      padding-right: 6px;
+    @include media-breakpoint-down(lg) {
+        padding: 10px 0;
     }
-  }
 
-  @include media-breakpoint-down(lg) {
-    padding: 10px 0;
-  }
+    .header-actions-col {
+        .btn {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }
 }
 
 .header-menu-col {
-  padding: 0 0 0 10px;
+    padding: 0 0 0 10px;
 }
 
 // Header logo
 .header-logo-col {
-  padding-bottom: 0;
-  margin: 0;
+    padding-bottom: 0;
+    margin: 0;
 
-  @include media-breakpoint-down(lg) {
-    padding: 0;
-  }
+    @include media-breakpoint-down(lg) {
+        padding: 0;
+    }
 }
 
 .header-logo-main {
-  text-align: left;
+    text-align: left;
 }
 
 // Header navigation
 .header-navigation-col {
-  display: none;
+    display: none;
 
-  @include media-breakpoint-up(xl) {
-    display: block;
-  }
+    @include media-breakpoint-up(xl) {
+        display: block;
+    }
 }
 
 // Header search
 .header-search {
-  margin: 0;
-  max-width: inherit;
+    margin: 0;
+    max-width: inherit;
 
-  .header-search-rectangle {
-    border-top: 1px solid $border-color;
-  }
+    @include media-breakpoint-up(xl) {
+        .header-search-form {
+            padding-top: 0;
+            padding-bottom: 40px;
+        }
 
-  .header-search-close {
-    display: none;
-
-    &:focus {
-      box-shadow: none;
+        .header-search-close {
+            display: block;
+            padding: 0 10px;
+            margin-right: 0;
+            margin-left: auto;
+        }
     }
-  }
 
-  .header-search-form {
-    @extend .container;
-    padding: 20px;
-  }
-
-  @include media-breakpoint-up(xl) {
-    .header-search-form {
-      padding-top: 0;
-      padding-bottom: 40px;
+    .header-search-rectangle {
+        border-top: 1px solid $border-color;
     }
 
     .header-search-close {
-      display: block;
-      padding: 0 10px;
-      margin-right: 0;
-      margin-left: auto;
+        display: none;
+
+        &:focus {
+            box-shadow: none;
+        }
     }
-  }
+
+    .header-search-form {
+        @extend .container;
+        padding: 20px;
+    }
 }
 
 .header-cart-btn {
-  .badge {
-    display: inline-block;
-    top: 0;
-    margin-right: 0;
-    padding-left: 6px;
-    padding-top: 1px;
-  }
+    .badge {
+        display: inline-block;
+        top: 0;
+        margin-right: 0;
+        padding-left: 6px;
+        padding-top: 1px;
+    }
 }
 
 .header-logo-picture {

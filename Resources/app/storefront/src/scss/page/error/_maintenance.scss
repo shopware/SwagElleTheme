@@ -1,29 +1,31 @@
 .footer-maintenance {
-  border-top: 1px solid $gray-400;
-  padding-top: 10px;
+    border-top: 1px solid $gray-400;
+    padding-top: 10px;
 }
 
 .is-ctl-maintenance {
-  .container-maintenance {
-    min-height: 65vh;
-  }
-  .maintenance-heading {
-    font-size: $maintenance-heading;
-  }
 
-  .header-logo-main {
-    text-align: center;
-  }
-
-  @include media-breakpoint-between(sm, md) {
-    .container-maintenance {
-      min-height: 70vh;
+    @include media-breakpoint-between(sm, md) {
+        .container-maintenance {
+            min-height: 70vh;
+        }
     }
-  }
 
-  @include media-breakpoint-down(sm) {
-    .container-maintenance {
-      min-height: 60vh;
+    @include media-breakpoint-down(sm) {
+        .container-maintenance {
+            min-height: 60vh;
+        }
     }
-  }
+
+    .container-maintenance {
+        min-height: 65vh;
+    }
+
+    .maintenance-heading {
+        font-size: $maintenance-heading;
+    }
+
+    .header-logo-main {
+        text-align: center;
+    }
 }

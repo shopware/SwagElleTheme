@@ -19,14 +19,16 @@ let product = {};
 describe('Checkout: Use different taxes in products while checkout', () => {
 
     beforeEach(() => {
-        return cy.setToInitialState()
+        cy.setToInitialState()
             .then(() => {
-                cy.createProductFixture()
-                    .then((result) => {
-                        product = result;
-                        return cy.createCustomerFixtureStorefront();
-                        cy.visit('/');
-                    })
+                return cy.createProductFixture()
+            })
+            .then((result) => {
+                product = result;
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                cy.visit('/');
             })
     });
 
@@ -36,9 +38,10 @@ describe('Checkout: Use different taxes in products while checkout', () => {
 
         context(`Checkout with ${additionalProduct.name} (${contextDescription})`, () => {
             beforeEach(() => {
-                return cy.createProductFixture(additionalProduct).then(() => {
-                    cy.visit('/');
-                })
+                return cy.createProductFixture(additionalProduct)
+                    .then(() => {
+                        cy.visit('/');
+                    })
             });
 
             it('@Checkout: Run checkout', () => {

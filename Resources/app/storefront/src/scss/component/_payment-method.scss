@@ -1,21 +1,21 @@
 .payment-method {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 
-  .form-group {
-    margin-bottom: 10px;
-  }
-
-  &-description {
-    strong {
-      font-weight: normal;
+    .form-group {
+        margin-bottom: 10px;
     }
 
-    p {
-      margin-left: 3px;
-    }
-  }
+    &-description {
+        strong {
+            font-weight: normal;
+        }
 
-  &-image {
-    margin-bottom: 8px;
-  }
+        p {
+            margin-left: 3px;
+        }
+    }
+
+    &-image {
+        margin-bottom: 8px;
+    }
 }
