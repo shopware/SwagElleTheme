@@ -1,5 +1,10 @@
 .filter-boolean {
-    .custom-checkbox .custom-control-label::before {
-        top: 11px;
+    .custom-checkbox {
+        .custom-control-label {
+            &::before,
+            &::after {
+                top: 11px;
+            }
+        }
     }
 }
