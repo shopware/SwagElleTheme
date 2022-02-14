@@ -4,4 +4,14 @@
         display: flex;
         justify-content: center;
     }
+
+    &.has-nav-outside {
+        .tns-inner {
+            margin-right: -25px !important;
+
+            .tns-item {
+                padding-right: 25px;
+            }
+        }
+    }
 }
