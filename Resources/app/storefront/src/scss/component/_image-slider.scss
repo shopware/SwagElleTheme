@@ -1,0 +1,11 @@
+.image-slider-controls-prev {
+    &.is-nav-prev-outside {
+        left: -8px;
+    }
+}
+
+.image-slider-controls-next {
+    &.is-nav-next-outside {
+        right: -8px;
+    }
+}
