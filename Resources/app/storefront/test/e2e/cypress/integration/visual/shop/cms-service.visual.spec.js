@@ -1,3 +1,5 @@
+import CategoryPageObject from '../../../support/pages/sw-category.page-object';
+
 describe('Shop page: CMS service page', () => {
     beforeEach(() => {
         cy.setToInitialState()
@@ -36,18 +38,34 @@ describe('Shop page: CMS service page', () => {
     });
 
     function assignToFooterLink() {
-        cy.server();
+        const page = new CategoryPageObject();
 
-        cy.route({
-            url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'patch'
-        }).as('saveCategory');
+        cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
 
-        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').get('.sw-tree-item__toggle').click();
-        cy.get('a[href="#/sw/category/index/24c3c853a8354db89d04ce3a06dc5bbc"]').contains('Information').parents('.sw-tree-item__children').find('.sw-tree-item__toggle').click();
-        cy.get('a[href="#/sw/category/index/8c287c93aae24001976d8aef2ade2f65"]').contains('Shipping and payment').click();
+        cy.intercept({
+            url: `${Cypress.env('apiPath')}/search/category`,
+            method: 'POST'
+        }).as('saveData');
+
+        cy.get('.sw-empty-state__title').contains('No category selected');
+        cy.get(`${page.elements.categoryTreeItem}__icon`).should('be.visible');
+
+        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').click();
+        cy.get('a[href="#/sw/category/index/24c3c853a8354db89d04ce3a06dc5bbc"]').contains('Information').parents('.sw-tree-item__children').find('.sw-context-button__button').click();
+
+        // Create a category
+        cy.get('.sw-tree-item__sub-action')
+            .contains('New subcategory')
+            .click();
+        cy.get('#sw-field--draft').type('Shipping and payment');
+        cy.get('.sw-confirm-field__button.sw-button--primary').click();
+        cy.get('.sw-tree-item__children .tree-link')
+            .contains('Shipping and payment')
+            .click();
+
+        // Edit the layout
         cy.get('.sw-category-detail__tab-cms').click();
-        cy.get('.sw-card.sw-category-layout-card').scrollIntoView();
+        cy.get('.sw-card__title').contains('Layout assignment').should('be.visible');
         cy.get('.sw-category-detail-layout__change-layout-action').click();
         cy.get('.sw-modal__dialog').should('be.visible');
 
@@ -55,11 +73,11 @@ describe('Shop page: CMS service page', () => {
         cy.get('.sw-modal .sw-button--primary').click();
         cy.get('.sw-card.sw-category-layout-card .sw-category-layout-card__desc-headline').contains('Shipping and payment');
 
-        // Save layout
+        // Save the category
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@saveCategory').then((response) => {
-            expect(response).to.have.property('status', 204);
-        });
+
+        // Wait for category request with correct data to be successful
+        cy.wait('@saveData').its('response.statusCode').should('equal', 200);
     }
 
     function createServicePage() {
