@@ -1,3 +1,9 @@
+# 1.4.0
+- Check theme compatibility with Shopware 6.4.9.0
+- Check theme compatibility with Shopware 6.4.8.0
+- Improve theme manager
+- Free shipping in filter cannot be clickable
+
 # 1.3.0
 - Check theme compatibility with Shopware 6.4.7.0
 - Change plugin installing order
