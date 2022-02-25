@@ -1,125 +1,259 @@
 {
-  "name": "Elle Theme",
-  "author": "Shopware AG",
-  "views": [
-    "@Storefront",
-    "@SwagCustomizedProducts",
-    "@SwagPayPal",
-    "@SwagAmazonPay",
-    "@SwagCmsExtensions",
-    "@SwagElleTheme",
-    "@Plugins"
-  ],
-  "previewMedia": "app/storefront/src/assets/images/ellePreview.png",
-  "style": [
-    "app/storefront/src/scss/overrides.scss",
-    "@Storefront",
-    "app/storefront/src/scss/base.scss"
-  ],
-  "script": [
-    "@Storefront",
-    "app/storefront/dist/storefront/js/swag-elle-theme.js"
-  ],
-  "asset": [
-    "app/storefront/src/assets"
-  ],
-  "config": {
-    "blocks": {
-      "footer": {
-        "label": {
-          "en-GB": "Footer / Topbar",
-          "de-DE": "Footer / Topbar"
+    "name": "Elle Theme",
+    "author": "Shopware AG",
+    "views": [
+        "@Storefront",
+        "@SwagCustomizedProducts",
+        "@SwagPayPal",
+        "@SwagAmazonPay",
+        "@SwagCmsExtensions",
+        "@SwagElleTheme",
+        "@Plugins"
+    ],
+    "previewMedia": "app/storefront/src/assets/images/ellePreview.png",
+    "style": [
+        "app/storefront/src/scss/overrides.scss",
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront",
+        "app/storefront/dist/storefront/js/swag-elle-theme.js"
+    ],
+    "asset": [
+        "app/storefront/src/assets"
+    ],
+    "config": {
+        "blocks": {
+            "themeColors": {
+                "label": {
+                    "en-GB": "Theme colors",
+                    "de-DE": "Themenfarben"
+                }
+            },
+            "typography": {
+                "label": {
+                    "en-GB": "Typography",
+                    "de-DE": "Typografie"
+                }
+            },
+            "eCommerce": {
+                "label": {
+                    "en-GB": "E-Commerce",
+                    "de-DE": "E-Commerce"
+                }
+            },
+            "statusColors": {
+                "label": {
+                    "en-GB": "Status messages",
+                    "de-DE": "Status-Meldungen"
+                }
+            },
+            "media": {
+                "label": {
+                    "en-GB": "Media",
+                    "de-DE": "Medien"
+                }
+            },
+            "footer": {
+                "label": {
+                    "en-GB": "Footer",
+                    "de-DE": "Fußzeile"
+                }
+            },
+            "404 Page": {
+                "label": {
+                    "en-GB": "404 error page",
+                    "de-DE": "404-Fehlerseite"
+                }
+            },
+            "Maintenance Page": {
+                "label": {
+                    "en-GB": "Maintenance page",
+                    "de-DE": "Wartungsseite"
+                }
+            },
+            "wishlist": {
+                "label": {
+                    "en-GB": "Wishlist",
+                    "de-DE": "Wishlist"
+                }
+            }
+        },
+        "fields": {
+            "sw-color-brand-primary": {
+                "label": {
+                    "en-GB": "Primary colour",
+                    "de-DE": "Primärfarbe"
+                },
+                "value": "#231645"
+            },
+            "sw-color-brand-secondary": {
+                "label": {
+                    "en-GB": "Secondary colour",
+                    "de-DE": "Sekundärfarbe"
+                },
+                "value": "#242523"
+            },
+            "sw-border-color": {
+                "label": {
+                    "en-GB": "Border",
+                    "de-DE": "Rahmen"
+                },
+                "value": "#ced4da"
+            },
+            "sw-background-color": {
+                "label": {
+                    "en-GB": "Background",
+                    "de-DE": "Hintergrund"
+                }
+            },
+            "sw-color-success": {
+                "label": {
+                    "en-GB": "Success",
+                    "de-DE": "Erfolg"
+                },
+                "value": "#3cc261"
+            },
+            "sw-color-info": {
+                "label": {
+                    "en-GB": "Information",
+                    "de-DE": "Information"
+                },
+                "value": "#26b6cf"
+            },
+            "sw-color-warning": {
+                "label": {
+                    "en-GB": "Warning",
+                    "de-DE": "Warnung"
+                },
+                "value": "#ffbd5d"
+            },
+            "sw-color-danger": {
+                "label": {
+                    "en-GB": "Error",
+                    "de-DE": "Fehler"
+                },
+                "value": "#e52427"
+            },
+            "sw-font-family-base": {
+                "label": {
+                    "en-GB": "Text font type",
+                    "de-DE": "Schriftart Text"
+                },
+                "value": "'Spartan', sans-serif"
+            },
+            "sw-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "value": "#161616"
+            },
+            "sw-font-family-headline": {
+                "label": {
+                    "en-GB": "Headline font type",
+                    "de-DE": "Schriftart Überschrift"
+                },
+                "value": "'Spartan', sans-serif"
+            },
+            "sw-headline-color": {
+                "label": {
+                    "en-GB": "Headline colour",
+                    "de-DE": "Überschriftfarbe"
+                },
+                "value": "#161616"
+            },
+            "sw-color-price": {
+                "label": {
+                    "en-GB": "Price",
+                    "de-DE": "Preis"
+                },
+                "value": "#161616"
+            },
+            "sw-color-buy-button": {
+                "label": {
+                    "en-GB": "Buy button",
+                    "de-DE": "Kaufen-Button"
+                },
+                "value": "#3cc261"
+            },
+            "sw-color-buy-button-text": {
+                "label": {
+                    "en-GB": "Buy button text",
+                    "de-DE": "Kaufen-Button-Text"
+                },
+                "value": "#ffffff"
+            },
+            "sw-logo-desktop": {
+                "label": {
+                    "en-GB": "Desktop",
+                    "de-DE": "Desktop"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/elle-logo.svg"
+            },
+            "sw-logo-tablet": {
+                "label": {
+                    "en-GB": "Tablet",
+                    "de-DE": "Tablet"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/elle-logo.svg"
+            },
+            "sw-logo-mobile": {
+                "label": {
+                    "en-GB": "Mobile",
+                    "de-DE": "Handy"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/elle-logo-mobile.svg"
+            },
+            "sw-logo-share": {
+                "label": {
+                    "en-GB": "App & share icon",
+                    "de-DE": "App- & Share-Icon"
+                }
+            },
+            "sw-logo-favicon": {
+                "label": {
+                    "en-GB": "Favicon",
+                    "de-DE": "Favicon"
+                }
+            },
+            "sw-footer-bg-color": {
+                "label": {
+                    "en-GB": "Background colour",
+                    "de-DE": "Hintergrundfarbe"
+                },
+                "type": "color",
+                "value": "#161616",
+                "editable": true,
+                "block": "footer",
+                "order": 100
+            },
+            "sw-footer-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "block": "footer",
+                "order": 200
+            },
+            "sw-footer-logo": {
+                "label": {
+                    "en-GB": "Footer logo",
+                    "de-DE": "Footer Logo"
+                },
+                "type": "media",
+                "value": "app/storefront/src/assets/logo/elle-logo-white.svg",
+                "editable": true,
+                "block": "footer",
+                "order": 300
+            }
         }
-      }
-    },
-    "fields": {
-      "sw-color-brand-primary": {
-        "value": "#231645"
-      },
-      "sw-color-brand-secondary": {
-        "value": "#242523"
-      },
-      "sw-border-color": {
-        "value": "#ced4da"
-      },
-      "sw-color-success": {
-        "value": "#3cc261"
-      },
-      "sw-color-info": {
-        "value": "#26b6cf"
-      },
-      "sw-color-warning": {
-        "value": "#ffbd5d"
-      },
-      "sw-color-danger": {
-        "value": "#e52427"
-      },
-      "sw-font-family-base": {
-        "value": "'Spartan', sans-serif"
-      },
-      "sw-text-color": {
-        "value": "#161616"
-      },
-      "sw-font-family-headline": {
-        "value": "'Spartan', sans-serif"
-      },
-      "sw-headline-color": {
-        "value": "#161616"
-      },
-      "sw-color-price": {
-        "value": "#161616"
-      },
-      "sw-color-buy-button": {
-        "value": "#3cc261"
-      },
-      "sw-color-buy-button-text": {
-        "value": "#ffffff"
-      },
-      "sw-logo-desktop": {
-        "type": "media",
-        "value": "app/storefront/src/assets/logo/elle-logo.svg"
-      },
-      "sw-logo-tablet": {
-        "type": "media",
-        "value": "app/storefront/src/assets/logo/elle-logo.svg"
-      },
-      "sw-logo-mobile": {
-        "type": "media",
-        "value": "app/storefront/src/assets/logo/elle-logo-mobile.svg"
-      },
-      "sw-footer-bg-color": {
-        "label": {
-          "en-GB": "Background colour",
-          "de-DE": "Hintergrundfarbe"
-        },
-        "type": "color",
-        "value": "#161616",
-        "editable": true,
-        "block": "footer",
-        "order": 100
-      },
-      "sw-footer-text-color": {
-        "label": {
-          "en-GB": "Text colour",
-          "de-DE": "Textfarbe"
-        },
-        "type": "color",
-        "value": "#fdfdfd",
-        "editable": true,
-        "block": "footer",
-        "order": 200
-      },
-      "sw-footer-logo": {
-        "label": {
-          "en-GB": "Footer logo",
-          "de-DE": "Footer Logo"
-        },
-        "type": "media",
-        "value": "app/storefront/src/assets/logo/elle-logo-white.svg",
-        "editable": true,
-        "block": "media",
-        "order": 300
-      }
     }
-  }
 }

@@ -97,12 +97,12 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
 
-        cy.get('.sw-card__title').contains('eCommerce')
+        cy.get('.sw-card__title').contains('E-Commerce')
             .parent('.sw-theme-manager-detail__area')
             .find('.sw-colorpicker__input')
             .first().clear().typeAndCheck(colorScheme.buyButton);
 
-        cy.get('.sw-card__title').contains('eCommerce')
+        cy.get('.sw-card__title').contains('E-Commerce')
             .parent('.sw-theme-manager-detail__area')
             .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.price);
 
