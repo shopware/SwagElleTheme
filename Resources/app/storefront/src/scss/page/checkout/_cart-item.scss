@@ -1,5 +1,5 @@
 .cart-item {
-    padding: 16px 0 0;
+    padding: 16px 0;
 
     @include media-breakpoint-down(sm) {
         &-remove {
@@ -11,6 +11,10 @@
     @include media-breakpoint-up(md) {
         &-details-container {
             padding-left: 0;
+        }
+
+        &-quantity-container {
+            width: 80px;
         }
     }
 

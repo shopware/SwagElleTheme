@@ -3,6 +3,10 @@
     &.disabled,
     &:disabled {
         color: $disabled-btn-color;
+
+        .icon {
+            color: $disabled-btn-color;
+        }
     }
 }
 

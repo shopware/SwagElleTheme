@@ -1,0 +1,16 @@
+.b2b--assignment-grid {
+    .b2b-table {
+        border: none;
+        margin: 0 -24px;
+
+        thead th {
+            border-bottom: $border-width solid $border-color;
+        }
+
+        th,
+        td {
+            border: none;
+            border-bottom: $border-width solid $border-color;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.b2b--plugin {
+
+    @include media-breakpoint-down(sm) {
+        .component-action-create {
+            float: none !important;
+        }
+    }
+
+    h1,
+    h3,
+    h4 {
+        font-weight: $font-weight-bold;
+    }
+}

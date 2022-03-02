@@ -5,3 +5,141 @@
         background-color: $gray-300;
     }
 }
+
+.b2b--grid-container {
+    border: none;
+    background-color: transparent;
+
+    .table--fastorder tr {
+        td,
+        th {
+            border: none !important;
+            border-bottom: $border-width solid $border-color !important;
+        }
+    }
+
+    .table-responsive {
+        overflow: visible;
+    }
+
+    .b2b-table__actions {
+        @extend .pl-0, .pr-0;
+    }
+}
+
+.b2b--orderlist-tableview {
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .table-view {
+        width: 100%;
+    }
+
+    .pagination-nav {
+        margin-top: 20px;
+        margin-bottom: 24px;
+    }
+
+    .pagination {
+        margin: 0;
+    }
+}
+
+.b2b-table {
+    table {
+        border: none;
+    }
+
+    thead,
+    tbody {
+        tr {
+            th,
+            td {
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    thead {
+        line-height: 2;
+
+        tr {
+            .icon {
+                width: 16px;
+                height: 16px;
+                margin-right: 6px;
+            }
+
+            th,
+            td {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    tbody {
+        tr td {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        + tbody {
+            border-top: none;
+        }
+    }
+
+    tr {
+        td,
+        th {
+            background-color: transparent !important;
+            border: none;
+            border-bottom: $border-width solid $border-color;
+        }
+
+        td.col-status {
+            text-align: left;
+        }
+    }
+
+    &__actions {
+        gap: 8px;
+        flex-wrap: wrap;
+        width: 100%;
+
+        > *:first-child {
+            @extend .col-6; }
+
+        .header-search-btn {
+            @extend .btn-secondary;
+
+            &:hover .icon {
+                color: $white;
+            }
+        }
+    }
+
+    .product-price-info {
+        margin-top: 0;
+    }
+
+    .product-price-wrapper,
+    .product-price {
+        font-size: 14px;
+    }
+
+    .headline-product {
+        font-weight: $font-weight-base;
+        font-size: 14px;
+    }
+}

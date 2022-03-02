@@ -1,0 +1,13 @@
+.cms-element-product-listing {
+    .border-primary {
+        @extend .btn-light;
+        @extend .mb-n3;
+        border: none;
+    }
+
+    &-actions {
+        & & {
+            display: none;
+        }
+    }
+}
