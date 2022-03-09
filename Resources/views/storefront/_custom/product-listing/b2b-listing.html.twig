@@ -1,0 +1,19 @@
+{% sw_extends '@Storefront/storefront/_custom/product-listing/b2b-listing.html.twig' %}
+
+{% block b2b_storefront_listing %}
+    <div class="b2b--orderlist-tableview module-listingview w-100 {{ b2b_acl('b2bfastorder', 'index') }}">
+
+        {% sw_include '@SwagB2bPlatform/storefront/_custom/product-listing/b2b-listing-inner.html.twig' %}
+
+        {% if searchResult.total > searchResult.limit %}
+            {% block element_product_listing_pagination_nav_bottom %}
+                {% sw_include '@Storefront/storefront/component/pagination.html.twig' with {
+                    entities: searchResult,
+                    criteria: searchResult.criteria
+                } %}
+            {% endblock %}
+        {% endif %}
+
+        {{ block('b2b_storefront_listing_remoteListFastOrder') }}
+    </div>
+{% endblock %}
