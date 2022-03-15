@@ -1,0 +1,39 @@
+.b2b--message {
+    &-container ul {
+        li {
+            .icon {
+                top: -2px;
+            }
+
+            p {
+                padding-left: 0;
+            }
+        }
+
+        .b2b--message-success {
+            padding-left: 0;
+        }
+    }
+
+    &-success {
+        display: flex;
+        gap: 4px;
+
+        > [class^='icon-'] {
+            width: 16px;
+            height: 16px;
+            color: $white;
+            background-color: $success;
+            align-self: normal;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+
+            > svg {
+                top: 0;
+                width: 70%;
+                height: 70%;
+            }
+        }
+    }
+}

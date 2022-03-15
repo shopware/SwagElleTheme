@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/frontend/b2bstatistic/grid/_filter.html.twig' %}
+
+{% block b2b_statistic_filter_panel_content_filter_contact %}
+    {% if contacts|length > 1 %}
+        <label for="authId">{{ "b2b.FilterContact"|trans }}</label>
+        <select
+            class="custom-select"
+            name="authId"
+        >
+            {{ block('b2b_statistic_filter_panel_content_filter_contact_options') }}
+        </select>
+    {% endif %}
+{% endblock %}
+
+{% block b2b_statistic_filter_panel_content_filter_role %}
+    <label for="roleId">{{ "b2b.FilterRole"|trans }}</label>
+    <select
+        class="custom-select"
+        name="roleId"
+    >
+        {{ block('b2b_statistic_filter_panel_content_filter_role_options') }}
+    </select>
+{% endblock %}
+
+{% block b2b_statistic_filter_panel_content_filter_state %}
+    <label for="state">{{ "b2b.FilterState"|trans }}</label>
+    <select
+        class="custom-select"
+        name="state"
+    >
+        {{ block('b2b_statistic_filter_panel_content_filter_state_options') }}
+    </select>
+{% endblock %}

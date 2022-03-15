@@ -22,6 +22,7 @@
         .cart-quantity-price {
             flex-direction: row-reverse;
             justify-content: space-between;
+            gap: 16px;
 
             @include media-breakpoint-up(md) {
                 flex-direction: inherit;
@@ -30,6 +31,16 @@
 
         .cart-item-details {
             margin-right: 32px;
+        }
+    }
+
+    .cart-item-price {
+        margin-left: 0;
+    }
+
+    .cart-item-customized-products {
+        .cart-item-quantity {
+            margin-bottom: 0;
         }
     }
 

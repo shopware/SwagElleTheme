@@ -46,3 +46,18 @@
         }
     }
 }
+
+.b2b--component-pagination {
+    .btn {
+        background-color: transparent;
+        border: none;
+
+        .icon-feather > svg {
+            top: 3px;
+        }
+    }
+
+    .btn-primary {
+        color: $gray-900;
+    }
+}

@@ -1,0 +1,11 @@
+.b2b-accordion {
+    &__body {
+        transition: max-height 0.5s ease;
+        background-color: $gray-100;
+    }
+
+    &__title {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

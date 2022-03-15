@@ -1,0 +1,23 @@
+.b2b--navigation {
+    background-color: $gray-100;
+
+    &::before,
+    &::after {
+        background-color: $gray-100;
+        border-bottom: none;
+    }
+
+    &-mainmenu::after {
+        content: normal;
+    }
+
+    .navigation--link {
+        &.is--active {
+            background-color: $white;
+        }
+
+        &::after {
+            content: normal;
+        }
+    }
+}

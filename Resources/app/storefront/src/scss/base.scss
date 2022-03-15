@@ -53,6 +53,18 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/address-editor';
 @import 'component/base-slider';
 @import 'component/image-slider';
+@import 'component/dashboard-teaser';
+@import 'component/cms-element';
+@import 'component/custom-select';
+@import 'component/remote-list';
+@import 'component/message';
+@import 'component/accordion';
+@import 'component/avatar';
+@import 'component/assignment-grid';
+@import 'component/datepicker';
+@import 'component/tree';
+@import 'component/tab';
+@import 'component/product-search';
 
 /*
  * Layout-related sections
@@ -69,6 +81,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/navigation-flyout';
 @import 'layout/account-menu';
 @import 'layout/offcanvas-cart';
+@import 'layout/navigation';
+@import 'layout/plugin';
 
 /*
  * Page-specific styles
@@ -95,6 +109,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/checkout/register';
 @import 'page/checkout/cart-item-children';
 @import 'page/checkout/customized-product-cart';
+@import 'page/checkout/checkout';
 @import 'page/error/404';
 @import 'page/error/maintenance';
 @import 'page/wishlist/wishlist';

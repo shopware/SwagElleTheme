@@ -58,3 +58,8 @@
 .product-wishlist {
     @extend .mt-0;
 }
+
+.product-cheapest-price:empty {
+    min-height: 0;
+    margin: 0;
+}

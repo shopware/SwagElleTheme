@@ -1,0 +1,12 @@
+.custom-select {
+    padding-right: 40px;
+
+    &:disabled {
+        opacity: 1;
+
+        &:hover {
+            border-color: transparent;
+            cursor: default;
+        }
+    }
+}

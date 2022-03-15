@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/component/product/listing.html.twig' %}
+
+{% block element_product_listing_pagination_nav_actions %}
+    {% if b2bSuite %}
+        <div class="cms-element-product-listing-actions row justify-content-between">
+            <div class="col-md-auto">
+                {{ block('element_product_listing_pagination_nav_top') }}
+            </div>
+
+            <div class="col-md-auto">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        {{ parent() }}
+                    </div>
+                    <div class="col-auto">
+                        {{ block('element_product_listing_sorting') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+
+{% block element_product_listing_pagination_nav_bottom %}
+    {% if not b2bSuite or b2bListingView != 'table' %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
