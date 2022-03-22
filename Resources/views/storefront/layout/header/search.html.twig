@@ -10,7 +10,8 @@
                     data-toggle="collapse"
                     data-target="#searchCollapse"
                     aria-expanded="true"
-                    aria-controls="searchCollapse">
+                    aria-controls="searchCollapse"
+                    data-search-widget-options='{{ searchWidgetOptions|json_encode }}'>
                 {% sw_icon 'x' style { 'pack': 'feather' } %}
             </button>
             <form action="{{ path('frontend.search.page') }}"
