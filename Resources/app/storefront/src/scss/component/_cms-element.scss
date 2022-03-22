@@ -11,3 +11,18 @@
         }
     }
 }
+
+.cms-element-buy-box {
+    #productDetailPageBuyProductForm {
+        .form-row.justify-content-end {
+            @extend .justify-content-start;
+        }
+    }
+
+    [data-swag-paypal-express-button="true"] {
+        @extend .col-12;
+        @extend .col-md-4;
+        @extend .col-lg-6;
+        @extend .offset-md-3;
+    }
+}
