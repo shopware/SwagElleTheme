@@ -40,6 +40,7 @@
             min-width: 40px;
             width: 40px;
             object-fit: cover;
+            // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
             font-family: 'object-fit: cover;'; // IE polyfill
 
             img {
@@ -108,5 +109,6 @@
     width: 34px;
     padding: 2px;
     object-fit: cover;
+    // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
     font-family: 'object-fit: cover;'; // IE polyfill
 }

@@ -97,17 +97,14 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
-            .parent('.sw-theme-manager-detail__area')
+        cy.get('.sw-field-id-sw-color-buy-button')
             .find('.sw-colorpicker__input')
             .first().clear().typeAndCheck(colorScheme.buyButton);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
-            .parent('.sw-theme-manager-detail__area')
-            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.price);
+        cy.get('.sw-field-id-sw-color-price')
+            .find('.sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.price);
 
-        cy.get('.sw-card__title').contains('Footer')
-            .parent('.sw-theme-manager-detail__area')
+        cy.get('.sw-field-id-sw-footer-bg-color')
             .find('.sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.footer);
 
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
@@ -137,7 +134,7 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
         cy.get('.header-logo-main-link').click();
         cy.get('.cms-listing-col').should('be.visible');
         cy.get('.product-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-name').click();
+        cy.get('.product-name').first().click();
         cy.get('.product-detail').should('be.visible');
         cy.get('.btn-buy').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.get('.product-detail-price').should('have.css', 'color', hexToRGB(colorScheme.price));

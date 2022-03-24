@@ -97,17 +97,14 @@ describe('ThemeColor: Visual tests', () => {
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.primary);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
-            .parent('.sw-theme-manager-detail__area')
+        cy.get('.sw-field-id-sw-color-buy-button')
             .find('.sw-colorpicker__input')
             .first().clear().typeAndCheck(colorScheme.buyButton);
 
-        cy.get('.sw-card__title').contains('E-Commerce')
-            .parent('.sw-theme-manager-detail__area')
-            .find('.sw-colorpicker__input').eq(1).clear().typeAndCheck(colorScheme.price);
+        cy.get('.sw-field-id-sw-color-price')
+            .find('.sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.price);
 
-        cy.get('.sw-card__title').contains('Footer')
-            .parent('.sw-theme-manager-detail__area')
+        cy.get('.sw-field-id-sw-footer-bg-color')
             .find('.sw-colorpicker__input').first().clear().typeAndCheck(colorScheme.footer);
 
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
