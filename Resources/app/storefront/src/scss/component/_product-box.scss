@@ -40,6 +40,16 @@
         height: 44px;
     }
 
+    .product-price-wrapper {
+        min-height: 55px;
+    }
+
+    .product-action {
+        .btn {
+            line-height: $btn-line-height;
+        }
+    }
+
     &.box-image {
         .product-image-wrapper {
             height: $custom-box-image-height-img;
@@ -59,7 +69,10 @@
     @extend .mt-0;
 }
 
-.product-cheapest-price:empty {
-    min-height: 0;
-    margin: 0;
+.product-cheapest-price {
+    margin-bottom: 0;
+    &:empty {
+        min-height: 0;
+        margin: 0;
+    }
 }
