@@ -1,3 +1,10 @@
+# 1.5.0
+- Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden
+- Qualitätskontrolle für das Thema Elle
+- Prüfung der Theme-Kompatibilität mit Shopware 6.4.10.0
+- Unterstützung der benutzerdefinierten Produktdetail-Seite im CMS
+- Unterstützung des B2B-Suite-Plugins
+
 # 1.4.0
 - Kompatibilität des Themas mit Shopware 6.4.9.0 prüfen
 - Kompatibilität des Themas mit Shopware 6.4.8.0 prüfen
