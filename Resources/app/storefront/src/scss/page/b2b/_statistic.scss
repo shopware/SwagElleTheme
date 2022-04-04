@@ -1,0 +1,31 @@
+.module-statistic {
+    .grid-form {
+        gap: 24px;
+
+        .grid-form-filter {
+            .input-group-text {
+                background-color: $primary;
+            }
+        }
+
+        .form-group {
+            flex-grow: 1;
+        }
+
+        .select-groupBy {
+            @extend .custom-select;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+
+    .table-responsive,
+    .grid-form-grid-table,
+    .b2b--component-pagination {
+        border: none;
+        background-color: transparent;
+    }
+}
