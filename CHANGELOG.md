@@ -1,3 +1,10 @@
+# 1.5.0
+- Display the lowest price where f.e. base prices are displayed
+- Quality check for the Elle theme
+- Check theme compatibility with Shopware 6.4.10.0
+- Support the custom product detail page in the CMS
+- Support B2B Suite plugin
+
 # 1.4.0
 - Check theme compatibility with Shopware 6.4.9.0
 - Check theme compatibility with Shopware 6.4.8.0
