@@ -26,7 +26,8 @@
 
     <div id="footerColumns"
          class="row footer-columns"
-         data-collapse-footer="true">
+         data-collapse-footer="true"
+         role="list">
         {% block layout_footer_navigation_columns %}
             {% for root in page.footer.navigation.tree %}
                 {% block layout_footer_navigation_column %}
@@ -202,4 +203,13 @@
             </div>
         </div>
     </div>
+
+    {# @var \Swag\PayPal\Storefront\Data\Struct\FundingEligibilityData fundingEligibilityData #}
+    {% set fundingEligibilityData = page.footer.extensions[constant('Swag\\PayPal\\Storefront\\Data\\FundingSubscriber::FUNDING_ELIGIBILITY_EXTENSION')] %}
+
+    {% if fundingEligibilityData %}
+        <div data-swag-paypal-funding-eligibility="true"
+             data-swag-paypal-funding-eligibility-options="{{ fundingEligibilityData|json_encode }}">
+        </div>
+    {% endif %}
 {% endblock %}
