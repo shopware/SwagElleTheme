@@ -1,12 +1,12 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "6.4.10.0"
+  PLATFORM_BRANCH: "6.4.11.0"
   PLUGIN_DEPENDENCIES:
     value: >
       [
         { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "master" },
-        { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
+        { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "5.0.3" },
         { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
         { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
       ]
