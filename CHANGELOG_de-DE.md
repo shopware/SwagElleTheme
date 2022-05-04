@@ -1,3 +1,6 @@
+# 1.6.0
+- Prüfung der Theme-Kompatibilität mit platform 6.4.11.0
+
 # 1.5.0
 - Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden
 - Qualitätskontrolle für das Thema Elle

@@ -1,3 +1,6 @@
+# 1.6.0
+- Check theme compatibility with platform v6.4.11.0
+
 # 1.5.0
 - Display the lowest price where f.e. base prices are displayed
 - Quality check for the Elle theme
