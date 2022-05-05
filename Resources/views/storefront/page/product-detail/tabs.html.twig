@@ -1,15 +1,12 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
 
 {% block page_product_detail_tabs_navigation_description %}
-    <li class="nav-item">
+    <li class="nav-item" role="tab" aria-controls="description-tab-pane" aria-selected="true">
         <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
            id="description-tab"
            data-toggle="tab"
            data-offcanvas-tabs="true"
-           href="#description-tab-pane"
-           role="tab"
-           aria-controls="description-tab-pane"
-           aria-selected="true">
+           href="#description-tab-pane">
             <span>{{ "detail.tabsDescription"|trans|sw_sanitize }}</span>
             <span class="product-detail-tab-navigation-icon">
                 {% sw_icon 'chevron-right' style { 'pack': 'feather', 'size': 'md' } %}
@@ -33,15 +30,13 @@
 {% endblock %}
 {% block page_product_detail_tabs_navigation_review %}
     {% if config('core.listing.showReview') %}
-        <li class="nav-item">
+        <li class="nav-item" role="tab" aria-controls="review-tab-pane"
+            aria-selected="true">
             <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
                id="review-tab"
                data-toggle="tab"
                data-offcanvas-tabs="true"
-               href="#review-tab-pane"
-               role="tab"
-               aria-controls="review-tab-pane"
-               aria-selected="true">
+               href="#review-tab-pane">
                 {{ "detail.tabsReview"|trans|sw_sanitize }}
                 <span class="product-detail-tab-navigation-icon">
                     {% sw_icon 'chevron-right' style { 'pack': 'feather', 'size': 'md' } %}

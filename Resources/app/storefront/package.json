@@ -8,12 +8,16 @@
   },
   "scripts": {
     "lint:scss": "stylelint --config stylelint.config.js ./src",
-    "lint:scss-fix": "npm run lint:scss -- --fix"
+    "lint:scss-fix": "npm run lint:scss -- --fix",
+    "ci:lighthouse": "node lighthouse-tests.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "fs-extra": "^10.1.0",
+    "lighthouse": "^9.5.0",
+    "puppeteer": "^13.7.0",
     "stylelint": "13.11.0",
     "stylelint-config-sass-guidelines": "6.0.0"
   }
