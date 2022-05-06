@@ -56,7 +56,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
 
-        cy.get('.btn.btn-block.btn-primary').click();
+        cy.get('.begin-checkout-btn').click();
         cy.get('.checkout').should('be.visible');
         cy.get('.confirm-main-header').contains('Complete order');
 

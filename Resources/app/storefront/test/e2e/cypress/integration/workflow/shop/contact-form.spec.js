@@ -44,7 +44,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
 
         cy.route({
             url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'patch'
+            method: 'PATCH'
         }).as('saveCategory');
 
         cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Home').click();

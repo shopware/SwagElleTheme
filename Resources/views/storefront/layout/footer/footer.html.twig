@@ -49,7 +49,7 @@
                 {% block layout_footer_navigation_newsletter_headline %}
                     <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
                          id="collapseFooterNewsletterTitle"
-                         data-target="#collapseFooterNewsletter"
+                         {{ dataBsTargetAttr }}="#collapseFooterNewsletter"
                          aria-expanded="true"
                          aria-controls="collapseFooterNewsletter">
                         {{ 'footer.newsletterHeadline'|trans|sw_sanitize }}
@@ -99,14 +99,24 @@
                                                                            placeholder="{{ 'newsletter.placeholderMail'|trans }}"
                                                                            aria-label="{{ 'newsletter.placeholderMail'|trans }}"
                                                                            aria-describedby="footerNewsletterBtnAddon">
-                                                                    <div class="input-group-append">
+
+                                                                    {% if feature('V6_5_0_0') %}
                                                                         <button class="btn btn-light"
                                                                                 type="button"
                                                                                 title="{{ 'newsletter.formSubmit'|trans|striptags }}"
                                                                                 id="footerNewsletterBtnAddon">
                                                                             {% sw_icon 'mail' style { 'pack': 'feather', 'size': 'sm' } %}
                                                                         </button>
-                                                                    </div>
+                                                                    {% else %}
+                                                                        <div class="input-group-append">
+                                                                            <button class="btn btn-light"
+                                                                                    type="button"
+                                                                                    title="{{ 'newsletter.formSubmit'|trans|striptags }}"
+                                                                                    id="footerNewsletterBtnAddon">
+                                                                                {% sw_icon 'mail' style { 'pack': 'feather', 'size': 'sm' } %}
+                                                                            </button>
+                                                                        </div>
+                                                                    {% endif %}
                                                                 </div>
                                                             {% endblock %}
 

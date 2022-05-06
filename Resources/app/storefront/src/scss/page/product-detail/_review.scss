@@ -33,7 +33,8 @@
 }
 
 .product-detail-review-sortby {
-    .custom-select {
+    .custom-select,
+    .form-select {
         font-size: $font-size-sm;
     }
 }
@@ -44,6 +45,14 @@
 
 .product-detail-review-share {
     @extend .d-none;
+}
+
+.product-detail-review-form-star {
+    margin-right: 0;
+}
+
+.product-detail-review-form-rating-text {
+    margin-bottom: 0;
 }
 
 // change font-size in the small tag
@@ -60,7 +69,7 @@ label[for='showForeignReviews'] {
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
     .product-detail-review-main {
         padding-right: 40px;
     }

@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/utilities/offcanvas.html.twig' %}
 
 {% block utilities_offcanvas_close %}
-    <button class="btn btn-light btn-block offcanvas-close js-offcanvas-close sticky-top">
+    <button class="btn btn-light {% if not feature('V6_5_0_0') %}btn-block{% endif %} offcanvas-close js-offcanvas-close sticky-top">
         {% block utilities_offcanvas_close_icon %}
             {% sw_icon 'x' style { 'pack': 'feather' } %}
         {% endblock %}

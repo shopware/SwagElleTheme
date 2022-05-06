@@ -50,7 +50,7 @@ describe('ThemeColor: Visual tests', () => {
 
                 cy.intercept({
                     path: `${Cypress.env('apiPath')}/_action/theme/*`,
-                    method: 'patch'
+                    method: 'PATCH'
                 }).as('saveData');
 
                 cy.get('.sw-theme-list-item .sw-theme-list-item__title')
@@ -86,7 +86,7 @@ describe('ThemeColor: Visual tests', () => {
     function changeColorScheme(colorScheme) {
         cy.intercept({
             path: `${Cypress.env('apiPath')}/_action/theme/*`,
-            method: 'patch'
+            method: 'PATCH'
         }).as('saveData');
 
         cy.get('.sw-theme-list-item')

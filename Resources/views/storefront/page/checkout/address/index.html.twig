@@ -14,7 +14,7 @@
             {{ "checkout.addressAlreadyHaveAccount"|trans|sw_sanitize }}
             <a href="#loginCollapse"
             class="login-collapse-toggle"
-            data-toggle="collapse"
+            {{ dataBsToggleAttr }}="collapse"
             aria-expanded="false">
                 <strong>{{ "checkout.addressLoginToggle"|trans|sw_sanitize }}</strong>
             </a>
@@ -31,7 +31,7 @@
                     <div class="card swag-amazon-pay-card">
                         <div class="card-body">
                             {% block page_checkout_address_login_swag_amazon_pay_card_body %}
-                                <div class="row no-gutters">
+                                <div class="row {{ gridNoGuttersClass }}">
                                     <div class="card-title">{{ "SwagAmazonPay.register.headline"|trans|striptags }}</div>
                                 </div>
                                 <div class="row align-items-top">

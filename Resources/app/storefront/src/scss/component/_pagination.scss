@@ -1,7 +1,7 @@
 .pagination {
     margin-top: 10px;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         justify-content: center;
         padding: 5px;
     }

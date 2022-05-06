@@ -4,6 +4,7 @@
 // Options
 $enable-responsive-font-sizes: false !default;
 $asset-path: '#{$sw-asset-theme-url}/bundles/swagelletheme/assets' !default;
+$enable-negative-margins: true;
 
 // Color system
 $gray-100: #f8f9fa !default;
@@ -23,6 +24,8 @@ $h3-font-size: 24px !default;
 $h4-font-size: 20px !default;
 $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
+
+$font-weight-bolder: 700 !default;
 
 // Components
 $border-radius: 0 !default;
@@ -62,3 +65,6 @@ $badge-font-size: 10px !default;
 $list-group-action-color: $gray-900 !default;
 $list-group-action-hover-color: $gray-900 !default;
 $list-group-action-active-color: $gray-900 !default;
+
+// Tables
+$table-accent-bg: transparent !default;
