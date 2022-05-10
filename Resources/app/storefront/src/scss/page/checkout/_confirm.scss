@@ -1,11 +1,11 @@
 .is-act-confirmpage {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         .confirm-main-header {
             font-size: $h2-font-size;
         }
     }
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
         .confirm-billing-address {
             margin-bottom: 40px;
         }

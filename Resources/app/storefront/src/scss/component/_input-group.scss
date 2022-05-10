@@ -2,10 +2,17 @@
 .input-group,
 .input-group-lg,
 .input-group-sm {
-    .input-group-append {
+    @if (feature('V6_5_0_0')) {
         .btn {
             padding-top: 0;
             padding-bottom: 0;
+        }
+    } @else {
+        .input-group-append {
+            .btn {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
         }
     }
 }

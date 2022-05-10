@@ -60,7 +60,7 @@ describe('Product Detail: Visual tests review area', () => {
 
         cy.intercept({
             path: `${Cypress.env('apiPath')}/product-review/*`,
-            method: 'patch'
+            method: 'PATCH'
         }).as('saveData');
 
         cy.clickContextMenuItem(

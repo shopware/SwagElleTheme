@@ -42,7 +42,7 @@
                 {% if config('core.basicInformation.imprintPage') is not null %}
                     <a href="{{ seoUrl('frontend.maintenance.singlepage',{ id: config('core.basicInformation.imprintPage') }) }}"
                        title="{{ "general.imprintLink"|trans|sw_sanitize }}"
-                       class="pl-2 pr-2">
+                       class="px-2">
                         {{ "general.imprintLink"|trans|sw_sanitize }}
                     </a>
                 {% endif %}
@@ -50,7 +50,7 @@
                 {% if config('core.basicInformation.privacyPage') is not null %}
                     <a href="{{ seoUrl('frontend.maintenance.singlepage',{ id: config('core.basicInformation.privacyPage') }) }}"
                        title="{{ "general.privacyLink"|trans|sw_sanitize }}"
-                       class="pl-2 pr-2">
+                       class="px-2">
                         {{ "general.privacyLink"|trans|sw_sanitize }}
                     </a>
                 {% endif %}

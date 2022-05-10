@@ -65,6 +65,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/tree';
 @import 'component/tab';
 @import 'component/product-search';
+@import 'component/badge';
 
 /*
  * Layout-related sections
@@ -83,6 +84,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/offcanvas-cart';
 @import 'layout/navigation';
 @import 'layout/plugin';
+@import 'layout/scroll-up';
 
 /*
  * Page-specific styles

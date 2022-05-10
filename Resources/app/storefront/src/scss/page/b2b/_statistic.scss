@@ -13,7 +13,11 @@
         }
 
         .select-groupBy {
-            @extend .custom-select;
+            @if (feature('V6_5_0_0')) {
+                @extend .form-select;
+            } @else {
+                @extend .custom-select;
+            }
         }
 
         label {

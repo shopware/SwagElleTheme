@@ -1,7 +1,7 @@
 .cart-item {
     padding: 16px 0;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         &-remove {
             position: absolute;
             right: 0;

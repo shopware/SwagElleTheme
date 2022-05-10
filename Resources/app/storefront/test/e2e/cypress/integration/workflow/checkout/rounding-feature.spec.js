@@ -19,7 +19,7 @@ describe('Checkout: Use rounding feature', () => {
         cy.server();
         cy.route({
             url: '/api/currency/**',
-            method: 'patch'
+            method: 'PATCH'
         }).as('saveData');
 
         cy.loginViaApi();

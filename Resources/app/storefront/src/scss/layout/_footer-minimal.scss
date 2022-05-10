@@ -2,13 +2,13 @@
 .is-act-checkoutregisterpage {
     .footer-minimal {
 
-        @include media-breakpoint-down(md) {
+       @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             .footer-vat {
                 margin: 15px 0;
             }
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
             .footer-service-menu-item {
                 display: block;
                 text-align: left;

@@ -35,7 +35,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
             path: `${Cypress.env('apiPath')}/search/category`
         }).as('loadCategory');
         cy.intercept({
-            method: 'patch',
+            method: 'PATCH',
             path: `${Cypress.env('apiPath')}/category/**`
         }).as('editCategory');
 

@@ -39,7 +39,7 @@ export default class ProductPageObject {
         // Request we want to wait for later
         cy.intercept({
             path: `${Cypress.env('apiPath')}/product/*`,
-            method: 'patch'
+            method: 'PATCH'
         }).as('productCall');
 
         cy.intercept({

@@ -9,7 +9,7 @@
 .header-row {
     padding: 14px 0;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
         padding: 10px 0;
     }
 
@@ -30,7 +30,7 @@
     padding-bottom: 0;
     margin: 0;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
         padding: 0;
     }
 }
@@ -89,6 +89,7 @@
     .badge {
         display: inline-block;
         top: 0;
+        right: 0;
         margin-right: 0;
         padding-left: 6px;
         padding-top: 1px;

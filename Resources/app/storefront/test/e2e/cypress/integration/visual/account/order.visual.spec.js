@@ -63,7 +63,7 @@ describe('Account: Order page', () => {
         cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
         cy.takeSnapshot('[Order] Re-order - Add product to shopping cart', '.container');
 
-        cy.get('.btn.btn-block.btn-primary').click();
+        cy.get('.begin-checkout-btn').click();
         cy.get('.checkout').should('be.visible');
         cy.get('.confirm-main-header').contains('Complete order');
         cy.takeSnapshot('[Order] Re-order - Confirm order page', '.checkout');

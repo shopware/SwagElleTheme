@@ -1,4 +1,4 @@
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
     .cms-block-container {
         .cms-block-container-row.has--sidebar {
             .cms-element-category-navigation {
@@ -12,7 +12,7 @@
     .gallery-slider-single-image {
         @extend .text-center;
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
             min-height: 225px !important;
         }
     }

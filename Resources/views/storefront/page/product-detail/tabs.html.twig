@@ -4,7 +4,7 @@
     <li class="nav-item" role="tab" aria-controls="description-tab-pane" aria-selected="true">
         <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
            id="description-tab"
-           data-toggle="tab"
+           {{ dataBsToggleAttr }}="tab"
            data-offcanvas-tabs="true"
            href="#description-tab-pane">
             <span>{{ "detail.tabsDescription"|trans|sw_sanitize }}</span>
@@ -34,7 +34,7 @@
             aria-selected="true">
             <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
                id="review-tab"
-               data-toggle="tab"
+               {{ dataBsToggleAttr }}="tab"
                data-offcanvas-tabs="true"
                href="#review-tab-pane">
                 {{ "detail.tabsReview"|trans|sw_sanitize }}

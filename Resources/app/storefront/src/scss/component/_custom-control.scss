@@ -1,38 +1,114 @@
 // custom control styles for checkbox/radio
-.custom-control.custom-checkbox,
-.custom-control.custom-radio {
-    .custom-control-label {
-        &::before,
-        &::after {
-            top: 0;
+@if (feature('V6_5_0_0')) {
+    .form-control.form-checkbox,
+    .form-control.form-radio {
+        .form-control-label {
+            &::before,
+            &::after {
+                top: 0;
+            }
+        }
+
+        strong {
+            line-height: 28px;
         }
     }
-}
 
-// custom control styles for switches
-.custom-switch {
-    .custom-control-label {
-        &::before {
-            background-color: $gray-400;
-        }
+    // form control styles for switches
+    .form-switch {
+        .form-control-label {
+            &::before {
+                background-color: $gray-400;
+            }
 
-        &::after {
-            background-color: $white;
-            top: 6px;
-            left: -29px;
+            &::after {
+                background-color: $white;
+                top: 6px;
+                left: -29px;
+            }
         }
     }
-}
 
-.custom-select {
-    line-height: 1.7;
-}
+    .form-select {
+        line-height: 1.7;
+    }
 
-@include media-breakpoint-up(lg) {
+    .form-check {
+        .custom-control-label {
+            line-height: 26px;
+        }
+
+        .filter-boolean-label {
+            line-height: 38px;
+        }
+
+        .filter-boolean-input {
+            margin-top: 10px;
+        }
+
+        .custom-control-input {
+            @extend .form-check-input;
+        }
+
+    }
+
+    .form-check-input:disabled {
+        background: $gray-200;
+
+        &~ .custom-control-label {
+            color: $gray-600;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .form-switch {
+            .form-control-label {
+                &::after {
+                    top: 5px;
+                }
+            }
+        }
+    }
+} @else {
+    .custom-control.custom-checkbox,
+    .custom-control.custom-radio {
+        .custom-control-label {
+            &::before,
+            &::after {
+                top: 0;
+            }
+        }
+
+        strong {
+            line-height: 28px;
+        }
+    }
+
+    // custom control styles for switches
     .custom-switch {
         .custom-control-label {
+            &::before {
+                background-color: $gray-400;
+            }
+
             &::after {
-                top: 5px;
+                background-color: $white;
+                top: 6px;
+                left: -29px;
+            }
+        }
+    }
+
+    .custom-select {
+        line-height: 1.7;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .custom-switch {
+            .custom-control-label {
+                &::after {
+                    top: 5px;
+                }
             }
         }
     }

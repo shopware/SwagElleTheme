@@ -1,12 +1,13 @@
 .card-tabs {
     background: $gray-100;
 
-    @include media-breakpoint-down(md) {
+   @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         margin-top: 20px;
     }
 
     .card-header {
         padding: 0;
+        border: 0;
     }
 
     .nav-item {
@@ -25,7 +26,7 @@
         margin: 0 1.5px;
         font-size: $font-size-lg;
 
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
             padding: 10px 0;
             font-size: $font-size-base;
         }
@@ -39,7 +40,7 @@
             border: none;
             margin: 0;
 
-            @include media-breakpoint-down(xs) {
+            @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
                 background: none;
             }
         }
@@ -49,7 +50,7 @@
         padding: 50px;
         background: $white;
 
-        @include media-breakpoint-down(md) {
+       @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             padding: 30px;
         }
     }

@@ -1,5 +1,4 @@
 .swag-cms-extensions-quickview-container {
-
     @include media-breakpoint-up(lg) {
         .product-detail-buy {
             .product-detail-manufacturer {
@@ -8,7 +7,7 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .swag-cms-extensions-quickview-header {
             .swag-cms-extensions-quickview-header-manufacturer {
                 display: none;

@@ -45,7 +45,7 @@ describe('CMS: Landing Page', { tags: ['@visual', '@cms'] }, () => {
         const page = new MediaPageObject();
 
         cy.intercept({
-            method: 'patch',
+            method: 'PATCH',
             path: `${Cypress.env('apiPath')}/cms-page/*`,
         }).as('saveData');
 
