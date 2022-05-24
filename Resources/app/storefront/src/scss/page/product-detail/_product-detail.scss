@@ -183,11 +183,11 @@
 @if (feature('V6_5_0_0')) {
     .product-detail-form-container {
         .buy-widget-container {
-            @extend .g-2
+            @extend .g-2;
         }
     
         .btn-buy-col .d-grid {
-            height: 100%
+            height: 100%;
         }
     }
 

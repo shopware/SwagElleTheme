@@ -2,7 +2,7 @@
 .is-act-checkoutregisterpage {
     .footer-minimal {
 
-       @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             .footer-vat {
                 margin: 15px 0;
             }

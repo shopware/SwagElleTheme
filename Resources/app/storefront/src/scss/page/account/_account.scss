@@ -11,12 +11,19 @@
 
 .account-welcome {
 
-   @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         padding-top: 5px;
     }
 
     h1 {
         @extend .h2;
+    }
+}
+
+.account-item-children {
+    .account-item-headline {
+        display: flex;
+        align-items: center;
     }
 }
 
