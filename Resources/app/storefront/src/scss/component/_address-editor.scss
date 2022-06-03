@@ -1,5 +1,5 @@
 .address-editor-select {
     @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
-        margin-top: $spacer;   
+        margin-top: $spacer;
     }
 }

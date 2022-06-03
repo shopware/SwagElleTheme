@@ -2,7 +2,7 @@
     .checkout {
         padding-top: 5px;
 
-       @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             padding-top: 30px;
 
             .address-main-header {

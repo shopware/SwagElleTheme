@@ -1,3 +1,11 @@
 .cart-item-children {
-    padding-right: 4px;
+    padding: 14px 4px 14px 16px;
+    .cart-item-headline {
+        display: flex;
+        align-items: center;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-left: 88px;
+    }
 }

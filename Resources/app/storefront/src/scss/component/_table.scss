@@ -118,7 +118,8 @@
         width: 100%;
 
         > *:first-child {
-            @extend .col-6; }
+            @extend .col-6;
+        }
 
         .header-search-btn {
             @extend .btn-secondary;

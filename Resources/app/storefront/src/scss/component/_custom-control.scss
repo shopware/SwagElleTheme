@@ -55,7 +55,7 @@
     .form-check-input:disabled {
         background: $gray-200;
 
-        &~ .custom-control-label {
+        ~ .custom-control-label {
             color: $gray-600;
         }
     }

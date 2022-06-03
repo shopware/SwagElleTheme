@@ -1,7 +1,7 @@
 .card-tabs {
     background: $gray-100;
 
-   @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         margin-top: 20px;
     }
 
@@ -50,7 +50,7 @@
         padding: 50px;
         background: $white;
 
-       @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             padding: 30px;
         }
     }

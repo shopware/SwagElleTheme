@@ -18,6 +18,8 @@ module.exports = {
                 ignore: ['attribute', 'class']
             }
         ],
-        'font-family-no-missing-generic-family-keyword': true
+        'font-family-no-missing-generic-family-keyword': true,
+        'block-opening-brace-newline-after': 'always',
+        'block-closing-brace-newline-before': 'always',
     }
 };
