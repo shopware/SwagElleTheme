@@ -21,5 +21,6 @@ module.exports = {
         'font-family-no-missing-generic-family-keyword': true,
         'block-opening-brace-newline-after': 'always',
         'block-closing-brace-newline-before': 'always',
+        'order/order': null
     }
 };

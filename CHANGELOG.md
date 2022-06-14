@@ -1,3 +1,5 @@
+# 1.7.0
+- Support both Bootstrap 4 and Bootstrap 5
 # 1.6.0
 - Check theme compatibility with platform v6.4.11.0
 - Lighthouse error
