@@ -74,8 +74,10 @@
         }
     }
 
-    .cart-header-tax-price {
-        @extend .col-3;
+    @if (not feature('V6_5_0_0')) {
+        .cart-header-tax-price {
+            @extend .col-3;
+        }
     }
 
     .cart-item-tax-price {

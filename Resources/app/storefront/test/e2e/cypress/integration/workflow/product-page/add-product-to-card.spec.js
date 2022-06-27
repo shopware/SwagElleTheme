@@ -13,7 +13,6 @@ describe('Product: Add to card in product detail', {tags: ['@workflow', '@produc
     });
 
     it('@workflow @product: Add to cart in product detail follow', () => {
-        cy.get('.product-detail-quantity-select').select('2');
         cy.get('.btn-buy').click();
         cy.get('.cart-offcanvas').should('have.class', 'is-open');
         cy.get('.offcanvas-cart .alert-success').should('be.visible')
