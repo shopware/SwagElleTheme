@@ -22,3 +22,12 @@
     width: $input-height;
     padding: unset;
 }
+
+.btn-light {
+    background-color: $gray-200;
+
+    &:hover, &:focus {
+        background-color: $gray-200;
+        border-color: $gray-200;
+    }
+}

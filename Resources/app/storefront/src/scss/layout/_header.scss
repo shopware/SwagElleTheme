@@ -99,3 +99,9 @@
 .header-logo-picture {
     margin: 0;
 }
+
+@if (feature('V6_5_0_0')) {
+    .header-wishlist .header-wishlist-badge {
+        top: 0;
+    }
+}

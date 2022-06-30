@@ -4,8 +4,10 @@
         border: none;
         color: $gray-900;
 
-        .icon-feather > svg {
-            top: 0;
+        @if (not feature('V6_5_0_0')) {
+            .icon-feather > svg {
+                top: 0;
+            }
         }
     }
 
@@ -15,6 +17,24 @@
 
             .icon-feather > svg {
                 top: -2px;
+            }
+        }
+    }
+
+    &.offcanvas-bottom {
+        top: auto;
+    }
+
+    &-header-review,
+    &-header-description {
+        .offcanvas-close {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+
+            .icon svg {
+                top: 0;
             }
         }
     }

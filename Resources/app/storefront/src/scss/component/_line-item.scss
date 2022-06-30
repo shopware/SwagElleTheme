@@ -1,0 +1,60 @@
+.is-offcanvas {
+    .line-item {
+        &-info {
+            .line-item-row {
+                flex-wrap: nowrap;
+            }
+        }
+
+        &-details {
+            flex-shrink: 1;
+            min-width: 0;
+        }
+
+        &-quantity-price {
+            order: 3;
+            display: flex;
+            padding-right: $cart-grid-gutter-width / 2;
+            padding-left: $cart-grid-gutter-width / 2;
+            margin-left: auto;
+            align-items: center;
+            gap: 10px;
+            width: calc(100% - 70px);
+            justify-content: space-between;
+        }
+
+        &-quantity-label,
+        &-total-price-label {
+            display: none;
+        }
+
+        &-quantity {
+            width: auto;
+            margin-bottom: 0;
+
+            &-select-wrapper {
+                width: 100%;
+            }
+        }
+
+        &-price {
+            width: auto;
+        }
+    }
+}
+
+.line-item-img {
+    border: none;
+}
+
+@include media-breakpoint-up(md) {
+    .line-item-quantity-select-wrapper {
+        .line-item-quantity {
+            width: 100%;
+        }
+    }
+}
+
+.js-offcanvas-cart-change-quantity {
+    min-width: 90px;
+}
