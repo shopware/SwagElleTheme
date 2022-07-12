@@ -33,7 +33,9 @@
             {% endif %}
 
             {% if showRemoveButton %}
-                {{ block('component_line_item_type_product_col_remove') }}
+                {% apply spaceless %}
+                    {{ block('component_line_item_type_product_col_remove') }}
+                {% endapply %}
             {% endif %}
         </div>
     </div>
