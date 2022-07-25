@@ -179,11 +179,11 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
-        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example timefield');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__label', 'Example color select');
         cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€110.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
 
         // Color select
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Purple')
