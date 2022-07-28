@@ -74,7 +74,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
             cy.visit('/admin#/sw/settings/cart/index');
             cy.contains('Enable refunds').click();
             cy.get('.sw-settings-cart__save-action').click();
-            cy.get('.icon--small-default-checkmark-line-medium').should('be.visible');
+            cy.get('.icon--regular-checkmark-xs').should('be.visible');
         });
 
         // Login
