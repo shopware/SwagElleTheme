@@ -1,5 +1,11 @@
+# 1.8.0
+- Überprüfung der Kompatibilität mit Platform v6.4.13.0
+- Behoben der UI-Probleme mit verschachtelten Elementen
+- Überprüfung der Kompatibilität mit Platform v6.4.14.0
+
 # 1.7.0
 - Unterstützung sowohl Bootstrap 4 als auch Bootstrap 5
+
 # 1.6.0
 - Prüfung der Theme-Kompatibilität mit platform 6.4.11.0
 - Der Lighthouse-Fehler
