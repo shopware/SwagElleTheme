@@ -1,5 +1,11 @@
+# 1.8.0
+- Checked theme compatibility with platform v6.4.13.0
+- Fixed nested line items UI issues
+- Checked theme compatibility with platform v6.4.14.0
+
 # 1.7.0
 - Support both Bootstrap 4 and Bootstrap 5
+
 # 1.6.0
 - Check theme compatibility with platform v6.4.11.0
 - Lighthouse error
