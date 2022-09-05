@@ -37,7 +37,8 @@
     "addressLoginToggle": "Click here to login."
   },
   "wishlist": {
-    "headline": "Your wish list"
+    "headline": "Your wishlist",
+    "empty": "Empty Wishlist"
   },
   "captcha": {
     "basicCaptchaInputPlaceholder": "Enter characters..."

@@ -4,6 +4,7 @@ $wishlist-icon-notadded-color: #758ca3;
 
 .wishlist-page {
     padding-bottom: 80px;
+    @extend .container;
 
     .product-wishlist-btn-remove {
         top: 8px;
