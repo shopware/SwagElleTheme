@@ -21,6 +21,7 @@
         "@shopware-ag/e2e-testsuite-platform": "^2.0.2",
         "cypress": "^7.6.0",
         "cypress-file-upload": "^5.0.8",
+        "cypress-real-events": "^1.5.1",
         "cypress-multi-reporters": "^1.5.0",
         "cypress-select-tests": "^1.7.1",
         "mocha": "^9.0.2",

@@ -7,7 +7,7 @@
             {{ lineItem.quantity }}{{ "checkout.quantityTimes"|trans|sw_sanitize }}
         {% endif %}
 
-        {{ lineItem.label|u.truncate(60) }}
+        {{ lineItem.label|u.truncate(60)|raw }}
     </div>
 {% endblock %}
 
