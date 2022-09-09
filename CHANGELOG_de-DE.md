@@ -1,3 +1,6 @@
+# 1.9.0
+- Überprüfung der Kompatibilität mit Platform v6.4.15.0
+
 # 1.8.0
 - Überprüfung der Kompatibilität mit Platform v6.4.13.0
 - Behoben der UI-Probleme mit verschachtelten Elementen

@@ -1,3 +1,6 @@
+# 1.9.0
+- Checked theme compatibility with platform v6.4.15.0
+
 # 1.8.0
 - Checked theme compatibility with platform v6.4.13.0
 - Fixed nested line items UI issues
