@@ -15,7 +15,7 @@ describe('Quick View: Test if it works correctly', () => {
             })
     });
 
-    it.skip('@visual @QuickView: Run Quick View in a product view directly in the listing page', () => {
+    it('@visual @QuickView: Run Quick View in a product view directly in the listing page', () => {
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({

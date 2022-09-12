@@ -1,0 +1,64 @@
+{% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_form_inner %}
+    {{ parent() }}
+
+    {% if config('core.cart.wishlistEnabled') %}
+        {% block clone_page_product_detail_wishlist %}
+            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                showText: true,
+                size: 'md',
+                productId: page.product.id
+            } %}
+        {% endblock %}
+    {% endif %}
+
+    {% block clone_buy_widget_ordernumber_container %}
+        {% if page.product.productNumber %}
+            <div class="product-detail-ordernumber-container">
+                {% block clone_buy_widget_ordernumber_label %}
+                    <span class="product-detail-ordernumber-label">
+                            {{ "detail.productNumberLabel"|trans|sw_sanitize }}
+                        </span>
+                {% endblock %}
+
+                {% block clone_buy_widget_ordernumber %}
+                    <meta itemprop="productID"
+                          content="{{ product.id }}"/>
+                    <span class="product-detail-ordernumber"
+                          itemprop="sku">
+                            {{ page.product.productNumber }}
+                        </span>
+                {% endblock %}
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {% if page.product.purchaseUnit %}
+        {% set price = page.product.calculatedPrice %}
+
+        {% block clone_buy_widget_price_unit %}
+            <div class="product-detail-price-unit">
+                {% block clone_buy_widget_price_unit_label %}
+                    <span class="price-unit-label">
+                            {{ "detail.priceUnitName"|trans|sw_sanitize }}
+                        </span>
+                {% endblock %}
+
+                {% block clone_buy_widget_price_unit_content %}
+                    <span class="price-unit-content">
+                            {{ product.purchaseUnit }} {{ product.unit.name }}
+                        </span>
+                {% endblock %}
+
+                {% if price.referencePrice is not null %}
+                    {% block clone_buy_widget_price_unit_reference_content %}
+                        <span class="price-unit-reference-content">
+                                ({{ price.referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }} {{ price.referencePrice.unitName }})
+                            </span>
+                    {% endblock %}
+                {% endif %}
+            </div>
+        {% endblock %}
+    {% endif %}
+{% endblock %}
