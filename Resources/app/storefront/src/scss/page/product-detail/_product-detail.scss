@@ -9,6 +9,8 @@
 }
 
 .product-detail-price-container {
+    margin-bottom: 20px;
+
     .product-detail-price {
         font-size: $product-detail-price;
         font-weight: $font-weight-semibold;
@@ -185,7 +187,7 @@
         .buy-widget-container {
             @extend .g-2;
         }
-    
+
         .btn-buy-col .d-grid {
             height: 100%;
         }
@@ -200,4 +202,8 @@
             margin-right: 10px;
         }
     }
+}
+
+.product-detail-reviews {
+    margin-bottom: 40px;
 }

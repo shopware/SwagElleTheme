@@ -15,8 +15,29 @@
         }
     }
 
+    .swag-cms-extensions-quickview-content-left {
+        padding: 0;
+
+        .gallery-slider-controls-prev,
+        .gallery-slider-controls-next {
+            width: 21px;
+            height: 60px;
+            background-color: rgba($white, 0.7);
+
+            .icon-feather {
+                width: 20px;
+            }
+        }
+    }
+
     .swag-cms-extensions-quickview-product-buy-form {
         margin-bottom: 1rem;
+
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+            form {
+                margin-bottom: 5px;
+            }
+        }
     }
 
     .swag-cms-extensions-quickview-header {
@@ -49,19 +70,80 @@
             margin-bottom: $spacer-sm;
         }
     }
+
+    .swag-cms-extensions-quickview-content--buy-quantity {
+        .input-group,
+        .product-detail-quantity-input {
+            height: 100%;
+        }
+    }
 }
 
 #swag-cms-extensions-quickview-carousel {
     .carousel-control-next,
     .carousel-control-prev {
         background: none;
+
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+            background: $gray-200;
+            width: 24px;
+        }
+    }
+
+    .carousel-control-prev {
+        border-radius: 0 2px 2px 0;
+    }
+
+    .carousel-control-next {
+        border-radius: 2px 0 0 2px;
     }
 }
 
 .swag-cms-extensions-quickview-modal {
+    padding-right: 0 !important;
+
     .modal-content {
+        margin: 0 22px;
+
         .quickview-loading-indicator .loader {
             @extend .icon-xs;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .modal-dialog {
+            justify-content: center;
+            max-width: none !important;
+        }
+    }
+}
+
+.swag-cms-extensions-quickview-close-button {
+    .close {
+        @extend .btn;
+    }
+}
+
+.swag-cms-extensions-quickview-content-right  {
+    margin-bottom: 0;
+
+    .product-detail-price-container {
+        .product-detail-price-unit {
+            display: none;
+        }
+    }
+
+    .price-unit-label {
+        font-weight: $font-weight-bold;
+    }
+
+    .product-detail-ordernumber {
+        word-break: break-all;
+    }
+
+    .js-magnifier-zoom-image-container {
+        > .product-wishlist {
+            display: none;
         }
     }
 }

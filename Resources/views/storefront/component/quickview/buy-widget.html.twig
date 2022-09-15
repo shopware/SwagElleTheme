@@ -11,7 +11,19 @@
 
     {# Put the position of reviews on here #}
     {% block page_product_detail_reviews %}
-        {{ parent() }}
+        {% if page.reviews|length > 0 and config('core.listing.showReview') %}
+
+            <div class="product-detail-reviews">
+                {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                    points: page.product.ratingAverage
+                } %}
+                <span class="product-detail-reviews-link">
+                {{ "detail.reviewLinkText"|trans({'%count%': page.totalReviews}) }}
+                ({{ page.totalReviews }})
+            </span>
+            </div>
+
+        {% endif %}
     {% endblock %}
 
     {% block page_product_detail_data_rich_snippet_price_range %}
