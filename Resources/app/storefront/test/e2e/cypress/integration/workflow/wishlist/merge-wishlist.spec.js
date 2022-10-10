@@ -286,8 +286,8 @@ describe('Wishlist: Merge wishlist', () => {
 
         cy.wait('@wishlistMerge').then(() => {
             cy.visit('/wishlist');
-            cy.get('.cms-listing-col').eq(0).contains('Test product 1');
-            cy.get('.cms-listing-col').eq(1).contains('Test product 2');
+            cy.get('.cms-listing-col').contains('Test product 1');
+            cy.get('.cms-listing-col').contains('Test product 2');
         });
     });
 });
