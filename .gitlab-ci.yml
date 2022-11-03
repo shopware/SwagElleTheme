@@ -2,6 +2,7 @@ variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
   PLATFORM_BRANCH: "6.4.16.0"
+  PERCY_TARGET_BRANCH: "master"
   PLUGIN_DEPENDENCIES:
     value: >
       [
@@ -23,3 +24,8 @@ include:
   project: 'shopware/6/product/platform'
   ref: 'trunk'
   file: '.gitlab/templates/theme.yml'
+
+default:
+    after_script:
+        - echo "Percy commit $PERCY_TARGET_BRANCH"
+        - echo "Percy branch $PERCY_TARGET_COMMIT"
