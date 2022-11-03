@@ -42,5 +42,8 @@
   },
   "captcha": {
     "basicCaptchaInputPlaceholder": "Enter characters..."
+  },
+  "contact": {
+    "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information</a>."
   }
 }

@@ -42,5 +42,8 @@
   },
   "captcha": {
     "basicCaptchaInputPlaceholder": "Zeichen eingeben..."
+  },
+  "contact": {
+    "privacyNotice": "<a data-toggle=\"modal\"  data-url=\"%url%\" href=\"%url%\"  title=\"Datenschutzvereinbarung\">Ich habe die Informationen zur Datenschutzvereinbarung gelesen.</a>."
   }
 }

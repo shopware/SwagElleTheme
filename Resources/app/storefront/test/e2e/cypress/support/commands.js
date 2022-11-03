@@ -276,3 +276,12 @@ Cypress.Commands.add('createProductVariantFixture', () => {
         }, 'product-variants.json');
     });
 });
+
+
+Cypress.Commands.overwrite('createCustomerFixtureStorefront', (originalFn, userData) => {
+    return originalFn(userData)
+        .then(() => {
+            return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
+                .its('code').should('eq', 0);
+        });
+});
