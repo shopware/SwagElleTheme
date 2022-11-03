@@ -1,7 +1,7 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "6.4.16.0"
+  PLATFORM_BRANCH: "next-23923/reset-translator-cache-after-switching-theme"
   PERCY_TARGET_BRANCH: "master"
   PLUGIN_DEPENDENCIES:
     value: >
