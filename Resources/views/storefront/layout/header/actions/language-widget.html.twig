@@ -2,8 +2,9 @@
 
 {% block layout_header_actions_language_widget_content %}
     {% set isoCode = page.header.activeLanguage.translationCode.code|lower|split('-') %}
-    {% set country = isoCode[0] %}
-    {% set language = isoCode[1] %}
+    {# @deprecated tag:v6.5.0 - Remove else cases, to maintain correct split of isoCode #}
+    {% set language = feature('v6.5.0.0') ? isoCode[0] : isoCode[1] %}
+    {% set country = feature('v6.5.0.0') ? isoCode[1] : isoCode[0] %}
 
     <div class="languages-menu dropdown">
         <button class="btn dropdown-toggle top-bar-nav-btn"

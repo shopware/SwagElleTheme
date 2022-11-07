@@ -37,6 +37,10 @@ describe('CMS: Landing Page', { tags: ['@visual', '@cms'] }, () => {
                 });
             })
             .then(() => {
+                return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
+                    .its('code').should('eq', 0);
+            })
+            .then(() => {
                 cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
             });
     });
