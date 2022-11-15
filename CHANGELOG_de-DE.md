@@ -1,3 +1,6 @@
+# 1.11.0
+- Überprüfung der Kompatibilität mit Platform v6.4.17.0
+
 # 1.10.0
 - Überprüfung der Kompatibilität mit Platform v6.4.16.0
 - Aktualisierung der Kompatibilität von CMS-Erweiterungen mit Bootstrap 5
