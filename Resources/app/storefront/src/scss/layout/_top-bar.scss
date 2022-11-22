@@ -41,6 +41,10 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    &-btn.btn {
+        border: $border-width solid transparent;
+    }
 }
 
 .top-bar-language {
