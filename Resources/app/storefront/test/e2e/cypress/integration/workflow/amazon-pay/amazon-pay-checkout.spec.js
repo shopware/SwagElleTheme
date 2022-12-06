@@ -47,7 +47,7 @@ describe('AmazonPay: Basic workflow', () => {
     });
 
     describe('AmazonPay: Checkout register page', () => {
-        it('@workflow @AmazonPay: should have amazon pay button in Checkout register page', () => {
+        it.skip('@workflow @AmazonPay: should have amazon pay button in Checkout register page', () => {
             // Visit product detail page
             cy.visit(`/`);
 
@@ -70,7 +70,7 @@ describe('AmazonPay: Basic workflow', () => {
                 .find('.amazonpay-button-container').should('be.visible');
         });
 
-        it('@workflow @AmazonPay: should not have amazon pay button in Checkout register page when buttons are hidden globally', () => {
+        it.skip('@workflow @AmazonPay: should not have amazon pay button in Checkout register page when buttons are hidden globally', () => {
             // Update plugin configuration to hide one click checkout buttons
             cy.updatePluginConfig(
                 {
@@ -100,7 +100,7 @@ describe('AmazonPay: Basic workflow', () => {
             cy.get('div.swag-amazon-pay-button-container.account-login').should('not.exist');
         });
 
-        it('@workflow @AmazonPay: should not have amazon pay button in Checkout register page when setting is disabled', () => {
+        it.skip('@workflow @AmazonPay: should not have amazon pay button in Checkout register page when setting is disabled', () => {
             // Update plugin configuration to not display button on checkout register page
             cy.updatePluginConfig(
                 {

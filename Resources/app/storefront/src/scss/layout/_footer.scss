@@ -41,13 +41,13 @@ $paypal-padding-sm: 9px;
 .footer-columns {
     border-bottom: none;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         padding-top: 20px;
     }
 }
 
 .footer-column {
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         border-bottom: 1px solid $footer-border-color;
     }
 }
@@ -67,7 +67,7 @@ $paypal-padding-sm: 9px;
 .footer-column-hotline {
     text-align: right;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         text-align: left;
     }
 
@@ -92,7 +92,7 @@ $paypal-padding-sm: 9px;
 
 .footer-contact-form {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         padding-bottom: 26px;
     }
 
@@ -113,7 +113,7 @@ $paypal-padding-sm: 9px;
     }
 
     .footer-newsletter & {
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             display: flex;
         }
     }

@@ -23,7 +23,7 @@
 .is-act-confirmpage,
 .is-act-finishpage,
 .is-act-cartpage {
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .cart-item {
             .cart-item-details {
                 padding-top: 20px;
@@ -50,14 +50,8 @@
 .cart-add-product-container {
     @extend .col-md-6;
 
-    @if (feature('V6_5_0_0')) {
-        .btn {
-            @extend .btn-square;
-        }
-    } @else {
-        .input-group-append .btn {
-            @extend .btn-square;
-        }
+    .btn {
+        @extend .btn-square;
     }
 
     .icon-feather-check {
@@ -66,17 +60,13 @@
 }
 
 .cart-shipping-costs-btn {
-    @if (feature('V6_5_0_0')) {
-        @include button-size($btn-padding-y-lg, $btn-padding-x, $btn-font-size, $btn-border-radius);
-        line-height: $btn-line-height;
-    } @else {
-        @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-    }
+    @include button-size($btn-padding-y-lg, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    line-height: $btn-line-height;
 
     width: 100%;
     margin-bottom: 20px;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         display: block;
     }
 }

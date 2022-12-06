@@ -24,18 +24,15 @@ $modal-max-width: 800px;
             padding: 0;
             color: $body-color;
             opacity: unset;
+            background: none;
 
             &:hover {
                 color: $body-color;
             }
 
-            @if (feature('V6_5_0_0')) {
-                background: none;
-
-                svg {
-                    top: 15px;
-                    right: 15px;
-                }
+            svg {
+                top: 15px;
+                right: 15px;
             }
         }
     }
@@ -93,11 +90,7 @@ $modal-max-width: 800px;
         }
 
         select {
-            @if (feature('V6_5_0_0')) {
-                @extend .form-select;
-            } @else {
-                @extend .custom-select;
-            }
+            @extend .form-select;
         }
     }
 
@@ -132,14 +125,6 @@ $modal-max-width: 800px;
                     padding-right: 24px;
                 }
             }
-        }
-    }
-}
-
-@if (feature('V6_5_0_0')) {
-    .modal-body {
-        .row .btn {
-            width: 100%;
         }
     }
 }

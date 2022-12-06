@@ -18,6 +18,10 @@
     }
 }
 
+.btn-primary:not(.btn-buy) {
+    @include button-variant($primary, $primary);
+}
+
 .btn-square {
     width: $input-height;
     padding: unset;

@@ -4,10 +4,8 @@
         border: none;
         color: $gray-900;
 
-        @if (not feature('V6_5_0_0')) {
-            .icon-feather > svg {
-                top: 0;
-            }
+        .icon-feather > svg {
+            top: 0;
         }
     }
 

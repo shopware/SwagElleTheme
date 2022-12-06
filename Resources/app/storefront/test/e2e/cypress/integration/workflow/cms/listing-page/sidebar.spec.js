@@ -67,9 +67,8 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.get('.sw-cms-slot:nth-of-type(1) .sw-text-editor__content-editor').type('This is the listing page with a sidebar');
 
         cy.get('#sw-field--currentBlockCategory').should('be.visible').select('Text');
-        cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)').scrollIntoView();
+        cy.changeElementStyling('.sw-cms-block-product-listing', 'display: none');
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)')
-            .first()
             .dragTo('.sw-cms-section__sidebar .sw-cms-section__empty-stage');
         cy.get('.sw-cms-section__sidebar .sw-cms-block__content').should('be.visible');
 
@@ -141,7 +140,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
 
     it('@workflow @cms: Create listing page with a sidebar', () => {
         createSampleListingPageWithSidebar();
-        // Verify category in ShowRoom Theme
+        // Verify category in Elle Theme
         cy.visit('/');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();

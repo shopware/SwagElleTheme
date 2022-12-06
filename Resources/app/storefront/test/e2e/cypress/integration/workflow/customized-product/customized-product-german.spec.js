@@ -100,7 +100,7 @@ describe('Customize Product: Visual test customize product in German', () => {
             });
     });
 
-    it('@workflow, @customized: Customize product in german', () => {
+    it.skip('@workflow, @customized: Customize product in german', () => {
         // Verify we are on the correct product detail page, by checking the product name
         cy.get('.product-detail-name')
             .should('be.visible')

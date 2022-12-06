@@ -7,7 +7,7 @@
     "newsletterHeadline": "Newsletter",
     "newsletterInfo": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of %shopname%.",
     "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm",
-    "serviceContactLink": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Or via our contact form</a>."
+    "serviceContactLink": "<a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Or via our contact form</a>."
   },
   "account": {
     "orRegisterLink": "register",

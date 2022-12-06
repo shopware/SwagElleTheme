@@ -9,7 +9,7 @@
 .header-row {
     padding: 14px 0;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+    @include media-breakpoint-down(xl) {
         padding: 10px 0;
     }
 
@@ -30,7 +30,7 @@
     padding-bottom: 0;
     margin: 0;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+    @include media-breakpoint-down(xl) {
         padding: 0;
     }
 }
@@ -100,8 +100,6 @@
     margin: 0;
 }
 
-@if (feature('V6_5_0_0')) {
-    .header-wishlist .header-wishlist-badge {
-        top: 0;
-    }
+.header-wishlist .header-wishlist-badge {
+    top: 0;
 }

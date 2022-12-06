@@ -29,7 +29,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -42,8 +42,6 @@ describe('Checkout: as a guest', () => {
         cy.get('input[name="lastName"]').type('Doe');
 
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
 
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -57,8 +55,8 @@ describe('Checkout: as a guest', () => {
 
         // Checkout
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
@@ -85,7 +83,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -106,10 +104,7 @@ describe('Checkout: as a guest', () => {
         cy.get(`.register-personal ${firstNameSelector}`).type('John');
         cy.get(`.register-personal ${lastNameSelector}`).type('Doe');
 
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).should('not.be.visible');
 
         cy.get(`.register-billing ${billingAddressStreetSelector}`).type('123 Main St');
         cy.get(`.register-billing ${billingAddressZipcodeSelector}`).type('1234');
@@ -133,8 +128,8 @@ describe('Checkout: as a guest', () => {
 
         // Checkout
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);

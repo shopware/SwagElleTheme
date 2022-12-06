@@ -1,6 +1,6 @@
 .is-act-finishpage {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .checkout {
             padding-top: 10px;
         }
@@ -14,7 +14,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .checkout {
             padding-top: 0;
         }
@@ -71,12 +71,6 @@
             p strong {
                 font-weight: normal;
             }
-        }
-    }
-
-    @if (not feature('V6_5_0_0')) {
-        .cart-header-tax-price {
-            @extend .col-3;
         }
     }
 

@@ -139,7 +139,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.get('.main-navigation-link[title="Listing Categorian"]').should('be.visible').click();
-        cy.get('.cms-block h2').contains('This is the listing page');
+        cy.get('.cms-block .cms-element-text').contains('This is the listing page');
         cy.takeSnapshot('[CMS] Listing Page', '.content-main', {widths: [375, 768, 1920]});
     });
 });

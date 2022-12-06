@@ -60,7 +60,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.checkout').should('be.visible');
         cy.get('.confirm-main-header').contains('Complete order');
 
-        cy.get('.custom-control.custom-checkbox input').click({force: true});
+        cy.get('.checkout-confirm-tos-checkbox').click({force: true});
         cy.get('#confirmFormSubmit').click();
 
         // Verify order

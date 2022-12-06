@@ -131,7 +131,7 @@ describe('Account: Register via account menu', { tags: ['@workflow', '@register'
         cy.get('#shippingAddressAdditionalField2').type('XYZ Ansgarstr 201');
         cy.get('#shippingAddressAddressPhoneNumber').type('0123456788');
 
-        cy.get('input[name="acceptedDataProtection"]').should('not.be.visible')
+        cy.get('input[name="acceptedDataProtection"]').should('be.visible')
             .check({ force: true })
             .should('be.checked');
 

@@ -117,12 +117,13 @@ describe('Contact: Visual tests', () => {
         cy.takeSnapshot('[Contact] Contact form modal submit', '.modal');
     });
 
-    it('@visual @shopPage: assign contact form to homepage', () => {
+    it.skip('@visual @shopPage: assign contact form to homepage', () => {
         createContactFormPage();
 
         cy.visit('/');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();
+        cy.wait(1000);
 
         cy.server();
 

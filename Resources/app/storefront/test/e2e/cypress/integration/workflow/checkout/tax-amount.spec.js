@@ -68,7 +68,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Offcanvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(productName);
                 cy.get(`${page.elements.offCanvasCart} .offcanvas-close`).click();
 
@@ -81,7 +81,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Offcanvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(additionalProduct.name);
 
                 // Checkout
@@ -97,8 +97,8 @@ describe('Checkout: Use different taxes in products while checkout', () => {
 
                 // Confirm
                 cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-                cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-                cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+                cy.get('.confirm-tos .form-check-input').scrollIntoView();
+                cy.get('.confirm-tos .form-check-input').click(1, 1);
                 cy.get('.confirm-address').contains('Pep Eroni');
 
                 cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`)

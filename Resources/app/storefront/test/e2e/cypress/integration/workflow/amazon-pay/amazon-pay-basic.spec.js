@@ -32,13 +32,13 @@ describe('AmazonPay: Basic view', () => {
             .then(() => cy.visit('/'));
     });
 
-    it.only('@workflow @AmazonPay: should have an technical required amazon pay cookie', () => {
+    it.skip('@workflow @AmazonPay: should have an technical required amazon pay cookie', () => {
         cy.get('.js-cookie-configuration-button').click();
         cy.get('.offcanvas-cookie-entries > .icon-arrow-head-right').first().click();
         cy.get('.offcanvas-cookie-entry').contains('Amazon Pay')
     });
 
-    it('@workflow @AmazonPay: should see logo in footer', () => {
+    it.skip('@workflow @AmazonPay: should see logo in footer', () => {
         cy.get('.js-cookie-configuration-button').click();
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
