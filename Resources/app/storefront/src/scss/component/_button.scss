@@ -32,3 +32,15 @@
         border-color: $gray-200;
     }
 }
+
+.btn-buy {
+    // @deprecated tag:v6.5.0 - Bootstrap v5 uses more aggressive contrast ratio in text color
+    @if feature('v6.5.0.0') {
+        &:hover,
+        &:focus {
+            color: $buy-btn-color;
+        }
+    } @else {
+        color: $buy-btn-color;
+    }
+}

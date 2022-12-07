@@ -105,3 +105,11 @@
         top: 0;
     }
 }
+
+.header-actions-btn {
+    &,
+    &:active,
+    &:hover {
+        border: $border-width solid transparent;
+    }
+}
