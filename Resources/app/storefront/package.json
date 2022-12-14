@@ -15,10 +15,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "fs-extra": "^10.1.0",
-    "lighthouse": "^9.5.0",
-    "puppeteer": "^13.7.0",
-    "stylelint": "13.11.0",
+    "fs-extra": "10.1.0",
+    "lighthouse": "9.5.0",
+    "puppeteer": "13.7.0",
+    "stylelint": "10.0.1",
     "stylelint-config-sass-guidelines": "6.0.0"
   }
 }
