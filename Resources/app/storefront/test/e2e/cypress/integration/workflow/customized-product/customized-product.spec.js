@@ -244,7 +244,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order with Demostore!');
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
@@ -357,7 +357,7 @@ describe('Customize Product: Visual tests product with full customize option', (
             // Finish checkout
             cy.get('#confirmFormSubmit').scrollIntoView();
             cy.get('#confirmFormSubmit').click();
-            cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+            cy.get('.finish-header').contains('Thank you for your order with Demostore!');
 
             // Let's check the calculation on /finish as well
             cy.contains(product.name);

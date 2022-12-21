@@ -137,7 +137,7 @@ describe('Checkout: as a customer', () => {
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
 
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order with Demostore!');
 
         cy.get('.finish-order-details .checkout-card .card-body p:nth-of-type(1)')
             .should('contain', 'Paid in advance');
