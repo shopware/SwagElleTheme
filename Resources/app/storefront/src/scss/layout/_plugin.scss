@@ -1,6 +1,6 @@
 .b2b--plugin {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .component-action-create {
             float: none !important;
         }

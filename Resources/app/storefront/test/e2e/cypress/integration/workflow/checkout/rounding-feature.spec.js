@@ -16,10 +16,9 @@ describe('Checkout: Use rounding feature', () => {
     });
 
     it(`@checkout: Run checkout with value of rounding is ${roundedNum}`, () => {
-        cy.server();
-        cy.route({
-            url: '/api/currency/**',
-            method: 'PATCH'
+        cy.intercept({
+            method: 'PATCH',
+            path: '/api/currency/**'
         }).as('saveData');
 
         cy.loginViaApi();
@@ -34,8 +33,8 @@ describe('Checkout: Use rounding feature', () => {
             .typeSingleSelectAndCheck(roundedNum, '.sw-settings-price-rounding__grand-interval-select');
 
         cy.get('.sw-settings-currency-detail__save-action').click();
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr).to.have.property('status', 204);
+        cy.wait('@saveData').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(204);
         });
         cy.get('.sw-loader').should('not.exist');
 
@@ -51,7 +50,7 @@ describe('Checkout: Use rounding feature', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout

@@ -11,7 +11,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .container-maintenance {
             min-height: 60vh;
         }

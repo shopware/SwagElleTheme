@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/component/address/address-editor-modal-create-address.html.twig' %}
+
+{% block component_address_address_editor_modal_create_address %}
+    <div id="{{ typePrefix }}{% if address %}address-create-edit{% else %}address-create-new{% endif %}"
+         class="collapse"
+         data-bs-parent="#{{ typePrefix }}addressEditorAccordion">
+        {{ block('component_address_address_editor_modal_create_address_wrapper') }}
+    </div>
+{% endblock %}

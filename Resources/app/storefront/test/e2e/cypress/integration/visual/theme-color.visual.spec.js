@@ -138,15 +138,13 @@ describe('ThemeColor: Visual tests', () => {
         cy.get('.cms-listing-col').should('be.visible');
         cy.get('.product-price').should('have.css', 'color', hexToRGB(colorScheme.price));
         cy.get('.product-name').click();
-        cy.get('.product-detail').should('be.visible');
         cy.get('.btn-buy').should('have.css', 'background-color', hexToRGB(colorScheme.buyButton));
         cy.get('.product-detail-price').should('have.css', 'color', hexToRGB(colorScheme.price));
-        cy.get('.product-detail-manufacturer a').should('have.css', 'color', hexToRGB(colorScheme.primary));
-        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-content');
+        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-buy');
 
         cy.get('.product-detail-buy .btn-buy').click();
         cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
+            expect(xhr.response).to.have.property('statusCode', 204)
         });
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
@@ -159,7 +157,7 @@ describe('ThemeColor: Visual tests', () => {
 
         cy.get('.revocation-notice > a').should('have.css', 'color', hexToRGB(colorScheme.primary));
         cy.get('#confirmFormSubmit').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
+        cy.get('.checkout-confirm-tos-checkbox').should('be.visible')
             .check({ force: true })
             .should('be.checked');
         cy.takeSnapshot('[Theme Color] Checkout - Complete order', '.checkout');

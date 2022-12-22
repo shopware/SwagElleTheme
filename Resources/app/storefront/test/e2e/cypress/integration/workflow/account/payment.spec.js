@@ -28,7 +28,7 @@ describe('Account: Payment page', { tags: ['@workflow', '@payment'] }, () => {
             expect(element).to.contain('Payment methods');
         });
 
-        cy.get('.payment-method:nth-child(2) input[name="paymentMethodId"]').should('not.be.visible')
+        cy.get('.payment-method:nth-child(2) input[name="paymentMethodId"]').should('be.visible')
             .check({ force: true })
             .should('be.checked');
         cy.get('.account-payment-card [type="submit"]').click();

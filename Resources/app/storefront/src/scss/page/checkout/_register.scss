@@ -2,7 +2,7 @@
     .checkout {
         padding-top: 5px;
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+        @include media-breakpoint-down(lg) {
             padding-top: 30px;
 
             .address-main-header {
@@ -10,7 +10,7 @@
             }
         }
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             padding-top: 0;
         }
 
@@ -85,7 +85,7 @@
 .page-checkout-address-login {
     .swag-amazon-pay-card {
         .card-title {
-            border-bottom: none;
+            border-bottom: 0;
         }
     }
 }

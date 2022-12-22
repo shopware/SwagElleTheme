@@ -44,7 +44,8 @@ describe('Product Detail: Visual tests variant feature', () => {
         cy.get('.sw-product-detail__tab-advanced-prices').click();
 
         cy.get(page.elements.loader).should('not.exist');
-        cy.get('.sw-field--switch__content [type="checkbox"]').click()
+        cy.wait(1000);
+        cy.get('.sw-inheritance-switch .sw-icon').click();
 
         cy.get('.sw-product-detail-context-prices__empty-state-select-rule').click();
 

@@ -77,7 +77,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
                 cy.get('.icon--regular-checkmark-xs').should('be.visible');
                 cy.visit('/');
 
-                cy.server().route('GET', '/widgets/search**').as('loadNextSearchPage');
+                cy.intercept('GET', '/widgets/search**').as('loadNextSearchPage')
 
                 cy.get('.search-toggle .search-toggle-btn').click();
                 cy.get('input[name=search]').type('Test').type('{enter}');
@@ -98,7 +98,9 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
 
                     for (let i = 1; i < pageCount; i++) {
                         cy.get('.pagination-nav .page-next').eq(0).click();
-                        cy.wait('@loadNextSearchPage').should('have.property', 'status', 200);
+                        cy.wait('@loadNextSearchPage').then(({ request, response }) => {
+                            expect(response.statusCode).to.eq(200);
+                        });
                         cy.get('.cms-listing-row .card').should('have.length', testCase);
                     }
 

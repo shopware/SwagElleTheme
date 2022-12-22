@@ -6,7 +6,7 @@
 
             {{ block('component_line_item_type_product_col_info') }}
 
-            {% if feature('V6_5_0_0') and displayMode === 'offcanvas' %}
+            {% if displayMode === 'offcanvas' %}
                 {% if showTaxPrice %}
                     {{ block('component_line_item_type_product_col_tax_price') }}
                 {% else %}
@@ -20,16 +20,6 @@
                         {{ block('component_line_item_type_product_col_total_price') }}
                     </div>
                 {% endblock %}
-            {% else %}
-                {{ block('component_line_item_type_product_col_quantity') }}
-
-                {% if showTaxPrice %}
-                    {{ block('component_line_item_type_product_col_tax_price') }}
-                {% else %}
-                    {{ block('component_line_item_type_product_col_unit_price') }}
-                {% endif %}
-
-                {{ block('component_line_item_type_product_col_total_price') }}
             {% endif %}
 
             {% if showRemoveButton %}

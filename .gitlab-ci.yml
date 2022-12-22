@@ -1,15 +1,11 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "6.4.18.0"
+  PLATFORM_BRANCH: "trunk"
   PERCY_TARGET_BRANCH: "master"
   PLUGIN_DEPENDENCIES:
     value: >
       [
-        { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "master" },
-        { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
-        { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
-        { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
       ]
     description: 'Plugin dependencies. Defined in json. Example: [{ "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" }]'
   COMPOSER_DEPENDENCIES:
@@ -22,10 +18,10 @@ variables:
 
 include:
   project: 'shopware/6/product/platform'
-  ref: '6.4'
+  ref: 'trunk'
   file: '.gitlab/templates/theme.yml'
 
 default:
-    after_script:
-        - echo "Percy commit $PERCY_TARGET_BRANCH"
-        - echo "Percy branch $PERCY_TARGET_COMMIT"
+  after_script:
+    - echo "Percy commit $PERCY_TARGET_BRANCH"
+    - echo "Percy branch $PERCY_TARGET_COMMIT"

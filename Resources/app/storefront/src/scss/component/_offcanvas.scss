@@ -1,14 +1,8 @@
 .offcanvas {
     .offcanvas-close {
         background-color: $gray-200;
-        border: none;
+        border: 0;
         color: $gray-900;
-
-        @if (not feature('V6_5_0_0')) {
-            .icon-feather > svg {
-                top: 0;
-            }
-        }
     }
 
     &.is-right {

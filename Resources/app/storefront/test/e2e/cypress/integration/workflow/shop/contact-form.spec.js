@@ -1,5 +1,5 @@
 const selector = {
-    footerLinkContact: '.footer-contact-form a[data-toggle="modal"]',
+    footerLinkContact: '.footer-contact-form a[data-bs-toggle="modal"]',
     formContactModal: '.modal form[action="/form/contact"]',
     formContact: '.cms-page form[action="/form/contact"]',
     formContactSalutation: '#form-Salutation',
@@ -40,11 +40,9 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     }
 
     function assignContactFormToHomepage() {
-        cy.server();
-
-        cy.route({
-            url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'PATCH'
+        cy.intercept({
+            method: 'PATCH',
+            url: `${Cypress.env('apiPath')}/category/*`
         }).as('saveCategory');
 
         cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Home').click();
@@ -59,9 +57,9 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
 
         // Save layout
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@saveCategory').then((response) => {
-            expect(response).to.have.property('status', 204);
-        });
+        cy.wait('@saveCategory').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(204);
+        })
     }
 
     function createContactFormPage() {
@@ -84,11 +82,9 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     }
 
     it('@workflow: open contact form modal', () => {
-        cy.server();
-
-        cy.route({
-            url: '/form/contact',
-            method: 'POST'
+        cy.intercept({
+            method: 'POST',
+            url: '/form/contact'
         }).as('contactFormPostRequest');
 
         cy.visit('/');
@@ -103,13 +99,12 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-             expect(response).to.have.property('status', 200);
+        cy.wait('@contactFormPostRequest').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(200);
         });
 
         cy.get('.modal').within(() => {
             cy.get('.confirm-message').contains('We have received your contact request and will process it as soon as possible.')
-
         });
     });
 
@@ -117,11 +112,10 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
         createContactFormPage();
 
         cy.visit('/');
-        cy.server();
 
-        cy.route({
-            url: '/form/contact',
-            method: 'POST'
+        cy.intercept({
+            method: 'POST',
+            url: '/form/contact'
         }).as('contactFormPostRequest');
 
         cy.get('.cms-page .card-title').contains('Contact');
@@ -132,8 +126,8 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-            expect(response).to.have.property('status', 200);
+        cy.wait('@contactFormPostRequest').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(200);
         });
 
         cy.get('.cms-page').within(() => {

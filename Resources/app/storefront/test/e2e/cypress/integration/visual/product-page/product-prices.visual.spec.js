@@ -91,7 +91,7 @@ describe('Product Detail: Visual tests price area', () => {
         //Verify product's advanced price in Storefront
         cy.visit('/Product-name/RS-333');
         cy.get('.product-block-prices').should('be.visible');
-        cy.get('.product-block-prices-table').contains('Unit price');
+        cy.get('.product-block-prices-grid').contains('Unit price');
         cy.get('.product-block-prices-body').contains('From');
         cy.takeSnapshot('[Product Detail] Advanced prices list', '.is-ctl-product');
     });

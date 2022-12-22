@@ -2,7 +2,7 @@ $order-status-bg: #d1f4dd;
 
 .order-item-header {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
+    @include media-breakpoint-down(sm) {
         padding-left: 10px;
         padding-right: 10px;
 
@@ -97,7 +97,7 @@ $order-status-bg: #d1f4dd;
 
 .order-item-detail {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .order-item-detail-footer {
             padding-left: 10px;
             padding-right: 10px;
@@ -119,7 +119,7 @@ $order-status-bg: #d1f4dd;
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .order-detail-content-row {
             align-items: start;
             margin-right: 10px;
@@ -139,7 +139,7 @@ $order-status-bg: #d1f4dd;
 
         width: 75px;
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             margin: 0 auto;
         }
     }

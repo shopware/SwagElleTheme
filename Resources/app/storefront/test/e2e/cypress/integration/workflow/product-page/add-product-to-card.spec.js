@@ -14,7 +14,7 @@ describe('Product: Add to card in product detail', {tags: ['@workflow', '@produc
 
     it('@workflow @product: Add to cart in product detail follow', () => {
         cy.get('.btn-buy').click();
-        cy.get('.cart-offcanvas').should('have.class', 'is-open');
+        cy.get('.cart-offcanvas').should('have.class', 'show');
         cy.get('.offcanvas-cart .alert-success').should('be.visible')
 
         cy.get('.cart-offcanvas .js-offcanvas-close').click()

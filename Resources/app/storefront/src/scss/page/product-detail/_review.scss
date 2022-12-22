@@ -69,7 +69,7 @@ label[for='showForeignReviews'] {
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .product-detail-review-main {
         padding-right: 40px;
     }
