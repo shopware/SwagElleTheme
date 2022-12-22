@@ -122,7 +122,7 @@ describe('Checkout: Proceed checkout using various customers', () => {
                 // Finish checkout
                 cy.get('#confirmFormSubmit').scrollIntoView();
                 cy.get('#confirmFormSubmit').click();
-                cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+                cy.get('.finish-header').contains('Thank you for your order with Demostore!');
 
                 // Check the total price
                 if (customer.firstName === 'Net') {

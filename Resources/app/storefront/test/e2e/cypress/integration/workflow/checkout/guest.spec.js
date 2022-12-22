@@ -66,7 +66,7 @@ describe('Checkout: as a guest', () => {
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order with Demostore!');
         cy.get('.checkout-aside-summary-total').contains(product.price[0].gross);
         cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
     });
@@ -142,7 +142,7 @@ describe('Checkout: as a guest', () => {
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+        cy.get('.finish-header').contains('Thank you for your order with Demostore!');
         cy.get('.checkout-aside-summary-total').contains(product.price[0].gross);
         cy.get('.col-5.checkout-aside-summary-value').contains('10.51');
     });

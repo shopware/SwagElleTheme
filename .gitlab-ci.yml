@@ -22,7 +22,7 @@ variables:
 
 include:
   project: 'shopware/6/product/platform'
-  ref: 'trunk'
+  ref: '6.4'
   file: '.gitlab/templates/theme.yml'
 
 default:

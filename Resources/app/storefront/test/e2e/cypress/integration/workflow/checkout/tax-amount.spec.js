@@ -145,7 +145,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 // Finish checkout
                 cy.get('#confirmFormSubmit').scrollIntoView();
                 cy.get('#confirmFormSubmit').click();
-                cy.get('.finish-header').contains('Thank you for your order at Demostore!');
+                cy.get('.finish-header').contains('Thank you for your order with Demostore!');
 
                 // Let's check the calculation on /finish as well
                 cy.contains(additionalProduct.name);
