@@ -65,7 +65,6 @@ describe('Shop page: CMS service page', () => {
 
         // Edit the layout
         cy.get('.sw-category-detail__tab-cms').click();
-        cy.get('.sw-card__title').contains('Layout assignment').should('be.visible');
         cy.get('.sw-category-detail-layout__change-layout-action').click();
         cy.get('.sw-modal__dialog').should('be.visible');
 

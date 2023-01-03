@@ -7,8 +7,8 @@
             <div class="header-search-rectangle"></div>
             <button class="btn header-search-close"
                     type="button"
-                    {{ dataBsToggleAttr }}="collapse"
-                    {{ dataBsTargetAttr }}="#searchCollapse"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#searchCollapse"
                     aria-expanded="true"
                     aria-controls="searchCollapse"
                     data-search-widget-options='{{ searchWidgetOptions|json_encode }}'>
@@ -26,26 +26,13 @@
                         {% endblock %}
 
                         {% block layout_header_search_button %}
-                            {% if feature('V6_5_0_0') %}
-                                <button type="submit"
-                                        class="btn header-search-btn"
-                                        aria-label="{{ "header.searchButton"|trans|striptags }}">
+                            <button type="submit"
+                                    class="btn header-search-btn"
+                                    aria-label="{{ "header.searchButton"|trans|striptags }}">
                                     <span class="header-search-icon">
                                         {% sw_icon 'search' style { 'pack': 'feather' } %}
                                     </span>
-                                </button>
-                            {% else %}
-                                <div class="input-group-append">
-                                    <button type="submit"
-                                            class="btn header-search-btn"
-                                            aria-label="{{ "header.searchButton"|trans|striptags }}">
-                                        <span class="header-search-icon">
-                                            {% sw_icon 'search' style { 'pack': 'feather' } %}
-                                        </span>
-                                    </button>
-                                </div>
-                            {% endif %}
-                            
+                            </button>
                         {% endblock %}
                     </div>
                 {% endblock %}

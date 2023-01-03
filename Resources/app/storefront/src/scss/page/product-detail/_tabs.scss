@@ -31,7 +31,7 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .product-detail-tab-preview-more {
         display: none;
     }
@@ -55,7 +55,7 @@
     }
 
     .nav-tabs {
-        border-bottom: none;
+        border-bottom: 0;
     }
 
     .product-detail-tabs.product-detail-information {

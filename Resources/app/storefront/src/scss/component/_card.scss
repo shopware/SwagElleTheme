@@ -1,3 +1,9 @@
 .card-title {
-    border-bottom: none;
+    border-bottom: 0;
+    margin-bottom: 12px;
+}
+
+.card-header + .list-group .list-group-item {
+    padding-bottom: 12px;
+    padding-top: 12px;
 }

@@ -36,7 +36,7 @@
 
 .btn.filter-panel-wrapper-toggle {
     @extend .btn-light;
-    border: none;
+    border: 0;
 
     .icon-feather.icon-xs > svg {
         top: 3px;

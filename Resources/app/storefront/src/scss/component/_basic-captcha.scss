@@ -15,7 +15,7 @@ $captcha-image-height: 46px;
 
 .basic-captcha-content {
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         &-code {
             max-width: 100%;
         }

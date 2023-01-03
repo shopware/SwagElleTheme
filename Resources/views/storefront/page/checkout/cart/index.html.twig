@@ -1,26 +1,16 @@
 {% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
 
 {% block page_checkout_cart_add_product_submit %}
-    {% if feature('V6_5_0_0') %}
-        <button class="btn btn-secondary btn-square"
-                type="submit"
-                id="addProductButton">
-            {% sw_icon 'check' style {'pack': 'feather'} %}
-        </button>
-    {% else %}
-        <div class="input-group-append">
-            <button class="btn btn-secondary btn-square"
-                    type="submit"
-                    id="addProductButton">
-                {% sw_icon 'check' style {'pack': 'feather'} %}
-            </button>
-        </div>
-    {% endif %}
+    <button class="btn btn-secondary btn-square"
+            type="submit"
+            id="addProductButton">
+        {% sw_icon 'check' style {'pack': 'feather'} %}
+    </button>
 {% endblock %}
 
 {% block page_checkout_cart_shipping_costs_trigger %}
     <a class="btn btn-light cart-shipping-costs-btn"
-       {{ dataBsToggleAttr }}="collapse"
+       data-bs-toggle="collapse"
        href="#collapseShippingCost"
        role="button"
        aria-expanded="false"
@@ -33,19 +23,9 @@
 {% endblock %}
 
 {% block page_checkout_cart_add_promotion_submit %}
-    {% if feature('V6_5_0_0') %}
-        <button class="btn btn-secondary btn-square"
-                type="submit"
-                id="addPromotion">
-            {% sw_icon 'check' style {'pack': 'feather'} %}
-        </button>
-    {% else %}
-        <div class="input-group-append">
-            <button class="btn btn-secondary btn-square"
-                    type="submit"
-                    id="addPromotion">
-                {% sw_icon 'check' style {'pack': 'feather'} %}
-            </button>
-        </div>
-    {% endif %}
+    <button class="btn btn-secondary btn-square"
+            type="submit"
+            id="addPromotion">
+        {% sw_icon 'check' style {'pack': 'feather'} %}
+    </button>
 {% endblock %}

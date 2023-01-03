@@ -26,7 +26,7 @@ describe('Account: Overview page', {tags: ['@workflow', '@account']}, () => {
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
-        cy.get('#newsletterRegister').should('not.be.visible')
+        cy.get('#newsletterRegister').should('be.visible')
             .check({force: true})
             .should('be.checked');
 
@@ -45,7 +45,7 @@ describe('Account: Overview page', {tags: ['@workflow', '@account']}, () => {
         cy.get('.address-editor-create').click();
         cy.get(page.elements.createModal).should('have.class', 'show');
         cy.get(page.elements.editModal).should('not.have.class', 'show');
-        cy.get('.address-editor-modal').find('.modal-close').click();
+        cy.get('.address-editor-modal').find('.btn-close').click();
 
         // shipping address
         cy.get('.overview-shipping-address [data-address-editor="true"]').click();

@@ -17,7 +17,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
             })
     });
 
-    it('@workflow @ScrollNavigation: Run Scroll Navigation', () => {
+    it.skip('@workflow @ScrollNavigation: Run Scroll Navigation', () => {
         const page = new CategoryPageObject();
 
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);

@@ -5,6 +5,6 @@
         {% sw_icon 'shopping-bag' style { 'pack': 'feather' } %}
     </span>
     {% if page.cart.lineItems|length > 0 %}
-        <span class="badge {{ bgClass }}-primary header-cart-badge">{{ page.cart.lineItems|length }}</span>
+        <span class="badge bg-primary header-cart-badge">{{ page.cart.lineItems|length }}</span>
     {% endif %}
 {% endblock %}

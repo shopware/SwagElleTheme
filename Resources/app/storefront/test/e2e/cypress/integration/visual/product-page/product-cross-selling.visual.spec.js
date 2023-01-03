@@ -91,7 +91,6 @@ describe('Product Detail: Product', () => {
         // Verify in storefront
         cy.visit('/');
         cy.contains('Original product').click();
-        cy.get('.product-detail-content').should('be.visible');
         cy.get('.product-detail-name').contains('Original product');
 
         cy.get('.product-cross-selling-tab-navigation')

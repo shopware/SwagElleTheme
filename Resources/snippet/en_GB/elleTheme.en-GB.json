@@ -7,7 +7,7 @@
     "newsletterHeadline": "Newsletter",
     "newsletterInfo": "Subscribe to the free newsletter and never miss any news or offers of %shopname%.",
     "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm",
-    "serviceContactLink": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Contact form</a>"
+    "serviceContactLink": "<a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Contact form</a>"
   },
   "account": {
     "orRegisterLink": "sign up",
@@ -26,7 +26,7 @@
   "general": {
     "paginationNumber": "Page %current_page% of %total_page%",
     "requiredFields": "Fields marked with an asterisk (*) are required.",
-    "privacyNotice": "I have read the <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">data protection information</a>."
+    "privacyNotice": "I have read the <a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">data protection information</a>."
   },
   "checkout": {
     "finishButtonBackToShop": "Back to shop",
@@ -44,6 +44,6 @@
     "basicCaptchaInputPlaceholder": "Enter characters here..."
   },
   "contact": {
-    "privacyNotice": "I have read the <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">data protection information</a>."
+    "privacyNotice": "I have read the <a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">data protection information</a>."
   }
 }

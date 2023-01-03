@@ -1,10 +1,25 @@
 .cart-item {
     padding: 16px 0;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         &-remove {
             position: absolute;
             right: 0;
+            width: auto;
+        }
+
+        &-quantity-row {
+            align-items: center;
+        }
+
+        &-row {
+            gap: 10px;
+        }
+
+        &-tax-price,
+        &-total-price {
+            display: flex;
+            justify-content: space-between;
         }
     }
 
@@ -15,6 +30,13 @@
 
         &-quantity-container {
             width: 80px;
+        }
+
+        &-quantity-label,
+        &-unit-price-label,
+        &-total-price-label,
+        &-tax-price-label {
+            display: none;
         }
     }
 

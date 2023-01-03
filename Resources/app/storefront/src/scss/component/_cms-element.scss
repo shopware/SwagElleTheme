@@ -2,7 +2,7 @@
     .border-primary {
         @extend .btn-light;
         @extend .mb-n3;
-        border: none;
+        border: 0;
     }
 
     &-actions {

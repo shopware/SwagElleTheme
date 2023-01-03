@@ -13,11 +13,7 @@
         }
 
         .select-groupBy {
-            @if (feature('V6_5_0_0')) {
-                @extend .form-select;
-            } @else {
-                @extend .custom-select;
-            }
+            @extend .form-select;
         }
 
         label {
@@ -29,7 +25,7 @@
     .table-responsive,
     .grid-form-grid-table,
     .b2b--component-pagination {
-        border: none;
+        border: 0;
         background-color: transparent;
     }
 }

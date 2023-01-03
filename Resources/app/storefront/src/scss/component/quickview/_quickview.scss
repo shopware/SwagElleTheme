@@ -7,7 +7,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .swag-cms-extensions-quickview-header {
             .swag-cms-extensions-quickview-header-manufacturer {
                 display: none;
@@ -33,7 +33,7 @@
     .swag-cms-extensions-quickview-product-buy-form {
         margin-bottom: 1rem;
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             form {
                 margin-bottom: 5px;
             }
@@ -84,7 +84,7 @@
     .carousel-control-prev {
         background: none;
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             background: $gray-200;
             width: 24px;
         }

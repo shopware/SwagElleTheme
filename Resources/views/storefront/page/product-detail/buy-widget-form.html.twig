@@ -29,7 +29,7 @@
     {% set lastOption = customizedProductsTemplate.options|last %}
 
     {% if lastOption.id == option.id and hasRequiredField == true %}
-        <div class="{{ formRowClass }} swag-customized-products-option swag-customized-products__item">
+        <div class="row g-2 swag-customized-products-option swag-customized-products__item">
             <span class="swag-customized-products-option__required-field-label">
                 {{ "customizedProducts.requiredField"|trans|sw_sanitize }}
             </span>
@@ -45,7 +45,7 @@
         {% set expressSettings = page.extensions[constant('Swag\\PayPal\\Checkout\\ExpressCheckout\\ExpressCheckoutSubscriber::PAYPAL_EXPRESS_CHECKOUT_BUTTON_DATA_EXTENSION_ID')] %}
 
         {% if expressSettings.productDetailEnabled %}
-            <div class="{{ formRowClass }} mt-3 justify-content-start">
+            <div class="row g-2 mt-3 justify-content-start">
                 {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-12 col-sm-12 col-md-4 col-lg-6 offset-md-3'} %}
             </div>
         {% endif %}
@@ -55,7 +55,7 @@
     {% set installmentBanner = page.extensions[constant('Swag\\PayPal\\Installment\\Banner\\InstallmentBannerSubscriber::PAYPAL_INSTALLMENT_BANNER_DATA_EXTENSION_ID')] %}
 
     {% if installmentBanner is not null %}
-        <div class="{{ formRowClass }} mt-3 mb-4 justify-content-end">
+        <div class="row g-2 mt-3 mb-4 justify-content-end">
             <div class="{{ buyable ? 'col-8' : 'col-12' }}" data-swag-paypal-installment-banner="true"
                  data-swag-pay-pal-installment-banner-options="{{ installmentBanner|json_encode }}">
             </div>

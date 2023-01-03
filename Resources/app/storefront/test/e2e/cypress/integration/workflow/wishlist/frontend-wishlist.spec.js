@@ -116,9 +116,9 @@ describe('Wishlist: for wishlist page', () => {
                 });
 
                 cy.wait('@offcanvas').then(xhr => {
-                    expect(xhr.response).to.have.property('statusCode', 200);
-                    cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
-                    cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
+                    expect(xhr.response).to.have.property('statusCode', 204);
+                    cy.get('.offcanvas.show.cart-offcanvas').should('exist');
+                    cy.get('.offcanvas.show.cart-offcanvas').find('.cart-item-label').contains(product.name);
 
                     // Wishlist product should still exist
                     cy.get('.cms-listing-row .cms-listing-col').contains(product.name);

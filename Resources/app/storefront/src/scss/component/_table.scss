@@ -7,13 +7,13 @@
 }
 
 .b2b--grid-container {
-    border: none;
+    border: 0;
     background-color: transparent;
 
     .table--fastorder tr {
         td,
         th {
-            border: none !important;
+            border: 0 !important;
             border-bottom: $border-width solid $border-color !important;
         }
     }
@@ -51,7 +51,7 @@
 
 .b2b-table {
     table {
-        border: none;
+        border: 0;
     }
 
     thead,
@@ -95,7 +95,7 @@
         }
 
         + tbody {
-            border-top: none;
+            border-top: 0;
         }
     }
 
@@ -103,7 +103,7 @@
         td,
         th {
             background-color: transparent !important;
-            border: none;
+            border: 0;
             border-bottom: $border-width solid $border-color;
         }
 

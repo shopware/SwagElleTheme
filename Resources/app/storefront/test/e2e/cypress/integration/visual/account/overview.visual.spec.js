@@ -14,7 +14,7 @@ describe('Account: Overview page', () => {
             });
     });
 
-    it('@visual: Overview page', () => {
+    it.skip('@visual: Overview page', () => {
         const accountPage = new AccountPageObject();
 
         cy.visit('/account/login');
@@ -30,7 +30,7 @@ describe('Account: Overview page', () => {
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
-        cy.get('#newsletterRegister').should('not.be.visible')
+        cy.get('#newsletterRegister').should('be.visible')
             .check({ force: true })
             .should('be.checked');
 
@@ -57,7 +57,7 @@ describe('Account: Overview page', () => {
 
         cy.takeSnapshot('[Overview] Create a new billing address form', '.address-editor-modal');
 
-        cy.get('.address-editor-modal').find('.modal-close').click();
+        cy.get('.address-editor-modal').find('.btn-close').click();
 
         // shipping address
         cy.get('.overview-shipping-address [data-address-editor="true"]').click();

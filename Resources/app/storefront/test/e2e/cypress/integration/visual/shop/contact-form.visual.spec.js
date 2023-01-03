@@ -1,5 +1,5 @@
 const selector = {
-    footerLinkContact: '.footer-contact-form a[data-toggle="modal"]',
+    footerLinkContact: '.footer-contact-form a[data-bs-toggle="modal"]',
     formContactModal: '.modal form[action="/form/contact"]',
     formContact: '.cms-page form[action="/form/contact"]',
     formContactSalutation: '#form-Salutation',
@@ -40,11 +40,9 @@ describe('Contact: Visual tests', () => {
     }
 
     function assignContactFormToHomepage() {
-        cy.server();
-
-        cy.route({
-            url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'PATCH'
+        cy.intercept({
+            method: 'PATCH',
+            path: `${Cypress.env('apiPath')}/category/*`
         }).as('saveCategory');
 
         cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Home').click();
@@ -84,11 +82,9 @@ describe('Contact: Visual tests', () => {
     }
 
     it('@visual: open modal contact form', () => {
-        cy.server();
-
-        cy.route({
-            url: '/form/contact',
-            method: 'POST'
+        cy.intercept({
+            method: 'POST',
+            path: '/form/contact'
         }).as('contactFormPostRequest');
 
         cy.visit('/');
@@ -124,12 +120,12 @@ describe('Contact: Visual tests', () => {
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
-        cy.server();
-
-        cy.route({
-            url: '/form/contact',
-            method: 'POST'
+        cy.intercept({
+            method: 'POST',
+            path: '/form/contact'
         }).as('contactFormPostRequest');
+
+        cy.wait(2000);
 
         cy.get('.cms-page .card-title').contains('Contact');
 

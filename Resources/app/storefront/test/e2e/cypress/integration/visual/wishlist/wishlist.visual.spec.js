@@ -127,7 +127,7 @@ describe('Wishlist: Check appearance of wishlist', () => {
             cy.get('.text-wishlist-remove').should('be.visible').contains('Remove from wishlist');
             cy.get('.icon-wishlist-not-added').should('not.be.visible');
 
-            cy.takeSnapshot('[Wishlist] Product detail', '.product-detail');
+            cy.takeSnapshot('[Wishlist] Product detail', '.product-detail-name');
         })
     });
 

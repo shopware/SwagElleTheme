@@ -39,8 +39,8 @@ describe('Checkout: as a guest', () => {
         const accountPage = new AccountPageObject();
 
         // Shopping cart
-        cy.get('.header-cart-btn').should('be.visible').click();
         cy.wait(1000);
+        cy.get('.header-cart-btn').should('be.visible').click();
         cy.takeSnapshot('[Checkout] Empty cart', '.offcanvas');
         cy.get('.offcanvas .offcanvas-close').should('be.visible').click();
 
@@ -62,7 +62,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
         cy.takeSnapshot('[Checkout] Offcanvas', '.offcanvas');
 
@@ -79,8 +79,6 @@ describe('Checkout: as a guest', () => {
         cy.get('input[name="lastName"]').type('Doe');
 
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
 
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -96,8 +94,8 @@ describe('Checkout: as a guest', () => {
 
         // Checkout
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
@@ -119,6 +117,7 @@ describe('Checkout: as a guest', () => {
         // Product detail
         cy.get('.search-toggle-btn').should('be.visible').click();
         cy.get('.header-search-input').should('be.visible');
+        cy.wait(1000);
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
         cy.get('.search-suggest-product-price').contains(product.price[0].gross);
@@ -126,7 +125,7 @@ describe('Checkout: as a guest', () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -147,8 +146,6 @@ describe('Checkout: as a guest', () => {
         cy.get(`.register-personal ${firstNameSelector}`).type('John');
         cy.get(`.register-personal ${lastNameSelector}`).type('Doe');
 
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
         cy.get(`${accountPage.elements.registerForm} input[name="password"]`).should('not.be.visible');
 
@@ -175,8 +172,8 @@ describe('Checkout: as a guest', () => {
 
         // Checkout
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);

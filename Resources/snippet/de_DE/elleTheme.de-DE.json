@@ -7,7 +7,7 @@
     "newsletterHeadline": "Newsletter",
     "newsletterInfo": "Abonnieren Sie den kostenlosen Newsletter und verpassen Sie keine Neuigkeiten und Angebote von %shopname%.",
     "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 9 - 17 Uhr",
-    "serviceContactLink": "<a data-toggle=\"modal\" data-url=\"%url%\"  href=\"%url%\" title=\"contact form\">Kontaktformular</a>"
+    "serviceContactLink": "<a data-bs-toggle=\"modal\" data-url=\"%url%\"  href=\"%url%\" title=\"contact form\">Kontaktformular</a>"
   },
   "account": {
     "orRegisterLink": "registrieren",
@@ -26,7 +26,7 @@
   "general": {
     "paginationNumber": "Seite %current_page% von %total_page%",
     "requiredFields": "Mit einem Stern (*) markierte Felder sind Pflichtfelder.",
-    "privacyNotice": "Ich habe die <a data-toggle=\"modal\"  data-url=\"%url%\" href=\"%url%\"  title=\"Datenschutzvereinbarung\">Datenschutzvereinbarung</a> gelesen."
+    "privacyNotice": "Ich habe die <a data-bs-toggle=\"modal\"  data-url=\"%url%\" href=\"%url%\"  title=\"Datenschutzvereinbarung\">Datenschutzvereinbarung</a> gelesen."
   },
   "checkout": {
     "finishButtonBackToShop": "Zurück zum Shop",
@@ -44,6 +44,6 @@
     "basicCaptchaInputPlaceholder": "Zeichen hier eingeben..."
   },
   "contact": {
-    "privacyNotice": "Ich habe die <a data-toggle=\"modal\"  data-url=\"%url%\" href=\"%url%\"  title=\"Datenschutzvereinbarung\">Datenschutzvereinbarung</a> gelesen."
+    "privacyNotice": "Ich habe die <a data-bs-toggle=\"modal\"  data-url=\"%url%\" href=\"%url%\"  title=\"Datenschutzvereinbarung\">Datenschutzvereinbarung</a> gelesen."
   }
 }

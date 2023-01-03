@@ -1,7 +1,7 @@
 .pagination {
     margin-top: 10px;
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(sm) {
         justify-content: center;
         padding: 5px;
     }
@@ -9,14 +9,14 @@
     .page-item {
         .page-link {
             background: none;
-            border: none;
+            border: 0;
             padding: 8px 5px;
         }
 
         &.disabled {
             .page-link {
                 background: none;
-                border: none;
+                border: 0;
 
                 .icon-feather {
                     color: $gray-500;
@@ -50,7 +50,7 @@
 .b2b--component-pagination {
     .btn {
         background-color: transparent;
-        border: none;
+        border: 0;
 
         .icon-feather > svg {
             top: 3px;
