@@ -14,9 +14,10 @@
     &.is-right {
         .offcanvas-close {
             display: flex;
+            gap: 4px;
 
-            .icon-feather > svg {
-                top: -2px;
+            .icon > svg {
+                top: -1px;
             }
         }
     }

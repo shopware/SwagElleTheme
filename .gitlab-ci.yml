@@ -1,7 +1,7 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "6.4.18.0"
+  PLATFORM_BRANCH: "6.4.19.0"
   PERCY_TARGET_BRANCH: "master"
   PLUGIN_DEPENDENCIES:
     value: >
@@ -9,7 +9,7 @@ variables:
         { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "master" },
         { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
         { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
-        { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
+        { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "2.5.0" }
       ]
     description: 'Plugin dependencies. Defined in json. Example: [{ "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" }]'
   COMPOSER_DEPENDENCIES:
