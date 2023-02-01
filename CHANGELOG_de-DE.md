@@ -1,3 +1,8 @@
+# 1.12.0
+- Überprüfung der Kompatibilität mit Platform v6.4.19.0
+- Überprüfung der Kompatibilität mit Platform v6.4.18.0
+- Überarbeitete Textbausteine
+
 # 1.11.0
 - Überprüfung der Kompatibilität mit Platform v6.4.17.0
 
