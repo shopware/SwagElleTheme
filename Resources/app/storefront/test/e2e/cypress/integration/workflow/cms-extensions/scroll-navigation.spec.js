@@ -6,7 +6,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.createProductFixture();
@@ -20,7 +20,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
     it.skip('@workflow @ScrollNavigation: Run Scroll Navigation', () => {
         const page = new CategoryPageObject();
 
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
             method: 'POST',

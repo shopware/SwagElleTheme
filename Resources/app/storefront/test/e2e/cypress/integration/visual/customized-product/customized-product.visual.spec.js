@@ -220,12 +220,12 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Off canvas cart
         cy.get('.offcanvas.is-open').should('be.visible');
-        cy.get('.cart-item-label').contains(product.name);
+        cy.get('.line-item-label').contains(product.name);
         cy.takeSnapshot('[Customized Product] Add to cart', '.cart-offcanvas');
 
         // Check the configuration
-        cy.get('.cart-item-collapse-button').click();
-        cy.contains('.cart-item-child-label-bullet', 'Example #2');
+        cy.get('.line-item-collapse-button').click();
+        cy.contains('.line-item-child-label-bullet', 'Example #2');
 
         cy.takeSnapshot('[Customized Product] Off-canvas nested line items', '.cart-offcanvas');
 
@@ -246,7 +246,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
         cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-main');
 
-        cy.get('.cart-item-collapse-button').first().click()
+        cy.get('.line-item-collapse-button').first().click()
         cy.takeSnapshot('[Customized Product] Checkout confirm nested line items', '.checkout-main');
 
         // Finish checkout
@@ -256,7 +256,7 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
-        cy.get('.cart-item-collapse-button').first().click()
+        cy.get('.line-item-collapse-button').first().click()
         cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-main');
     });
 
@@ -359,11 +359,11 @@ describe('Customize Product: Visual tests product with full customize option', (
 
             // Off canvas cart
             cy.get('.offcanvas.is-open').should('be.visible');
-            cy.get('.cart-item-label').contains(product.name);
+            cy.get('.line-item-label').contains(product.name);
 
             // Check the configuration
-            cy.get('.cart-item-collapse-button').click();
-            cy.contains('.cart-item-child-label-bullet', 'Example #2');
+            cy.get('.line-item-collapse-button').click();
+            cy.contains('.line-item-child-label-bullet', 'Example #2');
 
             // Checkout
             cy.get('.offcanvas-cart-actions .btn-primary').click();

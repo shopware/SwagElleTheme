@@ -43,6 +43,12 @@
         }
     }
 
+    .revocation-notice {
+        + .form-check + div {
+            @extend .form-check;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .confirm-product {
             .cart-item-tax-price,

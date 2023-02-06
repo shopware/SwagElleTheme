@@ -68,6 +68,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/badge';
 @import 'component/line-item';
 @import 'component/dropdown';
+@import 'component/quantity-selector';
 
 /*
  * Layout-related sections
@@ -106,12 +107,10 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/account/login';
 @import 'page/account/register';
 @import 'page/checkout/cart';
-@import 'page/checkout/cart-item';
 @import 'page/checkout/aside';
 @import 'page/checkout/confirm';
 @import 'page/checkout/finish';
 @import 'page/checkout/register';
-@import 'page/checkout/cart-item-children';
 @import 'page/checkout/customized-product-cart';
 @import 'page/checkout/checkout';
 @import 'page/error/404';

@@ -220,10 +220,10 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Off canvas cart
         cy.get('.offcanvas.is-open').should('be.visible');
-        cy.get('.cart-item-label').contains(product.name);
+        cy.get('.line-item-label').contains(product.name);
         // Check the configuration
-        cy.get('.cart-item-collapse-button').click();
-        cy.contains('.cart-item-child-label-bullet', 'Example #2');
+        cy.get('.line-item-collapse-button').click();
+        cy.contains('.line-item-child-label-bullet', 'Example #2');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -240,7 +240,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
-        cy.get('.cart-item-collapse-button').first().click()
+        cy.get('.line-item-collapse-button').first().click()
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
@@ -248,7 +248,7 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
-        cy.get('.cart-item-collapse-button').first().click()
+        cy.get('.line-item-collapse-button').first().click()
     })
 
     it.skip('@workflow, @customized: Customize product step by step mode', () => {
@@ -332,11 +332,11 @@ describe('Customize Product: Visual tests product with full customize option', (
 
             // Off canvas cart
             cy.get('.offcanvas.is-open').should('be.visible');
-            cy.get('.cart-item-label').contains(product.name);
+            cy.get('.line-item-label').contains(product.name);
 
             // Check the configuration
-            cy.get('.cart-item-collapse-button').click();
-            cy.contains('.cart-item-child-label-bullet', 'Example #2');
+            cy.get('.line-item-collapse-button').click();
+            cy.contains('.line-item-child-label-bullet', 'Example #2');
 
             // Checkout
             cy.get('.offcanvas-cart-actions .btn-primary').click();

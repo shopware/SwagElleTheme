@@ -84,7 +84,7 @@ describe('Checkout: Proceed checkout using various customers', () => {
 
                     // Set new address as shipping address
                     cy.contains('Set as default shipping').click();
-                    cy.get('.shipping-address p').contains('Sherman');
+                    cy.get('.shipping-address .address').contains('Sherman');
                 }
 
                 // Product detail
@@ -100,7 +100,7 @@ describe('Checkout: Proceed checkout using various customers', () => {
                 // Offcanvas
                 cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(product.name);
-                cy.get('.cart-item-price').contains(price);
+                cy.get('.line-item-price').contains(price);
                 cy.get('.summary-value.summary-total').contains(price);
 
                 // Checkout
@@ -142,10 +142,10 @@ describe('Checkout: Proceed checkout using various customers', () => {
                 cy.get('.cart-header-tax-price').contains(vatSnippet);
                 // Check the tax price
                 if (customer.firstName === 'Net') {
-                    cy.get('.col-12.cart-item-tax-price').contains('1.60');
+                    cy.get('.line-item-tax-price').contains('1.60');
                     cy.get('.col-5.checkout-aside-summary-value').contains('1.60');
                 } else {
-                    cy.get('.col-12.cart-item-tax-price').contains('1.68');
+                    cy.get('.line-item-tax-price').contains('1.68');
                     cy.get('.col-5.checkout-aside-summary-value').contains('1.68');
                 }
             });

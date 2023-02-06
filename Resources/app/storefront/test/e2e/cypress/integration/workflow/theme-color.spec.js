@@ -19,10 +19,10 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
                 return cy.createCustomerFixtureStorefront();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
                 cy.fixture('color-scheme.json').then((colorSchemeFixture) => {
                     colorScheme = colorSchemeFixture;
                     changeColorScheme(colorSchemeFixture);
@@ -43,10 +43,10 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
                 cy.clearCookies();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
 
                 cy.intercept({
                     path: `${Cypress.env('apiPath')}/_action/theme/*`,

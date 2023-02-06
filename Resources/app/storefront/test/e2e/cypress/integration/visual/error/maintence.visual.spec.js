@@ -1,6 +1,6 @@
 describe('Error: Maintenance visual testing page', () => {
     beforeEach(() => {
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 cy.searchViaAdminApi({
                     endpoint: 'sales-channel',
@@ -36,7 +36,7 @@ describe('Error: Maintenance visual testing page', () => {
 
         cy.takeSnapshot('[Shop] Maintenance page', '.container-maintenance');
 
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 cy.searchViaAdminApi({
                     endpoint: 'sales-channel',

@@ -1,17 +1,19 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
 
 {% block buy_widget_buy_quantity_container %}
-    <div class="col-4 col-sm-4 col-md-3 col-lg-3">
-        {% set selectQuantityThreshold = 100 %}
+    {% if showQuantitySelect %}
+        <div class="col-12 col-md-auto">
+            {% set selectQuantityThreshold = 100 %}
 
-        {% block buy_widget_buy_quantity %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
+            {% block buy_widget_buy_quantity_input_group %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block buy_widget_buy_button_container %}
-    <div class="col-8 col-sm-8 col-md-4 col-lg-6 btn-buy-col">
+    <div class="{% if showQuantitySelect %}col-12 col-md-4 col-lg{% else %}col-12{% endif %} btn-buy-col">
         {% block buy_widget_buy_button %}
             {{ parent() }}
         {% endblock %}

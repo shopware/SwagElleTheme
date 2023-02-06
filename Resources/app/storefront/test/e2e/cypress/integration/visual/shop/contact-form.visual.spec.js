@@ -21,7 +21,7 @@ describe('Contact: Visual tests', () => {
             cy.createProductFixture();
         })
         .then(() => {
-            cy.loginViaApi();
+            cy.login();
             cy.createCmsFixture();
         })
     });
@@ -57,9 +57,9 @@ describe('Contact: Visual tests', () => {
 
         // Save layout
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@saveCategory').then((response) => {
-            expect(response).to.have.property('status', 204);
-        });
+        cy.wait('@saveCategory').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(204);
+        })
     }
 
     function createContactFormPage() {
@@ -76,7 +76,8 @@ describe('Contact: Visual tests', () => {
             salesChannel = data.id;
             cy.createDefaultFixture('cms-page', {}, 'cms-contact-page')
         }).then(() => {
-            cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
+        }).then(() => {
             assignContactFormToHomepage();
         });
     }
@@ -101,8 +102,8 @@ describe('Contact: Visual tests', () => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-            expect(response).to.have.property('status', 200);
+        cy.wait('@contactFormPostRequest').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(200);
         });
 
         cy.get('.modal').within(() => {
@@ -137,8 +138,8 @@ describe('Contact: Visual tests', () => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-            expect(response).to.have.property('status', 200);
+        cy.wait('@contactFormPostRequest').then(({ request, response }) => {
+            expect(response.statusCode).to.eq(200);
         });
 
         cy.get('.cms-page').within(() => {

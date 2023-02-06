@@ -17,13 +17,13 @@ describe('Product Detail: Product', () => {
                 });
             })
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.visit('/');
                 cy.get('.cookie-permission-container .btn-primary').contains('Configure').click();
                 cy.get('.offcanvas .btn-primary').contains('Save').click();
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
             });
     });
 
