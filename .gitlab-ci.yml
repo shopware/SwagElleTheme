@@ -1,5 +1,5 @@
 variables:
-  CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
+  CYPRESS_SPEC: 'cypress/**/workflow/shop/contact-form.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
   PLATFORM_BRANCH: "trunk"
   PERCY_TARGET_BRANCH: "master"

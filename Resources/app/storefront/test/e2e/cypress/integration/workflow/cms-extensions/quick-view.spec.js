@@ -10,13 +10,13 @@ describe('Quick View: Test if it works correctly', () => {
                 product = result;
             })
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
                 cy.createCmsFixture();
             })
     });
 
     it.skip('@visual @QuickView: Run Quick View in a product view directly in the listing page', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
             method: 'POST',

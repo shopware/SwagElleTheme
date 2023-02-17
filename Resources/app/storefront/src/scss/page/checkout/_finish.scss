@@ -81,4 +81,10 @@
     .cart-item-remove {
         display: none;
     }
+
+    @include media-breakpoint-up(md) {
+        .cart-header-tax-price {
+            @include make-col(2);
+        }
+    }
 }

@@ -19,10 +19,10 @@ describe('ThemeColor: Visual tests', () => {
                 return cy.createCustomerFixtureStorefront();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/theme/manager/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);
                 cy.fixture('color-scheme.json').then((colorSchemeFixture) => {
                     colorScheme = colorSchemeFixture;
                     changeColorScheme(colorSchemeFixture);
@@ -43,7 +43,7 @@ describe('ThemeColor: Visual tests', () => {
                 cy.clearCookies();
             })
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
                 cy.visit(`${Cypress.env('admin')}#/sw/theme/manager/index`);

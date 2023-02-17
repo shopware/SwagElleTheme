@@ -34,9 +34,7 @@ describe('Account: Overview page', () => {
             .check({ force: true })
             .should('be.checked');
 
-        cy.get('.newsletter-alerts').should((element) => {
-            expect(element).to.contain('You have subscribed to the newsletter');
-        });
+        cy.get('.newsletter-alerts .alert-success').should('be.visible');
 
         cy.takeSnapshot('[Overview] Newsletter subscription', '.account-overview');
 

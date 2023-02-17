@@ -6,7 +6,7 @@ describe('Product Detail: Visual tests product image area', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.createProductFixture();
@@ -38,7 +38,7 @@ describe('Product Detail: Visual tests product image area', () => {
 
         // Add first image to product
         cy.get('.sw-product-media-form__previews').scrollIntoView();
-        cy.get('#files').attachFile(
+        cy.get('.sw-product-detail-base__media #files').attachFile(
             'img/sw-product-preview.png',
             {
                 fileName: 'sw-product-preview.png',
@@ -90,7 +90,7 @@ describe('Product Detail: Visual tests product image area', () => {
         // Upload Image
         for (let i = 0; i < 5; i++) {
             cy.get('.sw-product-media-form__previews').scrollIntoView();
-            cy.get('#files').attachFile(
+            cy.get('.sw-product-detail-base__media #files').attachFile(
                 `img/sw-product-preview-${i}.png`,
                 {
                     fileName: `sw-product-preview-${i}.png`,

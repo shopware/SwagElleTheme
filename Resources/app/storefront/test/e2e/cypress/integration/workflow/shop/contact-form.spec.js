@@ -21,7 +21,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
                 return cy.createProductFixture();
             })
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
                 cy.createCmsFixture();
             });
     });
@@ -76,7 +76,10 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
             salesChannel = data.id;
             cy.createDefaultFixture('cms-page', {}, 'cms-contact-page')
         }).then(() => {
-            cy.openInitialPage(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
+            cy.get('.sw-skeleton').should('not.exist');
+            cy.get('.sw-loader').should('not.exist');
+        }).then(() => {
             assignContactFormToHomepage();
         });
     }

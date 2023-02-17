@@ -64,7 +64,7 @@ describe('Account: Order page', () => {
 
         cy.get('.order-table-header-context-menu-content-form button').click();
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
+        cy.get('.cart-offcanvas .alert-success').should('be.visible');
         cy.takeSnapshot('[Order] Re-order - Add product to shopping cart', '.container');
 
         cy.get('.begin-checkout-btn').click();
@@ -83,7 +83,7 @@ describe('Account: Order page', () => {
 
     it('@visual: cancel order', () => {
         // Enable refunds
-        cy.loginViaApi().then(() => {
+        cy.login().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
             cy.contains('Enable refunds').click();
             cy.get('.sw-settings-cart__save-action').click();

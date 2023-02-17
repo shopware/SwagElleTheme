@@ -4,7 +4,7 @@ describe('Product Detail: Visual tests price area', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 return cy.createProductFixture();
@@ -27,7 +27,7 @@ describe('Product Detail: Visual tests price area', () => {
     });
 
     it('@visual, @price: List price', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
         const page = new ProductPageObject();
         const priceGroup = '.context-price-group';
         const quantityEndCell = '.sw-data-grid__cell--quantityEnd';
@@ -52,8 +52,7 @@ describe('Product Detail: Visual tests price area', () => {
 
         cy.get('.sw-product-detail-context-prices__empty-state-select-rule').click();
 
-        cy.get('.sw-select-result').contains('All customers').as('allCustomerOption');
-        cy.get('@allCustomerOption').click();
+        cy.get('.sw-select-result .sw-highlight-text').contains('All customers').click();
 
         // change quantityEnd of first row
         cy.get(`${priceGroup}-0 ${page.elements.dataGridRow}--0 ${quantityEndCell} input`)
@@ -91,7 +90,7 @@ describe('Product Detail: Visual tests price area', () => {
         //Verify product's advanced price in Storefront
         cy.visit('/Product-name/RS-333');
         cy.get('.product-block-prices').should('be.visible');
-        cy.get('.product-block-prices-grid').contains('Unit price');
+        cy.get('.product-block-prices-table').contains('Unit price');
         cy.get('.product-block-prices-body').contains('From');
         cy.takeSnapshot('[Product Detail] Advanced prices list', '.is-ctl-product');
     });

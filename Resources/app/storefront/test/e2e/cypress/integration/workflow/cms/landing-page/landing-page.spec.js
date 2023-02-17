@@ -7,7 +7,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         let salesChannel;
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
                 return cy.searchViaAdminApi({
@@ -29,15 +29,11 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
 
                 return cy.createDefaultFixture('landing-page', {
                     cmsPage: page,
-                    salesChannels: [
-                        {
-                            id: salesChannel
-                        }
-                    ]
+                    salesChannels: [{id: salesChannel}]
                 });
             })
             .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
             });
     });
 

@@ -21,7 +21,7 @@ describe('Checkout: Use rounding feature', () => {
             path: '/api/currency/**'
         }).as('saveData');
 
-        cy.loginViaApi();
+        cy.login();
 
         cy.visit(`/admin#/sw/settings/currency/detail/${product.price[0].currencyId}`);
 

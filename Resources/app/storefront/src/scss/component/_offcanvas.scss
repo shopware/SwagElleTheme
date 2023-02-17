@@ -32,4 +32,23 @@
             }
         }
     }
+
+    &.cart-offcanvas {
+        .line-item {
+            &-quantity-label,
+            &-total-price-label {
+                display: none;
+            }
+
+            &-quantity {
+                &-select-wrapper {
+                    width: 100%;
+                }
+
+                &-row {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
 }

@@ -4,7 +4,7 @@ describe('Product Detail: Visual tests variant feature', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.createProductVariantFixture();
@@ -17,7 +17,7 @@ describe('Product Detail: Visual tests variant feature', () => {
     });
 
     it('@visual @variants: Should have Variant product', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
         const page = new ProductPageObject();
         const priceGroup = '.context-price-group';
         const quantityEndCell = '.sw-data-grid__cell--quantityEnd';
@@ -49,8 +49,7 @@ describe('Product Detail: Visual tests variant feature', () => {
 
         cy.get('.sw-product-detail-context-prices__empty-state-select-rule').click();
 
-        cy.get('.sw-select-result').contains('All customers').as('allCustomerOption');
-        cy.get('@allCustomerOption').click();
+        cy.get('.sw-select-result .sw-highlight-text').contains('All customers').click();
 
         // change quantityEnd of first row
         cy.get(`${priceGroup}-0 ${page.elements.dataGridRow}--0 ${quantityEndCell} input`)

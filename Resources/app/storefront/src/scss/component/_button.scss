@@ -38,6 +38,8 @@
 }
 
 .btn-buy {
+    color: $buy-btn-color;
+
     &:hover,
     &:focus {
         color: $buy-btn-color;

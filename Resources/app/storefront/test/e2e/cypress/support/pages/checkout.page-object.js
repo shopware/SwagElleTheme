@@ -2,7 +2,7 @@ export default class CheckoutPageObject {
     constructor() {
         this.elements = {
             // General cart selectors
-            cartItem: '.cart-item',
+            cartItem: '.line-item',
             cartItemFeatureList: '.product-feature-list-list',
             cartItemFeatureListItem: '.product-feature-list-item',
             cartItemFeatureContainer: '.product-feature-feature',

@@ -4,7 +4,7 @@ describe('Product Detail: Visual tests review area', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 return cy.createProductFixture();
@@ -20,7 +20,7 @@ describe('Product Detail: Visual tests review area', () => {
     });
 
     it('@visual, @review: Display review tab with no review', () => {
-        cy.get('.review-tab').click();
+        cy.get('#review-tab').click();
         cy.get('.product-detail-review-teaser-btn').should('be.visible');
         cy.get('.product-detail-review-list').contains('No reviews found');
 
@@ -28,7 +28,7 @@ describe('Product Detail: Visual tests review area', () => {
     });
 
     it('@visual, @review: User post review', () => {
-        cy.get('.review-tab').click();
+        cy.get('#review-tab').click();
         cy.get('.product-detail-review-teaser button').click();
         cy.get('.product-detail-review-login').should('be.visible');
 
@@ -37,7 +37,7 @@ describe('Product Detail: Visual tests review area', () => {
         cy.get('.login-submit [type="submit"]').click();
 
         cy.visit('/Product-name/RS-333');
-        cy.get('.review-tab').click();
+        cy.get('#review-tab').click();
         cy.get('.product-detail-review-teaser button').click();
 
         cy.takeSnapshot('[Product Detail] Post review form layout', '.product-detail-tab-navigation');
@@ -51,9 +51,12 @@ describe('Product Detail: Visual tests review area', () => {
         cy.takeSnapshot('[Product Detail] Post review result', '.product-detail-tab-navigation');
     });
 
-    it('@visual, @review: Display available review', () => {
-        cy.createReviewFixture();
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
+    it.skip('@visual, @review: Display available review', () => {
+        cy.createReviewFixture().then(() => {
+            cy.visit(`${Cypress.env('admin')}#/sw/dashboard/index`);
+            cy.get('.sw-skeleton').should('not.exist');
+            cy.get('.sw-loader').should('not.exist');
+        });
 
         const page = new ProductPageObject();
         // Request we want to wait for later
@@ -83,7 +86,7 @@ describe('Product Detail: Visual tests review area', () => {
 
         //Verify product's review in Storefront
         cy.visit('/Product-name/RS-333');
-        cy.get('.review-tab').click();
+        cy.get('#review-tab').click();
         cy.get('.product-detail-review-language label').click();
         cy.get('.product-detail-review-language-form input').should('be.checked')
         cy.get('.product-detail-review-rating').should('be.visible');

@@ -7,14 +7,14 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         // Clean previous state and prepare Administration
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
             })
             .then(() => {
                 cy.createProductFixture();
             })
             .then((result) => {
                 product = result;
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+                cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
             });
     });
 
