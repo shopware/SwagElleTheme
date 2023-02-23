@@ -1,3 +1,6 @@
+# 1.13.0
+- Überprüfung der Kompatibilität mit Platform v6.4.20.0
+
 # 1.12.0
 - Überprüfung der Kompatibilität mit Platform v6.4.19.0
 - Überprüfung der Kompatibilität mit Platform v6.4.18.0

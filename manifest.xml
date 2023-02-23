@@ -8,7 +8,7 @@
         <description lang="de-DE">Das Elle Theme von Shopware lässt das Standard Design frisch und leicht aufleben. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
-        <version>1.12.0</version>
+        <version>1.13.0</version>
         <icon>icon.png</icon>
         <license>MIT</license>
     </meta>
