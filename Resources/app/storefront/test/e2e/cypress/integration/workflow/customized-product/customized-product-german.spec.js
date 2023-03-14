@@ -100,15 +100,11 @@ describe('Customize Product: Visual test customize product in German', () => {
             });
     });
 
-    it.skip('@workflow, @customized: Customize product in german', () => {
+    it('@workflow, @customized: Customize product in german', () => {
         // Verify we are on the correct product detail page, by checking the product name
         cy.get('.product-detail-name')
             .should('be.visible')
             .contains(product.name);
-
-        // Check for the price box
-        cy.get('.swag-customized-product__price-display').should('not.exist');
-        cy.get('.swag-customized-product__price-display').should('be.exist');
 
         // Check the price box card titel
         cy.contains('.swag-customized-product__price-display > .card-body > .card-title', 'Pro-Stück-Aufschläge');

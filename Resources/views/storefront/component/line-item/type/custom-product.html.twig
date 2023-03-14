@@ -1,0 +1,60 @@
+{% sw_extends '@SwagCustomizedProducts/storefront/component/line-item/type/custom-product.html.twig' %}
+
+{% if nestingLevel is not defined %}
+    {% set nestingLevel = 0 %}
+{% endif %}
+
+{% block swag_customized_products_line_item %}
+    <div class="swag-customized-products__line-item-grid_component {{ lineItemClasses }}">
+        <div class="row line-item-row">
+            <div class="swag-customized-products__line-item-info line-item-info">
+                <div class="row line-item-row">
+                    <div class="col-auto swag-customized-products__line-item-image">
+                        {% block swag_customized_products_line_item_image %}
+                            <div class="swag-customized-products__line-item-image-container line-item-img-container">
+                                {% sw_include '@Storefront/storefront/component/line-item/element/image.html.twig' %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                    <div class="swag-customized-products__line-item-details line-item-details">
+                        <div class="swag-customized-products__line-item-label">
+                            {{ block('swag_customized_products_line_item_label') }}
+                        </div>
+                        {{ block('swag_customized_products_line_item_details') }}
+                    </div>
+                </div>
+            </div>
+            <div class="swag-customized-products__line-item-quantity line-item-quantity">
+                {% block swag_customized_products_line_item_qunatity %}
+                    {% sw_include '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
+                {% endblock %}
+            </div>
+            <div class="swag-customized-products__line-item-unit-price line-item-unit-price">
+                {{ block('swag_customized_products_line_item_unit_price') }}
+            </div>
+            <div class="swag-customized-products__line-item-total-price line-item-total-price line-item-price">
+                {% block swag_customized_products_line_item_total_price %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="swag-customized-products__line-item-remove line-item-remove">
+                {{ block('swag_customized_products_line_item_remove') }}
+            </div>
+
+            <div class="swag-customized-products__line-item-collapse line-item-collapse">
+                <div class="row line-item-row">
+                    <div class="swag-customized-products__line-item-collapse-options">
+                        {{ block('swag_customized_products_line_item_collapse_options') }}
+                    </div>
+                    <div class="swag-customized-products__line-item-collapse-unit-price">
+                        {{ block('swag_customized_products_line_item_collapes_unit_price') }}
+                    </div>
+                    <div class="swag-customized-products__line-item-collapse-total-price">
+                        {{ block('swag_customized_products_line_item_collapse_total_price') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,7 +1,6 @@
 $order-status-bg: #d1f4dd;
 
 .order-item-header {
-
     @include media-breakpoint-down(sm) {
         padding-left: 10px;
         padding-right: 10px;
@@ -188,6 +187,12 @@ $order-status-bg: #d1f4dd;
     }
 }
 
+.order-table-header,
+.order-item-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .document-item-file-name {
     > a {
         display: flex;
@@ -196,6 +201,18 @@ $order-status-bg: #d1f4dd;
         > span {
             margin-right: 0.5rem;
         }
+    }
+}
+
+.order-table-header-order-table-body {
+    .order-table-header-order-table-body-cell[class*="col-"]:last-of-type {
+       padding: 0;
+    }
+
+    .order-table-body-value {
+        line-height: 35px;
+        display: inline-block;
+        vertical-align: middle;
     }
 }
 
