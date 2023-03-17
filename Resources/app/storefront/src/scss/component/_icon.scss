@@ -34,4 +34,8 @@
     &.icon-xs {
         @include sw-icon-size(16px);
     }
+
+    &.icon-feather-check {
+        width: auto;
+    }
 }

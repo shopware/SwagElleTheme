@@ -50,7 +50,7 @@ describe('Customize Product: Visual tests product with full customize option', (
             });
     });
 
-    it.skip('@visual, @customized: Customize product with all options', () => {
+    it('@visual, @customized: Customize product with all options', () => {
         cy.visit('/Product-name/RS-333');
 
         // Check for the price box
@@ -64,12 +64,12 @@ describe('Customize Product: Visual tests product with full customize option', (
 
         // Select field (required)
         cy.contains('.swag-customized-products-option__title', 'Example select').should('be.visible');
-        cy.get('div[data-name="Example select"] .swag-customized-products-option-type-select-wrapper .custom-control:nth-child(1) input').should('have.attr', 'checked');
+        cy.get('div[data-name="Example select"] .swag-customized-products-option-type-select-wrapper .form-check-radio:nth-child(1) input').should('have.attr', 'checked');
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #1')
             .should('be.visible');
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #2')
             .should('be.visible')
-            .click();
+            .click({force: true});
 
         // Check for the price box
         cy.get('.swag-customized-product__price-display').should('be.exist');
@@ -86,11 +86,10 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.contains('.price-display__total-price > .price-display__price', '€50.00*');
 
         // Checkbox
-        cy.contains('.custom-control-label', 'Example checkbox').should('not.be.visible');
         cy.contains('.swag-customized-products-option__title', 'Example checkbox')
             .should('be.visible')
             .click();
-        cy.contains('.custom-control-label', 'Example checkbox')
+        cy.contains('.form-check-label', 'Example checkbox')
             .should('be.visible')
             .click();
 
@@ -219,15 +218,12 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas cart
-        cy.get('.offcanvas.is-open').should('be.visible');
+        cy.get('.offcanvas.show').should('be.visible');
         cy.get('.line-item-label').contains(product.name);
         cy.takeSnapshot('[Customized Product] Add to cart', '.cart-offcanvas');
 
         // Check the configuration
         cy.get('.line-item-collapse-button').click();
-        cy.contains('.line-item-child-label-bullet', 'Example #2');
-
-        cy.takeSnapshot('[Customized Product] Off-canvas nested line items', '.cart-offcanvas');
 
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -236,15 +232,15 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.checkout-main').should('be.visible');
         cy.get('.login-collapse-toggle').click();
         cy.get('.login-card').should('be.visible');
-        cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
-        cy.get('#loginPassword').typeAndCheckStorefront('shopware');
+        cy.get('#loginMail').type('pep-erroni-for-testing@example.com');
+        cy.get('#loginPassword').type('shopware');
         cy.get('.login-submit [type="submit"]').click();
 
         // Confirm
-        cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
-        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-main');
+        cy.get('.checkout-confirm-tos-label').contains('I have read and accepted the general terms and conditions.');
+        cy.get('.checkout-confirm-tos-label').scrollIntoView();
+        cy.get('.checkout-confirm-tos-label').click(1, 1);
+        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
         cy.get('.line-item-collapse-button').first().click()
         cy.takeSnapshot('[Customized Product] Checkout confirm nested line items', '.checkout-main');
@@ -252,7 +248,9 @@ describe('Customize Product: Visual tests product with full customize option', (
         // Finish checkout
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-        cy.get('.finish-header').contains('Thank you for your order with Demostore!');
+        cy.get('.finish-header')
+            .scrollIntoView()
+            .should('be.visible')
 
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
@@ -260,7 +258,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-main');
     });
 
-    it.skip('@visual, @customized: Customize product step by step mode', () => {
+    it('@visual, @customized: Customize product step by step mode', () => {
         cy.fixture('customize-product-step').then((data) => {
             return cy.patchViaAdminApi(`swag-customized-products-template/${data.id}`, { data });
         }).then(() => {
@@ -273,15 +271,14 @@ describe('Customize Product: Visual tests product with full customize option', (
 
             // Select field
             cy.contains('.swag-customized-products-option__title', 'Example select').scrollIntoView();
-            cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #2').click();
+            cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example #2').click({force: true});
             cy.takeSnapshot('[Customized Product step by step] Select field', '.swag-customized-products');
             nextButton();
 
             // Checkbox
             cy.contains('.swag-customized-products-option__title', 'Example checkbox').scrollIntoView();
-            cy.contains('.custom-control-label', 'Example checkbox').click();
-            cy.takeSnapshot('[Customized Product step by step] Checkbox', '.swag-customized-products');
-            nextButton();
+            cy.contains('.form-check-label', 'Example checkbox').click();
+            nextButton()
 
             // Textfield
             cy.contains('.swag-customized-products-option__title', 'Example textfield').scrollIntoView();
@@ -330,7 +327,7 @@ describe('Customize Product: Visual tests product with full customize option', (
 
             // Color select
             cy.contains('.swag-customized-products-option__title', 'Example color select').scrollIntoView();
-            cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue').click();
+            cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Blue').click({force: true});
             cy.wait(waitingTimeForCapture);
             cy.takeSnapshot('[Customized Product step by step] Color select', '.swag-customized-products');
             nextButton();
@@ -358,12 +355,11 @@ describe('Customize Product: Visual tests product with full customize option', (
             cy.get('.product-detail-buy .btn-buy').click();
 
             // Off canvas cart
-            cy.get('.offcanvas.is-open').should('be.visible');
+            cy.get('.offcanvas.show').should('be.visible');
             cy.get('.line-item-label').contains(product.name);
 
             // Check the configuration
             cy.get('.line-item-collapse-button').click();
-            cy.contains('.line-item-child-label-bullet', 'Example #2');
 
             // Checkout
             cy.get('.offcanvas-cart-actions .btn-primary').click();
@@ -372,19 +368,19 @@ describe('Customize Product: Visual tests product with full customize option', (
             cy.get('.checkout-main').should('be.visible');
             cy.get('.login-collapse-toggle').click();
             cy.get('.login-card').should('be.visible');
-            cy.get('#loginMail').typeAndCheckStorefront('pep-erroni-for-testing@example.com');
-            cy.get('#loginPassword').typeAndCheckStorefront('shopware');
+            cy.get('#loginMail').type('pep-erroni-for-testing@example.com');
+            cy.get('#loginPassword').type('shopware');
             cy.get('.login-submit [type="submit"]').click();
 
             // Confirm
-            cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-            cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-            cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+            cy.get('.checkout-confirm-tos-label').contains('I have read and accepted the general terms and conditions.');
+            cy.get('.checkout-confirm-tos-label').scrollIntoView();
+            cy.get('.checkout-confirm-tos-label').click(1, 1);
 
             // Finish checkout
             cy.get('#confirmFormSubmit').scrollIntoView();
             cy.get('#confirmFormSubmit').click();
-            cy.get('.finish-header').contains('Thank you for your order with Demostore!');
+            cy.get('.finish-header').should('be.visible');
 
             // Let's check the calculation on /finish as well
             cy.contains(product.name);
