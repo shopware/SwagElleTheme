@@ -205,8 +205,8 @@ $order-status-bg: #d1f4dd;
 }
 
 .order-table-header-order-table-body {
-    .order-table-header-order-table-body-cell[class*="col-"]:last-of-type {
-       padding: 0;
+    .order-table-header-order-table-body-cell[class*='col-']:last-of-type {
+        padding: 0;
     }
 
     .order-table-body-value {

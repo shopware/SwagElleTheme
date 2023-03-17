@@ -1,3 +1,6 @@
+# 2.0.0
+- Freigabe v2.0 kompatibel mit Version 6.5
+
 # 1.11.0
 - Überprüfung der Kompatibilität mit Platform v6.4.17.0
 

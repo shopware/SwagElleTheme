@@ -93,6 +93,8 @@
 
     &-quantity-row {
         text-align: left;
+        --bs-gutter-x: 4px;
+        --bs-gutter-y: 4px;
 
         .line-item-quantity-container {
             margin-left: 0;
@@ -132,11 +134,6 @@
     .line-item-quantity-select-wrapper {
         margin-top: 0;
     }
-}
-
-.line-item-quantity-row {
-    --bs-gutter-x: 4px;
-    --bs-gutter-y: 4px;
 }
 
 @include media-breakpoint-up(sm) {
