@@ -77,6 +77,12 @@
     }
 }
 
+.is-act-checkoutregisterpage {
+    *:not(.cart-offcanvas) .swag-customized-products__line-item-collapse-unit-price {
+        display: none;
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .is- {
         .line-item-unit-price,
