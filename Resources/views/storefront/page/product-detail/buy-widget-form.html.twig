@@ -2,7 +2,7 @@
 
 {% block page_product_detail_buy_quantity_container %}
     {% if showQuantitySelect %}
-        <div class="col-12 col-md-auto">
+        <div class="col-12 col-md-3">
             {% set selectQuantityThreshold = 100 %}
 
             {% block page_product_detail_buy_quantity %}
@@ -48,7 +48,7 @@
 
         {% if expressSettings.productDetailEnabled %}
             <div class="row g-2 mt-3 justify-content-start">
-                {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-12 col-sm-12 col-md-4 col-lg-6 offset-md-3'} %}
+                {% sw_include '@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-12 col-md-4 col-lg-9 offset-md-3'} %}
             </div>
         {% endif %}
     {% endif %}
