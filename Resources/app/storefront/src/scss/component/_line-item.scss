@@ -121,7 +121,8 @@
         font-weight: $font-weight-bold;
     }
 
-    &-quantity-label {
+    &-quantity-label,
+    &-quantity {
         margin-bottom: 0;
     }
 }
@@ -156,6 +157,11 @@
         .line-item-quantity-row {
             margin: 0;
         }
+    }
+
+    .line-item-quantity-label {
+        text-align: center;
+        margin-top: 0;
     }
 }
 
