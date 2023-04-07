@@ -71,6 +71,10 @@
             margin-bottom: 15px;
         }
 
+        div[data-swag-paypal-express-button='true'] {
+            margin-top: 15px;
+        }
+
         #addPromotionOffcanvasCart {
             .icon {
                 color: $gray-100;
