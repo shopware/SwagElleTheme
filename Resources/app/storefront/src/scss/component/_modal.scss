@@ -1,7 +1,7 @@
 $modal-max-width: 800px;
+$modal-spacing: 40px;
 
 .modal {
-
     @include media-breakpoint-up(sm) {
         .modal-dialog {
             max-width: $modal-max-width;
@@ -11,6 +11,10 @@ $modal-max-width: 800px;
     &-content {
         border: 1px solid $border-color;
         border-radius: 3px;
+
+        .modal-header.only-close {
+            padding: $modal-spacing $modal-spacing 10px;
+        }
     }
 
     &-header {
@@ -19,20 +23,20 @@ $modal-max-width: 800px;
 
         .close {
             position: absolute;
-            right: 16px;
-            margin: -10px 0 0;
+            margin: 0;
             padding: 0;
             color: $body-color;
             opacity: unset;
             background: none;
+            right: 45px;
+            top: 35px;
 
             &:hover {
                 color: $body-color;
             }
 
-            svg {
-                top: 15px;
-                right: 15px;
+            &:focus {
+                box-shadow: none;
             }
         }
     }
