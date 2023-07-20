@@ -1,3 +1,10 @@
+# 2.1.0
+- Überprüfung der Kompatibilität mit dem Abonnement
+- Überprüfung der Kompatibilität mit dem Retourenmanagement
+- Vereinheitlichtes Styling für SwagCustomNotification
+- Fehler beim Laden von Miniaturbildern behoben
+- Express-Checkout-Buttons auf der Produkt-Detailseite behoben
+
 # 2.0.0
 - Freigabe v2.0 kompatibel mit Version 6.5
 

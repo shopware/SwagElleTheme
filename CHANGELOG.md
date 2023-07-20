@@ -1,3 +1,10 @@
+# 2.1.0
+- Checked compatibility with the subscription
+- Checked compatibility with return management
+- Unified stylings of SwagCustomNotification
+- Fixed thumbnail not loading bug
+- Fixed express checkout buttons on the product detail page
+
 # 2.0.0
 - Release v2.0 compatible with 6.5 version
 
