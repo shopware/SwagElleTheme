@@ -33,13 +33,17 @@ $order-status-bg: #d1f4dd;
             }
         }
 
-        .order-table-header-label {
+        .order-table-b2b-employee {
+            margin: 10px 0 10px 0 !important;
+        }
+
+        .order-table-header-label, .order-table-b2b-employee-label {
             display: block;
             float: left;
             width: 50%;
         }
 
-        .order-table-header-value {
+        .order-table-header-value, .order-table-b2b-employee-value {
             width: 50%;
         }
 
@@ -61,7 +65,11 @@ $order-status-bg: #d1f4dd;
         @extend .h3;
     }
 
-    .order-table-header-label {
+    .order-table-b2b-employee {
+        margin: -8px 0 16px 0;
+    }
+
+    .order-table-header-label, .order-table-b2b-employee-label {
         font-weight: $font-weight-semibold;
     }
 
@@ -95,7 +103,6 @@ $order-status-bg: #d1f4dd;
 }
 
 .order-item-detail {
-
     @include media-breakpoint-down(md) {
         .order-item-detail-footer {
             padding-left: 10px;
@@ -187,6 +194,10 @@ $order-status-bg: #d1f4dd;
 .order-item-header {
     padding-top: 10px;
     padding-bottom: 10px;
+
+    .order-table-b2b-employee {
+        padding: 0 !important;
+    }
 }
 
 .document-item-file-name {

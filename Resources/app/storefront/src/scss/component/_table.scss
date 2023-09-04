@@ -54,22 +54,6 @@
         border: 0;
     }
 
-    thead,
-    tbody {
-        tr {
-            th,
-            td {
-                &:first-child {
-                    padding-left: 0;
-                }
-
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
-        }
-    }
-
     thead {
         line-height: 2;
 
