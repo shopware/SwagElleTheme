@@ -40,6 +40,22 @@
                 <div class="col-auto header-actions-col">
                     <div class="row g-0">
                         {% block layout_header_search_toggle %}
+                            {% if getLicense('NATURAL_LANGUAGE_SEARCH-4165825') and config('AISearch.naturalLanguageSearch.enabled') %}
+                                <div class="col-auto">
+                                    <a class="nls-search-page-link" href="{{ path('frontend.natlang.page') }}">
+                                        <button
+                                                id="naturalLanguageSearch"
+                                                class="btn header-actions-btn"
+                                                type="button"
+                                                aria-label="{{ "naturalLanguageSearch.searchButton"|trans|striptags }}"
+                                                title="{{ "naturalLanguageSearch.searchButton"|trans|striptags }}"
+                                        >
+                                            {% sw_icon 'sparkles' style {'pack': 'default'} %}
+                                        </button>
+                                    </a>
+                                </div>
+                            {% endif %}
+
                             <div class="col-auto">
                                 <div class="search-toggle">
                                     <button class="btn header-actions-btn search-toggle-btn js-search-toggle-btn collapsed"

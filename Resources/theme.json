@@ -9,6 +9,7 @@
         "@SwagCmsExtensions",
         "@SwagB2bPlatform",
         "@SwagCustomNotification",
+        "@AISearch",
         "@SwagElleTheme",
         "@Plugins"
     ],
