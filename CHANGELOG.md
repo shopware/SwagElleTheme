@@ -1,3 +1,6 @@
+# 2.2.0
+- Checked search by context compatability
+
 # 2.1.0
 - Checked compatibility with the subscription
 - Checked compatibility with return management

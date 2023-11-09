@@ -1,7 +1,7 @@
 variables:
   CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
   PERCY_SPEC: 'cypress/**/*.visual.spec.js'
-  PLATFORM_BRANCH: "v6.5.3.0"
+  PLATFORM_BRANCH: "trunk"
   PERCY_TARGET_BRANCH: "master"
   PLUGIN_DEPENDENCIES:
     value: >
