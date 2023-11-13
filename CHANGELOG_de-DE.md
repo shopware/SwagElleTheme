@@ -1,3 +1,6 @@
+# 2.2.0
+- Überprüfung der Kompatibilität mit der Kontextsuche
+
 # 2.1.0
 - Überprüfung der Kompatibilität mit dem Abonnement
 - Überprüfung der Kompatibilität mit dem Retourenmanagement
