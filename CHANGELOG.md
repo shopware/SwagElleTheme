@@ -1,5 +1,7 @@
 # 2.2.0
 - Checked search by context compatability
+- Missing padding in B2B tables
+- Checked order items
 
 # 2.1.0
 - Checked compatibility with the subscription
