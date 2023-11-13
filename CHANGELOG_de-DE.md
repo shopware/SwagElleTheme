@@ -1,5 +1,7 @@
 # 2.2.0
 - Überprüfung der Kompatibilität mit der Kontextsuche
+- Fehlendes Padding der B2B-Tabellen
+- Überprüfung der Bestellelemente
 
 # 2.1.0
 - Überprüfung der Kompatibilität mit dem Abonnement
