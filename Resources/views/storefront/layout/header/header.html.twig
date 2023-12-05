@@ -40,7 +40,7 @@
                 <div class="col-auto header-actions-col">
                     <div class="row g-0">
                         {% block layout_header_search_toggle %}
-                            {% if getLicense('NATURAL_LANGUAGE_SEARCH-4165825') and config('AISearch.naturalLanguageSearch.enabled') %}
+                            {% if config('AISearch.naturalLanguageSearch.enabled') %}
                                 <div class="col-auto">
                                     <a class="nls-search-page-link" href="{{ path('frontend.natlang.page') }}">
                                         <button
