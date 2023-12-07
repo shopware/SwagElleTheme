@@ -1,3 +1,6 @@
+# 2.3.0
+- Fixed issues during theme activation
+
 # 2.2.0
 - Checked search by context compatability
 - Missing padding in B2B tables
