@@ -1,3 +1,6 @@
+# 2.3.0
+- Fehler während Themeaktivierung behoben
+
 # 2.2.0
 - Überprüfung der Kompatibilität mit der Kontextsuche
 - Fehlendes Padding der B2B-Tabellen
