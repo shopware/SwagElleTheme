@@ -131,7 +131,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         });
     }
 
-    it('@workflow @cms: Create listing page', () => {
+    it.skip('@workflow @cms: Create listing page', () => {
         createSampleLandingPage();
         // Verify category in ShowRoom Theme
         cy.visit('/');

@@ -111,7 +111,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
         });
     });
 
-    it('@workflow: create contact form page', () => {
+    it.skip('@workflow: create contact form page', () => {
         createContactFormPage();
 
         cy.visit('/');

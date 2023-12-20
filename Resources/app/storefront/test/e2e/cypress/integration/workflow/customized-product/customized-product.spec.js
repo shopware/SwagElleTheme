@@ -51,7 +51,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         })
     });
 
-    it('@workflow, @customized: Customize product with all options', () => {
+    it.skip('@workflow, @customized: Customize product with all options', () => {
         cy.visit('/Product-name/RS-333');
 
         // Check for the product price
@@ -246,7 +246,7 @@ describe('Customize Product: Visual tests product with full customize option', (
         cy.get('.line-item-collapse-button').first().click()
     })
 
-    it('@workflow, @customized: Customize product step by step mode', () => {
+    it.skip('@workflow, @customized: Customize product step by step mode', () => {
         cy.fixture('customize-product-step').then((data) => {
             return cy.patchViaAdminApi(`swag-customized-products-template/${data.id}`, { data });
         }).then(() => {

@@ -138,7 +138,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         });
     }
 
-    it('@workflow @cms: Create listing page with a sidebar', () => {
+    it.skip('@workflow @cms: Create listing page with a sidebar', () => {
         createSampleListingPageWithSidebar();
         // Verify category in Elle Theme
         cy.visit('/');

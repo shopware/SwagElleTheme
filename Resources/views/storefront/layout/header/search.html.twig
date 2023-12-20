@@ -16,8 +16,9 @@
             </button>
             <form action="{{ path('frontend.search.page') }}"
                   method="get"
-                  data-search-form="true"
+                  data-search-widget="true"
                   data-url="{{ path('frontend.search.suggest') }}?search="
+                  data-search-widget-options='{{ searchWidgetOptions|json_encode }}'
                   class="header-search-form">
                 {% block layout_header_search_input_group %}
                     <div class="input-group input-group-lg">

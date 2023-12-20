@@ -83,7 +83,7 @@ describe('Checkout: Proceed checkout using various customers', () => {
                     cy.get('.alert-success .alert-content').contains('Address has been saved.');
 
                     // Set new address as shipping address
-                    cy.contains('Set as default shipping').click();
+                    cy.contains('Use as default shipping address').click();
                     cy.get('.shipping-address .address').contains('Sherman');
                 }
 
