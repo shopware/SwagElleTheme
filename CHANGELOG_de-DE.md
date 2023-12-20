@@ -1,3 +1,6 @@
+# 3.0.0
+- Showpare-6.6-Kompatibilität
+
 # 2.3.0
 - Fehler während Themeaktivierung behoben
 

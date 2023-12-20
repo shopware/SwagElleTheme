@@ -49,11 +49,11 @@ describe('Account: Address page', () => {
         cy.get('.alert-success .alert-content').contains('Address has been saved.');
         cy.takeSnapshot('[Address] Address Created', '.account-address');
 
-        cy.get('.address-card .address-action-set-default').contains('Set as default shipping').click();
+        cy.get('.address-card .address-action-set-default').contains('Use as default shipping address').click();
         cy.get('.alert-success .alert-content').contains('Default address has been changed.');
         cy.takeSnapshot('[Address] Address - Set default shipping address', '.account-address');
 
-        cy.get('.address-card .address-action-set-default').contains('Set as default billing').click();
+        cy.get('.address-card .address-action-set-default').contains('Use as default billing address').click();
         cy.get('.alert-success .alert-content').contains('Default address has been changed.');
         cy.takeSnapshot('[Address] Address - Set default billing address', '.account-address');
 

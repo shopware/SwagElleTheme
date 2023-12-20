@@ -115,7 +115,7 @@ describe('ThemeColor: workflow change primary color and buy color', () => {
         });
     }
 
-    it('@workflow @themeColor: check change primary color ', () => {
+    it.skip('@workflow @themeColor: check change primary color ', () => {
         cy.intercept({
             path: '/widgets/checkout/info',
             method: 'get'

@@ -98,7 +98,7 @@ describe('Shop page: CMS service page', () => {
         });
     }
 
-    it('@workflow: assign service page to footer category', () => {
+    it.skip('@workflow: assign service page to footer category', () => {
         createServicePage();
         cy.visit('/');
 

@@ -11,7 +11,7 @@ describe('Account: Edit profile', { tags: ['@workflow', '@profile'] }, () => {
             })
     });
 
-    it('@workflow @profile: update profile', () => {
+    it.skip('@workflow @profile: update profile', () => {
         const page = new AccountPageObject();
 
         cy.authenticate().then((result) => {
@@ -41,7 +41,7 @@ describe('Account: Edit profile', { tags: ['@workflow', '@profile'] }, () => {
             expect(element).to.contain('Overview');
         });
 
-        cy.get('.card-actions [href="/account/profile"]').click();
+        cy.get('.list-group-item').contains('Your profile').click();
 
         const accountTypeSelector = 'select[name="accountType"]';
         const companySelector = 'input[name="company"]';

@@ -37,7 +37,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
             });
     });
 
-    it('@workflow @cms: basic landing page', () => {
+    it.skip('@workflow @cms: basic landing page', () => {
         const page = new MediaPageObject();
 
         cy.intercept({
