@@ -4,7 +4,7 @@
 // Options
 $enable-responsive-font-sizes: false !default;
 $enable-negative-margins: true;
-$app-css-relative-asset-path: '../assets' !default;
+$app-css-relative-asset-path: '../../' + $theme-id + '/assets' !default;
 
 // Color system
 $gray-100: #f8f9fa !default;
