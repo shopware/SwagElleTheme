@@ -20,8 +20,7 @@
         "app/storefront/src/scss/base.scss"
     ],
     "script": [
-        "@Storefront",
-        "app/storefront/dist/storefront/js/swag-elle-theme.js"
+        "@Storefront"
     ],
     "asset": [
         "app/storefront/src/assets"
