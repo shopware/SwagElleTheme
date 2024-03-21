@@ -51,7 +51,8 @@
                          id="collapseFooterNewsletterTitle"
                          data-bs-target="#collapseFooterNewsletter"
                          aria-expanded="true"
-                         aria-controls="collapseFooterNewsletter">
+                         aria-controls="collapseFooterNewsletter"
+                         role="listitem">
                         {{ 'footer.newsletterHeadline'|trans|sw_sanitize }}
                         {% block layout_footer_navigation_newsletter_icons %}
                             <div class="footer-column-toggle">
@@ -69,7 +70,8 @@
                 {% block layout_footer_navigation_newsletter_content %}
                     <div id="collapseFooterNewsletter"
                          class="footer-column-content collapse js-footer-column-content footer-column-newsletter"
-                         aria-labelledby="collapseFooterNewsletterTitle">
+                         aria-labelledby="collapseFooterNewsletterTitle"
+                         role="listitem">
                         <div class="footer-column-content-inner">
                             {% block layout_footer_navigation_newsletter_form %}
                                 <div class="footer-newsletter-form">

@@ -115,7 +115,7 @@
                     "en-GB": "Success",
                     "de-DE": "Erfolg"
                 },
-                "value": "#3cc261"
+                "value": "#206834"
             },
             "sw-color-info": {
                 "label": {
@@ -178,7 +178,7 @@
                     "en-GB": "Buy button",
                     "de-DE": "Kaufen-Button"
                 },
-                "value": "#3cc261"
+                "value": "#24743a"
             },
             "sw-color-buy-button-text": {
                 "label": {
