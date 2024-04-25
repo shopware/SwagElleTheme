@@ -5,7 +5,7 @@
         <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
            id="description-tab"
            data-bs-toggle="tab"
-           data-offcanvas-tabs="true"
+           data-off-canvas-tabs="true"
            href="#description-tab-pane">
             <span>{{ "detail.tabsDescription"|trans|sw_sanitize }}</span>
             <span class="product-detail-tab-navigation-icon">
@@ -35,7 +35,7 @@
             <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
                id="review-tab"
                data-bs-toggle="tab"
-               data-offcanvas-tabs="true"
+               data-off-canvas-tabs="true"
                href="#review-tab-pane">
                 {{ "detail.tabsReview"|trans|sw_sanitize }}
                 <span class="product-detail-tab-navigation-icon">
