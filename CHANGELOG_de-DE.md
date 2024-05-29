@@ -1,3 +1,7 @@
+# 3.1.0
+- Problem im Menü in der mobilen Ansicht behoben
+- Fehlerhafter Template Pfad der Produkt-Detailseite korrigiert
+
 # 3.0.0
 - Showpare-6.6-Kompatibilität
 
