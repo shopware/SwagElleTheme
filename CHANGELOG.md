@@ -1,3 +1,7 @@
+# 3.1.0
+- Fixed menu issue on mobile view
+- Fixed product detail page uses wrong path
+
 # 3.0.0
 - Showpare 6.6 compatibility
 
