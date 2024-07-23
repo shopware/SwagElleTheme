@@ -1,3 +1,6 @@
+# 4.0.0
+- `Resources/views/storefront/page/content/product-detail.html.twig` wurde gelöscht. Das Theme erweitert jetzt korrekt die Templates der Produkt-Detailseite.
+
 # 3.2.0
 - Deprecated `Resources/viewss/storefront/page/content/product-detail.html.twig`. Die Datei wird entfernt, damit die Produktdetailseite korrekt erweitert werden kann.
 

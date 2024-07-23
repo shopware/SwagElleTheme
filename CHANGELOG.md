@@ -1,3 +1,6 @@
+# 4.0.0
+- Deleted `Resources/views/storefront/page/content/product-detail.html.twig`. The theme now properly extends the storefront product detail page.
+
 # 3.2.0
 - Deprecated `Resources/viewss/storefront/page/content/product-detail.html.twig`. It will be removed to properly extend the product detail page.
 

@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_rich_snippets %}
+    <div class="row align-items-center">
+        {% sw_include '@Storefront/storefront/page/product-detail/headline.html.twig' %}
+    </div>
+
+    {{ parent() }}
+{% endblock %}
