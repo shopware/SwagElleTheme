@@ -1,3 +1,6 @@
+# 3.2.0
+- Deprecated `Resources/viewss/storefront/page/content/product-detail.html.twig`. Die Datei wird entfernt, damit die Produktdetailseite korrekt erweitert werden kann.
+
 # 3.1.0
 - Problem im Menü in der mobilen Ansicht behoben
 - Fehlerhafter Template Pfad der Produkt-Detailseite korrigiert
