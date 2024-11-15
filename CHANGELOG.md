@@ -1,3 +1,6 @@
+# 4.1.0
+- TEL-420 - Fixed an issue in the storefront product search preview where no products were suggested
+
 # 4.0.0
 - Deleted `Resources/views/storefront/page/content/product-detail.html.twig`. The theme now properly extends the storefront product detail page.
 

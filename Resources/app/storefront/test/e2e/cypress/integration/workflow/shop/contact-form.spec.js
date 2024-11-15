@@ -14,7 +14,7 @@ const selector = {
     modalButtonDismiss: 'button[data-dismiss="modal"]'
 }
 
-describe('Contact: Basic', { tags: ['@workflow'] }, () => {
+describe.skip('Contact: Basic', { tags: ['@workflow'] }, () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {

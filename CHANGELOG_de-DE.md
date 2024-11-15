@@ -1,3 +1,6 @@
+# 4.1.0
+- TEL-420 - Ein Problem in der Produkt-Suchvorschau der Storefront wurde behoben, bei dem keine Produkte vorgeschlagen wurden
+
 # 4.0.0
 - `Resources/views/storefront/page/content/product-detail.html.twig` wurde gelöscht. Das Theme erweitert jetzt korrekt die Templates der Produkt-Detailseite.
 
