@@ -1,0 +1,13 @@
+name: Theme
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ci:
+    uses: shopware/github-actions/.github/workflows/theme.yml@main
