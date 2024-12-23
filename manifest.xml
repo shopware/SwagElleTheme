@@ -5,7 +5,7 @@
         <label>Elle Theme</label>
         <label lang="de-DE">Elle Theme</label>
         <description>The Elle Theme from Shopware makes the standard design fresh and light. It can be used in any branch, offers additional functions and can be extended by apps.</description>
-        <description lang="de-DE">Das Elle Theme von Shopware lässt das Standard Design frisch und leicht aufleben. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
+        <description lang="de-DE">Das Elle Theme von Shopware frischt das Standarddesign auf. Es ist branchenübergreifend einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>4.1.0</version>
