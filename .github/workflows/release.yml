@@ -4,11 +4,11 @@ on:
 
 jobs:
   release:
-    name: Release
-    uses: shopware/github-actions/.github/workflows/store-release.yml@main
-    with:
-      extensionName: ${{ github.event.repository.name }}
-    secrets:
-      accountUser: ${{ secrets.SHOPWARE_ACCOUNT_USER }}
-      accountPassword: ${{ secrets.SHOPWARE_ACCOUNT_PASSWORD }}
-      ghToken: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: runs-on=${{ github.run_id }}/runner=sw-amd64
+    steps:
+    - uses: shopware/github-actions/store-release@main   
+      with:
+        extensionName: ${{ github.event.repository.name }}
+        accountUser: ${{ secrets.SHOPWARE_ACCOUNT_USER }}
+        accountPassword: ${{ secrets.SHOPWARE_ACCOUNT_PASSWORD }}
+        ghToken: ${{ secrets.GITHUB_TOKEN }}
