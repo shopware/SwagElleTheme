@@ -11,9 +11,6 @@
     "lint:scss-fix": "npm run lint:scss -- --fix",
     "ci:lighthouse": "node lighthouse-tests.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "fs-extra": "^10.1.0",
     "lighthouse": "^9.5.0",

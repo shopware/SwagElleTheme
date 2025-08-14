@@ -10,6 +10,6 @@
         <copyright>(c) by shopware AG</copyright>
         <version>4.1.0</version>
         <icon>icon.png</icon>
-        <license>MIT</license>
+        <license>GPL-3.0</license>
     </meta>
 </manifest>
