@@ -1,3 +1,5 @@
+// SwagElleTheme Copyright (C) 2025 shopware AG
+
 @each $color, $value in $theme-colors {
     .badge-#{$color} {
         @extend .bg-#{$color};
