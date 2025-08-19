@@ -16,7 +16,7 @@ released to the community under the terms of the GNU General Public License v3.0
 > ⚖️ Disclaimer
 > This software is provided "as is", without warranty of any kind, express or
 > implied, including but not limited to the warranties of merchantability,
-> fitness for a particular purpose andnoninfringement.
+> fitness for a particular purpose and noninfringement.
 >
 > In no event shall Shopware AG be liable for any claim, damages or other
 > liability, whether in an action of contract, tort or otherwise, arising from,
